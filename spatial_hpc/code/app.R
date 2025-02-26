@@ -16,7 +16,7 @@ if (file.exists(posit_connect_file)) {
   ## Location for the https://conn1.libd.org/ server
   spe <- readRDS(posit_connect_file)
 } else {
-  spe <- readRDS(basename(posit_connect_file))
+  spe <- readRDS(here::here("spatial_hpc", "processed-data", "spatial_hpc_spe.rds"))
 }
 
 vars <- colnames(colData(spe))
