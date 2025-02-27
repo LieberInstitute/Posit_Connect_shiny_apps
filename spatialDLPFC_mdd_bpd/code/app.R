@@ -15,18 +15,32 @@ options(repos = BiocManager::repositories())
 posit_connect_dir <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"
 if (file.exists(posit_connect_dir)) {
     ## Location for the https://conn1.libd.org/ server
-    spe <- loadHDF5SummarizedExperiment(dir = posit_connect_dir, prefix = "spe_n120_postQC_norm_")
+    spe <- loadHDF5SummarizedExperiment(
+        dir = posit_connect_dir,
+        prefix = "spe_n120_postQC_norm_"
+    )
 } else {
-    spe <- loadHDF5SummarizedExperiment(dir = here::here("spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"), prefix = "spe_n120_postQC_norm_")
+    spe <- loadHDF5SummarizedExperiment(
+        dir = here::here(
+            "spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"
+        ),
+        prefix = "spe_n120_postQC_norm_"
+    )
 }
 
 ## Load the data that has images
 posit_connect_dir <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_mdd_bpd/processed-data/02_build_spe"
 if (file.exists(posit_connect_dir)) {
     ## Location for the https://conn1.libd.org/ server
-    spe_with_images <- loadHDF5SummarizedExperiment(dir = posit_connect_dir, prefix = "spe_n120_imgs_")
+    spe_with_images <- loadHDF5SummarizedExperiment(
+        dir = posit_connect_dir,
+        prefix = "spe_n120_imgs_"
+    )
 } else {
-    spe_with_images <- loadHDF5SummarizedExperiment(dir = here::here("spatialDLPFC_mdd_bpd/processed-data/02_build_spe"), prefix = "spe_n120_imgs_")
+    spe_with_images <- loadHDF5SummarizedExperiment(
+        dir = here::here("spatialDLPFC_mdd_bpd/processed-data/02_build_spe"),
+        prefix = "spe_n120_imgs_"
+    )
 }
 
 ## Merge the two objects
