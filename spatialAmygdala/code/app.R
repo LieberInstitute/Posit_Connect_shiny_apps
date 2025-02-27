@@ -19,6 +19,9 @@ if (file.exists(posit_connect_file)) {
     load(here::here("spatialAmygdala/processed-data/Visium/03_qc_metrics/spe_stitched_local_outliers.Rdata"), verbose = TRUE)
 }
 
+# lobstr::obj_size(spe)
+# 5.54 GB
+
 vars <- colnames(colData(spe))
 
 ## Deploy the website
