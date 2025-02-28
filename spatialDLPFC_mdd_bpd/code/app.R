@@ -13,35 +13,42 @@ options(repos = BiocManager::repositories())
 
 ## Load the data that has colData info
 posit_connect_dir <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"
+rep_local_dir <- here::here(
+    "spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"
+)
 if (file.exists(posit_connect_dir)) {
     ## Location for the https://conn1.libd.org/ server
-    spe <- loadHDF5SummarizedExperiment(
-        dir = posit_connect_dir,
-        prefix = "spe_n120_postQC_norm_"
-    )
+    dir_to_use <- posit_connect_dir
+} else if (file.exists(repo_local_dir)) {
+    dir_to_use <- rep_local_dir
 } else {
-    spe <- loadHDF5SummarizedExperiment(
-        dir = here::here(
-            "spatialDLPFC_mdd_bpd/processed-data/04_feature_selection"
-        ),
-        prefix = "spe_n120_postQC_norm_"
-    )
+    dir_to_use <- getwd()
 }
+
+spe <- loadHDF5SummarizedExperiment(
+    dir = dir_to_use,
+    prefix = "spe_n120_postQC_norm_"
+)
 
 ## Load the data that has images
 posit_connect_dir <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_mdd_bpd/processed-data/02_build_spe"
+rep_local_dir <- here::here(
+    "spatialDLPFC_mdd_bpd/processed-data/02_build_spe"
+)
+
 if (file.exists(posit_connect_dir)) {
     ## Location for the https://conn1.libd.org/ server
-    spe_with_images <- loadHDF5SummarizedExperiment(
-        dir = posit_connect_dir,
-        prefix = "spe_n120_imgs_"
-    )
+    dir_to_use <- posit_connect_dir
+} else if (file.exists(repo_local_dir)) {
+    dir_to_use <- rep_local_dir
 } else {
-    spe_with_images <- loadHDF5SummarizedExperiment(
-        dir = here::here("spatialDLPFC_mdd_bpd/processed-data/02_build_spe"),
-        prefix = "spe_n120_imgs_"
-    )
+    dir_to_use <- getwd()
 }
+
+spe_with_images <- loadHDF5SummarizedExperiment(
+    dir = dir_to_use,
+    prefix = "spe_n120_imgs_"
+)
 
 ## Merge the two objects
 m <- match(imgData(spe)$sample_id, imgData(spe_with_images)$sample_id)
