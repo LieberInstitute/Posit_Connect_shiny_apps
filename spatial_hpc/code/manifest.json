@@ -4929,16 +4929,16 @@
         "RemoteRepo": "spatialLIBD",
         "RemoteUsername": "LieberInstitute",
         "RemoteRef": "HEAD",
-        "RemoteSha": "7512c95554c0fe29fe42f5643610579785370231",
+        "RemoteSha": "41866c2254887c14af4c62e6ee0e47f63f75744a",
         "GithubRepo": "spatialLIBD",
         "GithubUsername": "LieberInstitute",
         "GithubRef": "HEAD",
-        "GithubSHA1": "7512c95554c0fe29fe42f5643610579785370231",
+        "GithubSHA1": "41866c2254887c14af4c62e6ee0e47f63f75744a",
         "NeedsCompilation": "no",
-        "Packaged": "2025-02-28 21:39:35 UTC; leocollado",
+        "Packaged": "2025-02-28 21:55:55 UTC; leocollado",
         "Author": "Leonardo Collado-Torres [aut, cre]\n    (<https://orcid.org/0000-0003-2140-308X>),\n  Kristen R. Maynard [ctb] (<https://orcid.org/0000-0003-0031-8468>),\n  Andrew E. Jaffe [ctb] (<https://orcid.org/0000-0001-6886-1454>),\n  Brenda Pardo [ctb] (<https://orcid.org/0000-0001-8103-7136>),\n  Abby Spangler [ctb] (<https://orcid.org/0000-0002-0028-9348>),\n  Jesús Vélez Santiago [ctb] (<https://orcid.org/0000-0001-5128-3838>),\n  Lukas M. Weber [ctb] (<https://orcid.org/0000-0002-3282-1730>),\n  Louise Huuki-Myers [ctb] (<https://orcid.org/0000-0001-5148-3602>),\n  Nicholas Eagles [ctb] (<https://orcid.org/0000-0002-9808-5254>)",
         "Maintainer": "Leonardo Collado-Torres <lcolladotor@gmail.com>",
-        "Built": "R 4.4.2; ; 2025-02-28 21:39:35 UTC; unix"
+        "Built": "R 4.4.2; ; 2025-02-28 21:55:56 UTC; unix"
       }
     },
     "statmod": {
