@@ -25,7 +25,7 @@ rm(spe_with_images)
 ## Coerce to a sparse matrix
 counts(spe) <- NULL
 logcounts(spe) <- as(logcounts(spe), "dgCMatrix")
-# Error: vector memory limit of 64.0 Gb reached, see mem.maxVSize()
+# Error: vector memory limit of 64.0 Gb reached, see mem.maxVSize() ## Needed a compute node with something like 300 GB to actually do this
 
 Sys.time()
 lobstr::obj_size(spe)
@@ -33,8 +33,12 @@ Sys.time()
 
 ## Save later use
 saveRDS(
-  spe,
-  file = here("processed-data", "04_feature_selection", "spatialDLPFC_mdd_bpd_spe.rds")
+    spe,
+    file = here(
+        "processed-data",
+        "04_feature_selection",
+        "spatialDLPFC_mdd_bpd_spe.rds"
+    )
 )
 
 ## Reproducibility information

@@ -16,8 +16,31 @@ if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
     spe <- readRDS(posit_connect_file)
 } else {
-    spe <- readRDS(here::here("spatialDLPFC_mdd_bpd", "processed-data", "04_feature_selection", "spatialDLPFC_mdd_bpd_spe.rds"))
+    spe <- readRDS(here::here(
+        "spatialDLPFC_mdd_bpd",
+        "processed-data",
+        "04_feature_selection",
+        "spatialDLPFC_mdd_bpd_spe.rds"
+    ))
 }
+# > spe
+# class: SpatialExperiment
+# dim: 28965 535248
+# metadata(0):
+# assays(1): logcounts
+# rownames(28965): ENSG00000243485 ENSG00000238009 ... ENSG00000278817 ENSG00000277196
+# rowData names(7): source type ... gene_type gene_search
+# colnames(535248): GACCTGGTCTGGGCGT-1_V13F27-338_A1 CGTCCAGATGGCTCCA-1_V13F27-338_A1 ...
+#   ACCTCAGCGAGGCGCA-1_V13B23-282_D1 GGCTGAGCATCGTAAG-1_V13B23-282_D1
+# colData names(21): sample_id in_tissue ... problem_area_flag sizeFactor
+# reducedDimNames(0):
+# mainExpName: NULL
+# altExpNames(0):
+# spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
+# imgData names(4): sample_id image_id data scaleFactor
+
+# > lobstr::obj_size(spe)
+# 10.69 GB
 
 spe$ManualAnnotation <- NA
 vars <- colnames(colData(spe))
