@@ -12,19 +12,31 @@ options("golem.app.prod" = TRUE)
 options(repos = BiocManager::repositories())
 
 ## Load the data
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialAmygdala/processed-data/Visium/03_qc_metrics/spe_stitched_local_outliers.Rdata"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neuropil/sce_neuropil_spd.rds"
 
+if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    #load(posit_connect_file, verbose = TRUE)
-sce <- readRDS(posit_connect_file)
+    sce <- readRDS(posit_connect_file)
+} else {
+    sce <- readRDS(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neuropil/sce_neuropil_spd.rds"))
+}
+
+#sce <- readRDS(posit_connect_file)
+
+#load initial.R setup file for iSEE apps
 initial_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neuropil/initial.R"
+if (file.exists(initial_file)) {
+    source(initial_file, print.eval = TRUE)
+} else  {
+    source(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neuropil/initial.R"), print.eval = TRUE)
+}
 
 
 
 # sce <- readRDS("sce_neuropil_spd.rds")
 
 
-source(initial_file, print.eval = TRUE)
+
 
 rownames(sce) <- rowData(sce)$gene_name
 
