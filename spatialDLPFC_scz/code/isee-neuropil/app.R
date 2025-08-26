@@ -4,6 +4,8 @@ library("iSEE")
 library("shiny")
 library("paletteer")
 library("Polychrome")
+library("spatialLIBD")
+library("SpatialExperiment")
 
 ## spatialLIBD uses golem
 options("golem.app.prod" = TRUE)
