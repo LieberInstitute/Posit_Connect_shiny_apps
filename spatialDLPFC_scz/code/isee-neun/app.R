@@ -14,23 +14,23 @@ options("golem.app.prod" = TRUE)
 options(repos = BiocManager::repositories())
 
 ## Load the data
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neuropil/sce_neuropil_spd.rds"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neun/pseudo_neun_spd_pvals.rds"
 
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
     sce <- readRDS(posit_connect_file)
 } else {
-    sce <- readRDS(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neuropil/sce_neuropil_spd.rds"))
+    sce <- readRDS(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neun/pseudo_neun_spd_pvals.rds"))
 }
 
 #sce <- readRDS(posit_connect_file)
 
 #load initial.R setup file for iSEE apps
-initial_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neuropil/initial.R"
+initial_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/spatialDLPFC_scz/isee-neun/initial.R"
 if (file.exists(initial_file)) {
     source(initial_file, print.eval = TRUE)
 } else  {
-    source(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neuropil/initial.R"), print.eval = TRUE)
+    source(here::here("spatialDLPFC_scz/processed-data/iSEE-apps/neun/initial.R"), print.eval = TRUE)
 }
 
 
@@ -40,14 +40,14 @@ if (file.exists(initial_file)) {
 
 
 
-rownames(sce) <- rowData(sce)$gene_name
+#rownames(sce) <- rowData(sce)$gene_name
 
 domain_colors <- paletteer::paletteer_d(palette = "Polychrome::palette36", n = length(levels(unique(sce$spd_label))))
 
 
 iSEE(
     sce,
-    appTitle = "pseudobulk DLPFC SCZ - neuropil",
+    appTitle = "pseudobulk DLPFC SCZ - neuronal",
     initial = initial,
     colormap = ExperimentColorMap( colData = list(
         DX = function(n) {
