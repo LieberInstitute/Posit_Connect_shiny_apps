@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 _jhpce_org/
+*.DS_Store
