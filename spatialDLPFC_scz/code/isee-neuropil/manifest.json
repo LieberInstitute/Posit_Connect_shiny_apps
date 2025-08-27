@@ -948,33 +948,6 @@
         "Built": "R 4.5.0; ; 2025-04-16 03:55:13 UTC; unix"
       }
     },
-    "Polychrome": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "Polychrome",
-        "Title": "Qualitative Palettes with Many Colors",
-        "Version": "1.5.4",
-        "Date": "2025-04-06",
-        "Authors@R": "c(person(given = \"Guy\", family = \"Brock\", role = \"aut\"),\n\t    person(given = c(\"Kevin\", \"R.\"), family = \"Coombes\",\n                   role = c(\"aut\", \"cre\"), email = \"krc@silicovore.com\"))",
-        "Description": "Tools for creating, viewing, and assessing qualitative\n palettes with many (20-30 or more) colors. See Coombes and colleagues\n (2019) <doi:10.18637/jss.v090.c01>.",
-        "Depends": "R (>= 4.4)",
-        "Imports": "colorspace, scatterplot3d, methods, graphics, grDevices,\nstats, utils",
-        "Suggests": "RColorBrewer, knitr, rmarkdown, ggplot2",
-        "License": "Apache License (== 2.0)",
-        "LazyLoad": "yes",
-        "LazyData": "no",
-        "URL": "http://oompa.r-forge.r-project.org/",
-        "VignetteBuilder": "knitr",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-04-06 21:14:05 UTC; kevin",
-        "Author": "Guy Brock [aut],\n  Kevin R. Coombes [aut, cre]",
-        "Maintainer": "Kevin R. Coombes <krc@silicovore.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2025-04-06 21:50:02 UTC",
-        "Built": "R 4.5.0; ; 2025-04-06 22:08:42 UTC; unix"
-      }
-    },
     "R6": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -4813,28 +4786,6 @@
         "Built": "R 4.5.1; ; 2025-08-26 17:17:44 UTC; unix"
       }
     },
-    "scatterplot3d": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "scatterplot3d",
-        "Version": "0.3-44",
-        "Date": "2023-05-05",
-        "Title": "3D Scatter Plot",
-        "Author": "Uwe Ligges <ligges@statistik.tu-dortmund.de>, Martin Maechler, Sarah Schnackenberg",
-        "Maintainer": "Uwe Ligges <ligges@statistik.tu-dortmund.de>",
-        "Description": "Plots a three dimensional (3D) point cloud.",
-        "Depends": "R (>= 2.7.0)",
-        "License": "GPL-2",
-        "Encoding": "UTF-8",
-        "Imports": "grDevices, graphics, stats",
-        "NeedsCompilation": "no",
-        "Packaged": "2023-05-05 08:23:11 UTC; ligges",
-        "Repository": "CRAN",
-        "Date/Publication": "2023-05-05 09:20:09 UTC",
-        "Built": "R 4.5.0; ; 2025-03-31 22:06:45 UTC; unix"
-      }
-    },
     "scuttle": {
       "Source": "Bioconductor",
       "Repository": "https://bioconductor.org/packages/3.21/bioc",
@@ -5747,10 +5698,10 @@
   },
   "files": {
     "app.R": {
-      "checksum": "0a057da475bc0e28f8149e95ed85cc97"
+      "checksum": "0b6523dd33ac4e1864f9f3c5654114a2"
     },
     "initial.R": {
-      "checksum": "6d391c72a07d8bc925a3355bb91d36f8"
+      "checksum": "b51b6c78e8c5b859b5b4518001035cfa"
     }
   },
   "users": null

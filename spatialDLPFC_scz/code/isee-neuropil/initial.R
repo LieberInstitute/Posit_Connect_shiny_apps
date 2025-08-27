@@ -5,15 +5,15 @@ initial <- list()
 ################################################################################
 
 initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", XAxis = "Column data", 
-                                      XAxisColumnData = "DX", XAxisFeatureName = "LINC01409", XAxisFeatureSource = "---", 
-                                      XAxisFeatureDynamicSource = FALSE, YAxisFeatureName = "NRXN2", 
-                                      YAxisFeatureSource = "---", YAxisFeatureDynamicSource = FALSE, 
-                                      FacetRowByColData = "sample_id", FacetColumnByColData = "sample_id", 
-                                      ColorByColumnData = "spd_label", ColorByFeatureNameAssay = "logcounts", 
-                                      ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "sex", 
-                                      SizeByColumnData = "age", TooltipColumnData = character(0), 
+                                      XAxisColumnData = "DX", XAxisFeatureName = "LINC01409, p-value=5.07e-01", 
+                                      XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE, 
+                                      YAxisFeatureName = "NRXN2, p-value=6.84e-03", YAxisFeatureSource = "---", 
+                                      YAxisFeatureDynamicSource = FALSE, FacetRowByColData = "sample_id", 
+                                      FacetColumnByColData = "sample_id", ColorByColumnData = "spd_label", 
+                                      ColorByFeatureNameAssay = "logcounts", ColorBySampleNameColor = "#FF0000", 
+                                      ShapeByColumnData = "sex", SizeByColumnData = "age", TooltipColumnData = character(0), 
                                       FacetRowBy = "None", FacetColumnBy = "None", ColorBy = "Column data", 
-                                      ColorByDefaultColor = "#000000", ColorByFeatureName = "LINC01409", 
+                                      ColorByDefaultColor = "#000000", ColorByFeatureName = "LINC01409, p-value=5.07e-01", 
                                       ColorByFeatureSource = "---", ColorByFeatureDynamicSource = FALSE, 
                                       ColorBySampleName = "V12D07-334_A1_spd02", ColorBySampleSource = "---", 
                                       ColorBySampleDynamicSource = FALSE, ShapeBy = "Column data", 
@@ -25,7 +25,7 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       FontSize = 1, LegendPointSize = 1, LegendPosition = "Bottom", 
                                       HoverInfo = TRUE, LabelCenters = FALSE, LabelCentersBy = "sample_id", 
                                       LabelCentersColor = "#000000", VersionInfo = list(iSEE = structure(list(
-                                          c(2L, 18L, 0L)), class = c("package_version", "numeric_version"
+                                          c(2L, 20L, 0L)), class = c("package_version", "numeric_version"
                                           ))), PanelId = c(FeatureAssayPlot = 1L), PanelHeight = 580L, 
                                       PanelWidth = 6L, SelectionBoxOpen = FALSE, RowSelectionSource = "---", 
                                       ColumnSelectionSource = "---", DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, 
@@ -37,15 +37,15 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
 ################################################################################
 
 initial[["FeatureAssayPlot2"]] <- new("FeatureAssayPlot", Assay = "logcounts", XAxis = "Column data", 
-                                      XAxisColumnData = "DX", XAxisFeatureName = "LINC01409", XAxisFeatureSource = "---", 
-                                      XAxisFeatureDynamicSource = FALSE, YAxisFeatureName = "NRXN2", 
-                                      YAxisFeatureSource = "---", YAxisFeatureDynamicSource = FALSE, 
-                                      FacetRowByColData = "DX", FacetColumnByColData = "spd_label", 
-                                      ColorByColumnData = "spd_label", ColorByFeatureNameAssay = "logcounts", 
-                                      ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "sex", 
-                                      SizeByColumnData = "age", TooltipColumnData = character(0), 
+                                      XAxisColumnData = "DX", XAxisFeatureName = "LINC01409, p-value=5.07e-01", 
+                                      XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE, 
+                                      YAxisFeatureName = "NRXN2, p-value=6.84e-03", YAxisFeatureSource = "---", 
+                                      YAxisFeatureDynamicSource = FALSE, FacetRowByColData = "DX", 
+                                      FacetColumnByColData = "spd_label", ColorByColumnData = "spd_label", 
+                                      ColorByFeatureNameAssay = "logcounts", ColorBySampleNameColor = "#FF0000", 
+                                      ShapeByColumnData = "sex", SizeByColumnData = "age", TooltipColumnData = character(0), 
                                       FacetRowBy = "None", FacetColumnBy = "Column data", ColorBy = "Column data", 
-                                      ColorByDefaultColor = "#000000", ColorByFeatureName = "LINC01409", 
+                                      ColorByDefaultColor = "#000000", ColorByFeatureName = "LINC01409, p-value=5.07e-01", 
                                       ColorByFeatureSource = "---", ColorByFeatureDynamicSource = FALSE, 
                                       ColorBySampleName = "V12D07-334_A1_spd02", ColorBySampleSource = "---", 
                                       ColorBySampleDynamicSource = FALSE, ShapeBy = "Column data", 
@@ -58,7 +58,7 @@ initial[["FeatureAssayPlot2"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       FontSize = 1, LegendPointSize = 1, LegendPosition = "Bottom", 
                                       HoverInfo = TRUE, LabelCenters = FALSE, LabelCentersBy = "sample_id", 
                                       LabelCentersColor = "#000000", VersionInfo = list(iSEE = structure(list(
-                                          c(2L, 18L, 0L)), class = c("package_version", "numeric_version"
+                                          c(2L, 20L, 0L)), class = c("package_version", "numeric_version"
                                           ))), PanelId = 2L, PanelHeight = 580L, PanelWidth = 6L, SelectionBoxOpen = FALSE, 
                                       RowSelectionSource = "---", ColumnSelectionSource = "---", 
                                       DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, ColumnSelectionDynamicSource = FALSE, 
