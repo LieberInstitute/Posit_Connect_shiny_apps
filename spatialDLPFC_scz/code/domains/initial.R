@@ -49,7 +49,7 @@ initial[["FeatureAssayPlot2"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       SelectionAlpha = 0.1, ZoomData = numeric(0), BrushData = list(), 
                                       VisualBoxOpen = FALSE, VisualChoices = c("Color", "Facet"
                                       ), ContourAdd = FALSE, ContourColor = "#0000FF", FixAspectRatio = FALSE, 
-                                      ViolinAdd = TRUE, PointSize = 1, PointAlpha = 1, Downsample = FALSE, 
+                                      ViolinAdd = TRUE, PointSize = 2, PointAlpha = 1, Downsample = FALSE, 
                                       DownsampleResolution = 200, CustomLabels = FALSE, CustomLabelsText = "V12D07-334_A1_spd01", 
                                       FontSize = 1, LegendPointSize = 1, LegendPosition = "Bottom", 
                                       HoverInfo = TRUE, LabelCenters = FALSE, LabelCentersBy = "sample_id", 
