@@ -2,3 +2,5 @@ spe_shiny*
 rsconnect
 *.rds
 *.Rdata
+sce_isee*
+*.Rds
