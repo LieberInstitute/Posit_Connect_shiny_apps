@@ -26,6 +26,8 @@ spe <- loadHDF5SummarizedExperiment(
     dir = dir_to_use
 )
 
+#docs_path = here("spatialNAC", "code", "spatialLIBD", "www")
+
 #spe_name <- here("spatialNAC", "code", "spatialLIBD", "spe_shiny.rds")
 #spe1 <- readRDS(spe_name)
 vars <- colnames(colData(spe))
@@ -55,5 +57,5 @@ spatialLIBD::run_app(
     ),
     default_cluster = "X10x_graphclust",
     auto_crop_default = FALSE,
-    docs_path = here("spatialNAC", "code", "spatialLIBD", "www")
+    docs_path = "www"
 )
