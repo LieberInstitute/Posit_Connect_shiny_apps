@@ -36,7 +36,7 @@ initial[["ReducedDimensionPlot1"]] <- new("ReducedDimensionPlot", Type = "tSNE_H
 initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", XAxis = "Column data", 
                                       XAxisColumnData = "CellType.Final", XAxisFeatureName = "KCNIP4", 
                                       XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE, 
-                                      YAxisFeatureName = "MIR1302-2HG", YAxisFeatureSource = "RowDataTable1", 
+                                      YAxisFeatureName = "DRD1", YAxisFeatureSource = "RowDataTable1", 
                                       YAxisFeatureDynamicSource = FALSE, FacetRowByColData = "Sample", 
                                       FacetColumnByColData = "Sample", ColorByColumnData = "CellType.Final", 
                                       ColorByFeatureNameAssay = "logcounts", ColorBySampleNameColor = "#FF0000", 
@@ -88,10 +88,10 @@ initial[["ComplexHeatmapPlot1"]] <- new("ComplexHeatmapPlot", Assay = "logcounts
 # Settings for Row data table 1
 ################################################################################
 
-initial[["RowDataTable1"]] <- new("RowDataTable", Selected = "MIR1302-2HG", Search = "", SearchColumns = c("", 
-                                                                                                           "", "", "", "", ""), HiddenColumns = character(0), VersionInfo = list(
-                                                                                                               iSEE = structure(list(c(2L, 20L, 0L)), class = c("package_version", 
-                                                                                                                                                                "numeric_version"))), PanelId = 1L, PanelHeight = 500L, PanelWidth = 6L, 
+initial[["RowDataTable1"]] <- new("RowDataTable", Selected = "DRD1", Search = "", SearchColumns = c("", 
+                                                                                                        "", "", "", "", ""), HiddenColumns = character(0), VersionInfo = list(
+                                                                                                            iSEE = structure(list(c(2L, 20L, 0L)), class = c("package_version", 
+                                                                                                                                                             "numeric_version"))), PanelId = 1L, PanelHeight = 500L, PanelWidth = 6L, 
                                   SelectionBoxOpen = FALSE, RowSelectionSource = "---", ColumnSelectionSource = "---", 
                                   DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, ColumnSelectionDynamicSource = FALSE, 
                                   RowSelectionRestrict = FALSE, ColumnSelectionRestrict = FALSE, 
