@@ -88,7 +88,7 @@ initial[["ComplexHeatmapPlot1"]] <- new("ComplexHeatmapPlot", Assay = "logcounts
 # Settings for Row data table 1
 ################################################################################
 
-initial[["RowDataTable1"]] <- new("RowDataTable", Selected = "DRD1", Search = "", SearchColumns = c("", 
+initial[["RowDataTable1"]] <- new("RowDataTable", Selected = "DRD1", Search = "DRD1", SearchColumns = c("", 
                                                                                                         "", "", "", "", ""), HiddenColumns = character(0), VersionInfo = list(
                                                                                                             iSEE = structure(list(c(2L, 20L, 0L)), class = c("package_version", 
                                                                                                                                                              "numeric_version"))), PanelId = 1L, PanelHeight = 500L, PanelWidth = 6L, 
