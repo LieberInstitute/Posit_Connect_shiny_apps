@@ -69,7 +69,7 @@ work!
 
 ## Citing our work
 
-## Internal
+Zenodo Archive for this project - [10.5281/zenodo.17089020](https://doi.org/10.5281/zenodo.17089020)  
 
-- JHPCE locations:
-  - `/dcs04/lieber/marmaypag/spatialNac_LIBD4125/spatial_NAc`
+
+
