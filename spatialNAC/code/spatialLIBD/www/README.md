@@ -7,6 +7,9 @@ spatialNAc
 <img src="https://github.com/LieberInstitute/spatial_NAc/blob/main/project_overview.png?raw=true" width="1000px" align="left" />  
 
 
+<br />  
+
+
 ## Overview
 
 Welcome to the `spatialNAc` project! This project involves paired
