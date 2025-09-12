@@ -50,6 +50,6 @@ sce <- registerAppOptions(sce, color.maxlevels = length(unique(sce$CellType.Fina
 #Deploy app
 iSEE(
     sce,
-    appTitle = "NAc snRNAseq data",
+    appTitle = "LFF-ERC snRNAseq data",
     initial = initial
 )
