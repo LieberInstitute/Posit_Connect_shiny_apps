@@ -3,7 +3,7 @@ library("here")
 library("withr")
 
 rsconnect::writeManifest(
-    appDir = here::here("spatialNAC", "code", "iSEE-app"),
+    appDir = here::here("lff_erc", "code", "iSEE-app"),
     appFiles = c(
         "app.R",
         "initial.R"
