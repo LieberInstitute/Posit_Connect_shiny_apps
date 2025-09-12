@@ -3,85 +3,31 @@ Spot-level `spatialLIBD` documentation
 
 This document describes the spot-level portion of the shiny web application made by the  [`spatialLIBD`](https://bioconductor.org/packages/spatialLIBD) Bioconductor package. You can either find the documentation about this package through [Bioconductor](https://bioconductor.org/packages/spatialLIBD) or at the [`spatialLIBD` documentation website](http://lieberinstitute.github.io/spatialLIBD). Below we explain the options common across tabs and each of the tabs at the spot-level data.
 
-## Slides and videos
+## Documentation video
 
-You might find the following slides useful for understanding the features from this part of the web application. 
-
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/dde92cd6dfc04f9589770e074915658f" title="BioTuring_spatialLIBD" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 420;" data-ratio="1.3333333333333333"></iframe>
-
-These slides were part of our 2021-04-27 webinar for BioTuring that you can watch on YouTube:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S8884Kde-1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-A recording of an earlier version of this talk is also available on YouTube.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aD2JU-vUv54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-You might also be interested in this video demonstration of `spatialLIBD` for the [LIBD rstats club](http://research.libd.org/rstatsclub/).
+You might be interested in this video demonstration of `spatialLIBD` for the [LIBD rstats club](http://research.libd.org/rstatsclub/).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LZ2kvCiRVdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Raw summary
 
-Before the documentation, this tab displays the [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment) object that contains the spot-level data. It's basically useful to know that the data has been loaded and that you can start navigating the app. If you wish to download this data, use the following command.
-
-```{r}
-## Check that you have a recent version of spatialLIBD installed
-stopifnot(packageVersion("spatialLIBD") >= "1.11.12")
-
-## Download spe data
-spe <- spatialLIBD::fetch_data(type = "spatialNAc_spe")
-```
-
-Throughout the rest of this document, we'll refer to this object by the name `spe`.
+Before the documentation, this tab displays the [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment) object that contains the spot-level data. It's basically useful to know that the data has been loaded and that you can start navigating the app. Throughout the rest of this document, we'll refer to this object by the name `spe`.
 
 ## Common options
 
-* `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name. Samples are named by donor-- in practice, tissue was split across several Visium slides and computationally stitched together to include the entire nucleus accumbens for each donor. [TODO: describe more about donors]
-* `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
-  - `edited_imaged`: shows your edited image from the Edit image tab.
-  - `lowres`: shows low resolution images of raw immunofluorescence data before image processing such as spectral unmixing and object segmentation.
+* `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name.
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
-  - `ManualAnnotation`: your own manual annotation of the spots.
-  - `PRECAST_K{3-15}`: PRECAST clustering results corresponding to random start 3. See [this](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/07_spatial_domains/01_precast/01-run_precast.R) for more details. 
-  - `Spatial Domains (SpDs)`: 8 transcriptionally distinct SpDs were obtained by merging related PRECAST k = 10 domains. The script to annotate and merge PRECAST clusters can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/07_spatial_domains/01_precast/05-annotate_domains.R)
-* `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab. Details:
-  - `Quality control metrics`: QC metrics for each spot was computed as detailed [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/05_harmony_BayesSpace/02-compute_QC_metrics.R) and include 
-    - `sum_umi`: sum of UMI counts across a spot.
-    - `sum_gene`: number of genes with non-zero counts in a spot.
-    - `expr_chrM`: sum of chrM counts in a spot.
-    - `expr_chrM_ratio`: ratio of `expr_chrM / sum_umi`.
-    - `Nmask_dark_blue`: Predicted number of nuclei using Vistoseq
-    - `edge_distance`: Euclidean distance from edge using transformed spatial coordinates
-  - `RCTD Cell type deconvolution scores`: RCTD deconvolution weights were generated using paired snRNA-seq and 10x Visium data to examine the relative proportions of the identified cell types in snRNA-seq across Visium spots. The code used to prepare the inputs, run RCTD, and visualize domain-level differences in cell type proportions can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/08_spot_deconvo/01_RCTD). We report the cell type deconvolution scores corresponding to:
-    - `Oligo`
-    - `DRD1_MSN_A`
-    - `DRD1_MSN_B`
-    - `DRD1_MSN_C`
-    - `DRD1_MSN_D`
-    - `DRD2_MSN_A`
-    - `DRD2_MSN_B`
-    - `Inh_{A-F}` 
-    - `Excitatory`
-    - `Endothelial`
-    - `Microglia`
-    - `Ependymal`
-    - `Astrocyte_A/B`
-  - `MERINGUE consensus patterns`: We include the inferred MERINGUE consensus pattern scores for MCPs 1-4. Details for the inference of MERINGUE factors independently in each sample can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/14_MSN_factorization/01_run_MERINGUE_single_sample.R), and the scripts used in clustering donor-specific MERINGUE patterns to consensus patterns can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/14_MSN_factorization/02_plot_patterns.R)
-  - `Projections of NMF factors inferred in paired snRNA-seq data`: We include projections from 66 unsupervised latent factors, labeled, `human_snRNA_nmf{1-66}`. The scripts used to infer the latent factors can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/01_process_reference) and the scripts used for projection is [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/02_target_projections)
-  - `Projections of NMF factors inferred in rodent snRNA-seq data include volitional morphine and controls`: We include projections from 30 unsupervised latent factors, labeled, `morphine_volitional_nmf{1-30}`. The scripts used to infer the latent factors can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/01-run_NMF.R) and the scripts used for projection is [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/02-project_NMF.R)
-  - `Projections of NMF factors inferred in rodent snRNA-seq data include acute morphine and controls`: We include projections from 30 unsupervised latent factors, labeled, `morphine_acute_nmf{1-30}`. The scripts used to infer the latent factors can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/01-run_NMF.R) and the scripts used for projection is [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/02-project_NMF.R)
-  - `Projections of NMF factors inferred in rodent snRNA-seq data include acute cocaine and controls`: We include projections from 30 unsupervised latent factors, labeled, `cocaine_acute_nmf{1-30}`. The scripts used to infer the latent factors can be found [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/01-run_NMF.R) and the scripts used for projection is [here](https://github.com/LieberInstitute/spatial_NAc/blob/main/code/16_transfer_learning/04_cellType_NMF/02-project_NMF.R)
-
-  
-  
-
-
-   
+  - from the clustering results produced by `spaceranger` one Visium slide at a time. These clusters start with the `10x_` prefix.
+  - from your own manual annotation of the spots under `ManualAnnotation`.
+  - resulting from using a shared nearest neighbors approach with 10 neighbors cut at 4 up to 28 clusters. These are `SNN_k10_k4` up to `SNN_k10_k28`.
+  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28.
+* `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
+* `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab.
+* `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
+* `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
 * `Spot transparency level`: the transparency of the spots in the visualizations. It can be useful if the spot colors are blocking the background image.
-* `Spot point size`: the size of the spots in the visualizations.
 * `Minimum count value`: Values from the selected `continuous variable to plot` at or below this threshold will not be displayed.
-* `Gene color scale`: Whether to use the color blind friendly palette (`viridis`) or to use a custom palette that we used for our `paper`. Other options from the [viridisLite R package](https://sjmgarnier.github.io/viridisLite/reference/viridis.html#details) are also supported.
+* `Gene color scale`: Whether to use the color blind friendly palette (`viridis`) or to use a custom palette that we used for the _HumanPilot_ `paper` (Maynard, Collado-Torres, et al, 2021). Other options from the [viridisLite R package](https://sjmgarnier.github.io/viridisLite/reference/viridis.html#details) are also supported.
 * `Gene color direction`: whether colors should be ordered from darkest to lightest or in the reverse direction.
 
 We will cover the download button and upload CSV options at the end of this document.
@@ -97,9 +43,9 @@ spatialLIBD::vis_clus()
 
 ## Clusters (interactive)
 
-Displays a 1,200 by 1,200 pixels interactive plot area with a matrix of 2 by 2 plots. The top row shows the data at the spot-level with the histology information in the background. The bottom row shows the spot-level data at a reduced dimension space (PCA, TSNE, UMAP, etc). The left column shows the selected gene or continuous variable, while the right column shows the selected cluster or discrete variable. The four plots are linked to each other such that if you use the lasso selector (mouse over to the top right of the interactive area to select it) in a single plot, the other 3 will get updated to highlight the same selection of points.
+Displays a 1,200 by 1,200 pixels interactive plot area with a matrix of 2 by 2 plots. The top row shows the data at the spot-level with the histology information in the background. The bottom row shows the spot-level data at a reduced dimension space (PCA, TSNE, UMAP). The left column shows the selected gene or continuous variable, while the right column shows the selected cluster or discrete variable. The four plots are linked to each other such that if you use the lasso selector (mouse over to the top right of the interactive area to select it) in a single plot, the other 3 will get updated to highlight the same selection of points. 
 
-This panel allows you to look at the results from a given clustering approach and combine that information with the expression of a given gene to visualize the spot-level data both in the spatial resolution as well as a reduced dimensionality space from the expression of the most variable genes.
+This panel allows you to look at the results from a given clustering approach and combine that information with the expression of a given gene to visualize the spot-level data both in the spatial resolution as well as a reduced dimensionality space from the expression of the most variable genes. 
 
 Once you have selected spots of interest, at the bottom of the tab there is a text box where you can enter your manual annotations. This overwrites `spe$ManualAnnotation` which is why you need to confirm doing so by clicking the button `Label selected points (from lasso) with manual annotation`. You can then change the `clusters to plot` option to `ManualAnnotation` to see your new spot labels.
 
@@ -129,7 +75,7 @@ spatialLIBD::vis_gene()
 
 ## Gene (interactive)
 
-This tab shows a single interactive plot. It is similar to `clusters (interactive)` as in you can use the lasso selector (mouse over top right to find it) to select spots and them label them using the text box at the bottom with the corresponding button. Unlike `clusters (interactive)`, this version includes checkboxes at the top for each of the unique values of the selected `discrete variable to plot` such that you can subset the spots to those present on a given cluster. 
+This tab shows a single interactive plot. It is similar to `clusters (interactive)` as in you can use the lasso selector (mouse over top right to find it) to select spots and them label them using the text box at the bottom with the corresponding button. Unlike `clusters (interactive)`, this version includes checkboxes at the top for each of the unique values of the selected `discrete variable to plot` such that you can subset the spots to those present on a given cluster.
 
 Note that if you have `discrete variable to plot` toggled to the `ManualAnnotation` option and update the spot-level information with the text box and button at the bottom of the tab, then it will re-load the interactive visualization and you will lose your selection of points.
 
@@ -159,20 +105,4 @@ These CSV files with your manual annotations can be re-uploaded to `spatialLIBD`
 
 In summary, the order in which you re-upload the CSV files matters as newer uploads will overwrite any duplicated spots from previous CSV files.
 
-We also recommend saving your work often in case you lose connection to `spatialLIBD`. Though you could always run this website locally by using the following command:
-
-```{r}
-## Run this web application locally with:
-spatialLIBD::run_app()
-
-## You will have more control about the length of the session and memory usage.
-## See http://research.libd.org/spatialLIBD/reference/run_app.html#examples.
-## Also see https://github.com/LieberInstitute/spatial_NAc/tree/main/code/06_deploy_app.
-
-## You could also use spatialLIBD::run_app() to visualize your
-## own data given some requirements described
-## in detail in the package vignette documentation
-## at http://research.libd.org/spatialLIBD/.
-```
-
-This will require about 1.8GB of RAM to run on the server side, though potentially more, specially when using the `clusters (interactive)` tab.
+We also recommend saving your work often in case you lose connection to `spatialLIBD`.
