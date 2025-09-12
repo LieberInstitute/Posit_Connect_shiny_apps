@@ -4,7 +4,10 @@ spatialNAc
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
-<img src="https://github.com/LieberInstitute/spatial_NAc/blob/main/project_overview.png" width="1000px" align="left" />
+<img src="https://github.com/LieberInstitute/spatial_NAc/blob/main/project_overview.png?raw=true" width="1000px" align="left" />  
+
+
+<br />  
 
 
 ## Overview
@@ -66,7 +69,7 @@ work!
 
 ## Citing our work
 
-## Internal
+Zenodo Archive for this project - [10.5281/zenodo.17089020](https://doi.org/10.5281/zenodo.17089020)  
 
-- JHPCE locations:
-  - `/dcs04/lieber/marmaypag/spatialNac_LIBD4125/spatial_NAc`
+
+
