@@ -12,59 +12,32 @@ options("golem.app.prod" = TRUE)
 options(repos = BiocManager::repositories())
 
 
-#sce <- readRDS("sce_ERC_iSEE.rds")
-#sn_colors <- readRDS("sn_colors.rds")
-
 
 ## Load the data
-posit_connect_dir <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/spatialLIBD/spe_shiny"
-repo_local_dir <- here::here(
-    "lff_lc", "processed-data", "spe_shiny"
-)
-
-if (file.exists(posit_connect_dir)) {
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/spatialLIBD/01-Samui_TissSect_SPE_RotsMirrors_logcounts_lowres.RDS"
+if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    dir_to_use <- posit_connect_dir
+    spe <- readRDS(posit_connect_file)
 } else {
-    dir_to_use <- repo_local_dir
+    spe <- readRDS(here::here("lff_lc", "processed-data", "01-Samui_TissSect_SPE_RotsMirrors_logcounts_lowres.RDS"))
 }
 
-spe <- loadHDF5SummarizedExperiment(
-    dir = dir_to_use
-)
 
-#### load data ####
-## main spe object
-#spe <- readRDS("spe_ERC_app.rds")
-
-# Add gene search
-#rowData(spe)$gene_search <- paste0(rowData(spe)$gene_name, "; ", rowData(spe)$gene_id)
-
-## k09 pseudobulk +modeling data
-#spe_pb <- readRDS("spe_pseudobulk-SpD.rds")
-
-## define spatialLIBD column
-#spe_pb$spatialLIBD <- spe_pb$SpD
-
-# here::here("processed-data","05_spe_correct_cluster","20_model_pseudobulk_anno","spe_pseudobulk-SpD.rds")
-
-#modeling_results <- readRDS("modeling-results-SpD.rds")
-#sig_genes <- readRDS("sig_genes_SpD.rds")
 
 ## Quickly explore the data
 vars <- colnames(colData(spe))
 
 
-colData(spe)$key <- rownames(colData(spe))
-colData(spe)$ManualAnnotation <- "NA"
+#colData(spe)$key <- rownames(colData(spe))
+#colData(spe)$ManualAnnotation <- "NA"
 rownames(spe) <- rowData(spe)$gene_id
-#spe$exclude_overlapping <- as.factor(spe$exclude_overlapping)
-#colnames(colData(spe)) <- vars <- gsub("X10x", "10x", vars)
+
 
 ## Colors 
 # metadata(spe)$SpD_colors
 
-
+#lobstr::obj_size(spe)
+#1.66 GB
 
 spatialLIBD::run_app(
     spe,
