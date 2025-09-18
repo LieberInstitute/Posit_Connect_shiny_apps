@@ -3,11 +3,11 @@ library("here")
 library("withr")
 
 rsconnect::writeManifest(
-    appDir = here::here("lff_erc", "code", "spatialLIBD"),
+    appDir = here::here("lff_lc", "code", "spatialLIBD"),
     appFiles = c(
         "app.R",
         withr::with_dir(
-            here::here("lff_erc", "code", "spatialLIBD"),
+            here::here("lff_lc", "code", "spatialLIBD"),
             dir("www", full.names = TRUE)
         )
     )
