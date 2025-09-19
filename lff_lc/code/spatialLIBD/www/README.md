@@ -12,7 +12,7 @@ Experimental Overview
 This study, led by Bernard (Bernie) Mulvey and Heena Divecha and generously funded by the [Ludwig Family Foundation](https://www.ludwigfamilyfoundation.org/) and conceived of by Kristen Maynard, Keri Martinowich, and Danny Weinberger, profiled mid-life human LC using spatially resolved transcriptomics (SRT; 10x Genomics Visium). The resulting data came from 85 tissue sections across 33 donors, balanced for AD risk factors including sex, genomic ancestry, and APOE genotypes. The resulting dataset constitutes an unprecedently well-powered molecular profile of the human LC, spanning over 7,000 Visium spots assigned to the Visium domain after stringently examining visual overlap with neuromelanin and concordance with previous LC gene expression profiles. Analyses of this data provided insights into differential expression in the LC and surrounding cell types, including astrocytes, across AD risk variables, and allowed us to associate gene expression with NM content of the same tissue sections.  
 
 The LC and surrounding spatial domains  
-<img src="https://github.com/LieberInstitute/LFF_spatial_LC/blob/gh-pages/images/?raw=true" />  
+<img src="https://github.com/LieberInstitute/LFF_spatial_LC/blob/gh-pages/images/tiss.png?raw=true" />  
 
 
 ### Data resources
