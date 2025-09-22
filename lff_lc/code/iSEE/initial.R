@@ -5,13 +5,13 @@ initial <- list()
 ################################################################################
 
 initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "counts", XAxis = "Column data", 
-                                      XAxisColumnData = "APOE", XAxisFeatureName = "NDRG2", XAxisFeatureSource = "---", 
-                                      XAxisFeatureDynamicSource = FALSE, YAxisFeatureName = "SNAP25", 
-                                      YAxisFeatureSource = "---", YAxisFeatureDynamicSource = FALSE, 
-                                      FacetRowByColData = "Ancestry", FacetColumnByColData = "sample_id", 
-                                      ColorByColumnData = "Sex", ColorByFeatureNameAssay = "counts", 
-                                      ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "APOE", 
-                                      SizeByColumnData = "Age", TooltipColumnData = character(0), 
+                                      XAxisColumnData = "APOE Genotype", XAxisFeatureName = "NDRG2", 
+                                      XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE, 
+                                      YAxisFeatureName = "SNAP25", YAxisFeatureSource = "---", 
+                                      YAxisFeatureDynamicSource = FALSE, FacetRowByColData = "Ancestry", 
+                                      FacetColumnByColData = "sample_id", ColorByColumnData = "Sex", 
+                                      ColorByFeatureNameAssay = "counts", ColorBySampleNameColor = "#FF0000", 
+                                      ShapeByColumnData = "Sex", SizeByColumnData = "Age", TooltipColumnData = character(0), 
                                       FacetRowBy = "Column data", FacetColumnBy = "None", ColorBy = "Column data", 
                                       ColorByDefaultColor = "#000000", ColorByFeatureName = "NDRG2", 
                                       ColorByFeatureSource = "---", ColorByFeatureDynamicSource = FALSE, 
@@ -30,5 +30,5 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "counts", XAxi
                                           ))), PanelId = c(FeatureAssayPlot = 1L), PanelHeight = 550L, 
                                       PanelWidth = 12L, SelectionBoxOpen = FALSE, RowSelectionSource = "---", 
                                       ColumnSelectionSource = "---", DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, 
-                                      ColumnSelectionDynamicSource = TRUE, RowSelectionRestrict = FALSE, 
-                                      ColumnSelectionRestrict = TRUE, SelectionHistory = list())
+                                      ColumnSelectionDynamicSource = FALSE, RowSelectionRestrict = FALSE, 
+                                      ColumnSelectionRestrict = FALSE, SelectionHistory = list())
