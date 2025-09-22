@@ -23,7 +23,7 @@ if (file.exists(posit_connect_file)) {
 
 #load initial.R setup file for iSEE apps
 #Source
-source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/spatialNAC/code/iSEE-app/initial.R?raw=TRUE")
+source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/lff_lc/code/iSEE/initial.R?raw=TRUE")
 
 
 
