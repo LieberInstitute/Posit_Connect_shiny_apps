@@ -7,7 +7,7 @@ initial <- list()
 initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "counts", XAxis = "Column data", 
                                       XAxisColumnData = "APOE Carrier Type", XAxisFeatureName = "NDRG2", 
                                       XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE, 
-                                      YAxisFeatureName = "SNAP25", YAxisFeatureSource = "---", 
+                                      YAxisFeatureName = "HMGCS1", YAxisFeatureSource = "---", 
                                       YAxisFeatureDynamicSource = FALSE, FacetRowByColData = "Ancestry", 
                                       FacetColumnByColData = "sample_id", ColorByColumnData = "Sex", 
                                       ColorByFeatureNameAssay = "counts", ColorBySampleNameColor = "#FF0000", 
@@ -39,7 +39,7 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "counts", XAxi
 
 initial[["FeatureAssayPlot2"]] <- new("FeatureAssayPlot", Assay = "counts", XAxis = "Column data", 
                                       XAxisColumnData = "Domain", XAxisFeatureName = "NDRG2", XAxisFeatureSource = "---", 
-                                      XAxisFeatureDynamicSource = FALSE, YAxisFeatureName = "SNAP25", 
+                                      XAxisFeatureDynamicSource = FALSE, YAxisFeatureName = "HMGCS1", 
                                       YAxisFeatureSource = "---", YAxisFeatureDynamicSource = FALSE, 
                                       FacetRowByColData = "Ancestry", FacetColumnByColData = "Ancestry", 
                                       ColorByColumnData = "Sex", ColorByFeatureNameAssay = "counts", 
