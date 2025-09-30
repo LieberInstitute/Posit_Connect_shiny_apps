@@ -41,7 +41,7 @@ rda.baboon <- registerAppOptions(rda.baboon, color.maxlevels = length(unique(rda
 #Deploy app
 iSEE(
     rda.baboon,
-    appTitle = "BLA_Baboon",
+    appTitle = "BLA - Baboon",
     initial = initial,
     colormap = ExperimentColorMap(
         colData = list(fine_celltype = function(x) {
