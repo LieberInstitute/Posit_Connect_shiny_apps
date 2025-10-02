@@ -4,7 +4,7 @@ initial <- list()
 # Settings for Reduced dimension plot 1
 ################################################################################
 
-initial[["ReducedDimensionPlot1"]] <- new("ReducedDimensionPlot", Type = "umap", XAxis = 1L, YAxis = 2L, 
+initial[["ReducedDimensionPlot1"]] <- new("ReducedDimensionPlot", Type = "UMAP", XAxis = 1L, YAxis = 2L, 
                                           FacetRowByColData = "species", FacetColumnByColData = "broad_celltype", 
                                           ColorByColumnData = "fine_celltype", ColorByFeatureNameAssay = "logcounts", 
                                           ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "Sample", 
@@ -33,7 +33,7 @@ initial[["ReducedDimensionPlot1"]] <- new("ReducedDimensionPlot", Type = "umap",
 # Settings for Reduced dimension plot 2
 ################################################################################
 
-initial[["ReducedDimensionPlot2"]] <- new("ReducedDimensionPlot", Type = "umap", XAxis = 1L, YAxis = 2L,
+initial[["ReducedDimensionPlot2"]] <- new("ReducedDimensionPlot", Type = "UMAP", XAxis = 1L, YAxis = 2L,
                                           FacetRowByColData = "species", FacetColumnByColData = "broad_celltype",
                                           ColorByColumnData = "fine_celltype", ColorByFeatureNameAssay = "logcounts",
                                           ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "Sample",
