@@ -2,6 +2,8 @@
 library("SingleCellExperiment")
 library("iSEE")
 library("shiny")
+library("spatialLIBD")
+library("here")
 packageVersion("iSEE")
 
 ## spatialLIBD uses golem
