@@ -1,0 +1,4 @@
+
+*.rda
+sce_app/
+*.rds
