@@ -31,8 +31,8 @@ mobile_layout <- c(
     "300px howMuch"
 )
 
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/misc/split_receipt/example_text.rds"
-posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/misc/split_receipt/a3080d75-fcb0-4b6c-8132-eb69c2c50199.JPG"
+#posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/misc/split_receipt/example_text.rds"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/misc/split_receipt/a3080d75-fcb0-4b6c-8132-eb69c2c50199.JPG"
 
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
