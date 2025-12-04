@@ -58,15 +58,26 @@ if (file.exists(posit_connect_file)) {
         image_trim(fuzz = 40)
 
 }
-if (file.exists(posit_connect_file1)) {
+
+#if (file.exists(posit_connect_file1)) {
     ## Location for the https://conn1.libd.org/ server
-    sce <- readRDS(posit_connect_file1)
+#    sce <- readRDS(posit_connect_file1)
 
-} else {
-    sce <- readRDS(here::here("misc", "split_receipt", "processed-data", "example_text.rds"))
+#} else {
+#    sce <- readRDS(here::here("misc", "split_receipt", "processed-data", "example_text.rds"))
 
-}
+#}
 
+
+
+img_default <-
+    image_read("a3080d75-fcb0-4b6c-8132-eb69c2c50199.JPG") %>%
+    image_deskew() %>%
+    image_rotate(12) %>%
+    image_resize("2000x") %>%
+    image_convert(type = "Grayscale") %>%
+    image_contrast() %>%
+    image_trim(fuzz = 40)
 
 # text_default <- image_ocr(img_default)
 # saveRDS(text_default, file = "example_text.rds")
