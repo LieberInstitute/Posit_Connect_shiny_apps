@@ -22,7 +22,7 @@ if (file.exists(posit_connect_file)) {
     spe <- readRDS(here::here("misc", "OSTA_spatialLIBD_demo", "processed-data", "spe_workflow_Visium_spatialLIBD.rds"))
 }
 
-spe <- readRDS("spe_workflow_Visium_spatialLIBD.rds")
+#spe <- readRDS("spe_workflow_Visium_spatialLIBD.rds")
 
 ## Deploy the website
 spatialLIBD::run_app(
