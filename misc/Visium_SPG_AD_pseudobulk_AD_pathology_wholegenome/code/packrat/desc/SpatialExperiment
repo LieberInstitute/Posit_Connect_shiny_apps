@@ -1,0 +1,44 @@
+Package: SpatialExperiment
+Version: 1.8.1
+Title: S4 Class for Spatially Resolved Transcriptomics Data
+Description: Defines an S4 class for storing data from spatially resolved 
+    transcriptomics (ST) experiments. The class extends SingleCellExperiment to 
+    support storage and retrieval of additional information from spot-based and 
+    molecule-based ST platforms, including spatial coordinates, images, and 
+    image metadata. A specialized constructor function is included for data 
+    from the 10x Genomics Visium platform.
+Authors@R: c(
+    person("Dario", "Righelli", role=c("aut", "cre"), 
+        email="dario.righelli@gmail.com"), 
+    person("Davide", "Risso", role=c("aut"), 
+        email="risso.davide@gmail.com"), 
+    person("Helena L.", "Crowell", role=c("aut"), 
+        email="helena.crowell@uzh.ch"), 
+    person("Lukas M.", "Weber", role=c("aut"), 
+        email="lukas.weber.edu@gmail.com"))
+URL: https://github.com/drighelli/SpatialExperiment
+BugReports: https://github.com/drighelli/SpatialExperiment/issues
+License: GPL-3
+Encoding: UTF-8
+biocViews: DataRepresentation, DataImport, Infrastructure,
+        ImmunoOncology, GeneExpression, Transcriptomics, SingleCell,
+        Spatial
+Depends: methods, SingleCellExperiment
+Imports: rjson, grDevices, magick, utils, S4Vectors,
+        SummarizedExperiment, DropletUtils, BiocGenerics, BiocFileCache
+Suggests: knitr, rmarkdown, testthat, BiocStyle, BumpyMatrix
+VignetteBuilder: knitr
+RoxygenNote: 7.2.1
+git_url: https://git.bioconductor.org/packages/SpatialExperiment
+git_branch: RELEASE_3_16
+git_last_commit: c954f37
+git_last_commit_date: 2023-03-04
+Date/Publication: 2023-03-05
+NeedsCompilation: no
+Packaged: 2023-03-07 08:54:13 UTC; biocbuild
+Author: Dario Righelli [aut, cre],
+  Davide Risso [aut],
+  Helena L. Crowell [aut],
+  Lukas M. Weber [aut]
+Maintainer: Dario Righelli <dario.righelli@gmail.com>
+Built: R 4.2.2; ; 2023-03-07 18:09:39 UTC; unix
