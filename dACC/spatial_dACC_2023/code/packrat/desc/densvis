@@ -1,0 +1,63 @@
+Package: densvis
+Title: Density-Preserving Data Visualization via Non-Linear
+        Dimensionality Reduction
+Version: 1.10.1
+Date: 2022-01-25
+Authors@R: 
+  c(
+    person(
+      given = "Alan",
+      family = "O'Callaghan",
+      role = c("aut", "cre"),
+      email = "alan.ocallaghan@outlook.com"
+    ),
+    person(given = "Ashwinn", family = "Narayan", role = "aut"),
+    person(given = "Hyunghoon", family = "Cho", role = "aut")
+  )
+Description: 
+  Implements the density-preserving modification to t-SNE 
+  and UMAP described by Narayan et al. (2020) 
+  <doi:10.1101/2020.05.12.077776>.
+  The non-linear dimensionality reduction techniques t-SNE and UMAP
+  enable users to summarise complex high-dimensional sequencing data
+  such as single cell RNAseq using lower dimensional representations. 
+  These lower dimensional representations enable the visualisation of discrete
+  transcriptional states, as well as continuous trajectory (for example, in 
+  early development). However, these methods focus on the local neighbourhood 
+  structure of the data. In some cases, this results in
+  misleading visualisations, where the density of cells in the low-dimensional
+  embedding does not represent the transcriptional heterogeneity of data in the 
+  original high-dimensional space. den-SNE and densMAP aim to enable more 
+  accurate visual interpretation of high-dimensional datasets by producing 
+  lower-dimensional embeddings that accurately represent the heterogeneity of 
+  the original high-dimensional space, enabling the identification of 
+  homogeneous and heterogeneous cell states.
+  This accuracy is accomplished by including in the optimisation process a term
+  which considers the local density of points in the original high-dimensional 
+  space. This can help to create visualisations that are more representative of 
+  heterogeneity in the original high-dimensional space.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: Rcpp, basilisk, assertthat, reticulate, irlba
+Suggests: knitr, rmarkdown, BiocStyle, ggplot2, Rtsne, uwot, testthat
+BugReports: https://github.com/Alanocallaghan/densvis/issues
+LinkingTo: Rcpp
+biocViews: DimensionReduction, Visualization, Software, SingleCell,
+        Sequencing
+VignetteBuilder: knitr
+URL: https://bioconductor.org/packages/densvis
+StagedInstall: no
+git_url: https://git.bioconductor.org/packages/densvis
+git_branch: RELEASE_3_17
+git_last_commit: ca3a13e
+git_last_commit_date: 2023-05-01
+Date/Publication: 2023-05-02
+NeedsCompilation: yes
+Packaged: 2023-05-02 20:31:17 UTC; biocbuild
+Author: Alan O'Callaghan [aut, cre],
+  Ashwinn Narayan [aut],
+  Hyunghoon Cho [aut]
+Maintainer: Alan O'Callaghan <alan.ocallaghan@outlook.com>
+Built: R 4.3.0; x86_64-apple-darwin20; 2023-05-24 21:19:30 UTC; unix

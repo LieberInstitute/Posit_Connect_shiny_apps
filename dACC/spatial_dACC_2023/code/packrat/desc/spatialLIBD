@@ -1,0 +1,77 @@
+Package: spatialLIBD
+Title: spatialLIBD: an R/Bioconductor package to visualize
+        spatially-resolved transcriptomics data
+Version: 1.12.0
+Date: 2023-04-24
+Authors@R: 
+    c(
+    person("Leonardo", "Collado-Torres", role = c("aut", "cre"), 
+    email = "lcolladotor@gmail.com", comment = c(ORCID = "0000-0003-2140-308X")),
+    person(c("Kristen", "R."), "Maynard",
+    role = "ctb", email = "Kristen.Maynard@libd.org",
+    comment = c(ORCID = "0000-0003-0031-8468")),
+    person(c("Andrew", "E."), "Jaffe",
+    role = "ctb", email = "andrew.jaffe@libd.org",
+    comment = c(ORCID = "0000-0001-6886-1454")),
+    person("Brenda", "Pardo",
+    role = "ctb", email = "bpardo@lcgej.unam.mx",
+    comment = c(ORCID = "0000-0001-8103-7136")),
+    person("Abby", "Spangler",
+    role = "ctb", email = "aspangle@gmail.com",
+    comment = c(ORCID = "0000-0002-0028-9348")),
+    person("Jesús", "Vélez Santiago",
+    role = "ctb", email = "jvelezmagic@gmail.com",
+    comment = c(ORCID = "0000-0001-5128-3838")),
+    person("Lukas M.", "Weber",
+    role = "ctb", email = "lukas.weber.edu@gmail.com", 
+    comment = c(ORCID = "0000-0002-3282-1730")),
+    person("Louise", "Huuki-Myers", role = "ctb", email = "lahuuki@gmail.com",
+    comment = c(ORCID = "0000-0001-5148-3602")),
+    person("Nicholas", "Eagles", role = "ctb", email = "nickeagles77@gmail.com",
+    comment = c(ORCID = "0000-0002-9808-5254"))
+    )
+Description: Inspect interactively the spatially-resolved transcriptomics data
+    from the 10x Genomics Visium platform as well as data from the 
+    Maynard, Collado-Torres et al, Nature Neuroscience, 2021 project analyzed by
+    Lieber Institute for Brain Development (LIBD) researchers and collaborators.
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: true
+Imports: shiny, golem, ggplot2, cowplot, plotly, viridisLite,
+        shinyWidgets, sessioninfo, grid, grDevices, methods,
+        AnnotationHub, utils, png, scater, DT, ExperimentHub,
+        RColorBrewer, SummarizedExperiment, stats, graphics, S4Vectors,
+        IRanges, fields, benchmarkme, SingleCellExperiment,
+        BiocFileCache, jsonlite, tibble, rtracklayer, Matrix,
+        BiocGenerics, GenomicRanges, magick, paletteer, scuttle, edgeR,
+        limma, statmod
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/LieberInstitute/spatialLIBD
+BugReports: https://support.bioconductor.org/tag/spatialLIBD
+Suggests: knitr, RefManageR, rmarkdown, BiocStyle, testthat (>= 2.1.0),
+        covr, here, BiocManager, lobstr
+VignetteBuilder: knitr
+biocViews: Homo_sapiens_Data, ExperimentHub, SequencingData,
+        SingleCellData, ExpressionData, Tissue, PackageTypeData,
+        SpatialData
+Depends: SpatialExperiment (>= 1.3.3), R (>= 3.6)
+git_url: https://git.bioconductor.org/packages/spatialLIBD
+git_branch: RELEASE_3_17
+git_last_commit: 5eacc61
+git_last_commit_date: 2023-04-25
+Date/Publication: 2023-04-27
+NeedsCompilation: no
+Packaged: 2023-04-27 15:33:31 UTC; biocbuild
+Author: Leonardo Collado-Torres [aut, cre]
+    (<https://orcid.org/0000-0003-2140-308X>),
+  Kristen R. Maynard [ctb] (<https://orcid.org/0000-0003-0031-8468>),
+  Andrew E. Jaffe [ctb] (<https://orcid.org/0000-0001-6886-1454>),
+  Brenda Pardo [ctb] (<https://orcid.org/0000-0001-8103-7136>),
+  Abby Spangler [ctb] (<https://orcid.org/0000-0002-0028-9348>),
+  Jesús Vélez Santiago [ctb] (<https://orcid.org/0000-0001-5128-3838>),
+  Lukas M. Weber [ctb] (<https://orcid.org/0000-0002-3282-1730>),
+  Louise Huuki-Myers [ctb] (<https://orcid.org/0000-0001-5148-3602>),
+  Nicholas Eagles [ctb] (<https://orcid.org/0000-0002-9808-5254>)
+Maintainer: Leonardo Collado-Torres <lcolladotor@gmail.com>
+Built: R 4.3.0; ; 2023-05-24 21:20:13 UTC; unix
