@@ -2391,6 +2391,32 @@
         "Archs": "colorspace.so.dSYM"
       }
     },
+    "colourpicker": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "colourpicker",
+        "Title": "A Colour Picker Tool for Shiny and for Selecting Colours in\nPlots",
+        "Version": "1.3.0",
+        "Authors@R": "c(\n    person(\"Dean\", \"Attali\", \n        email = \"daattali@gmail.com\",\n        role = c(\"aut\", \"cre\"),\n        comment= c(ORCID=\"0000-0002-5645-3493\")),\n    person(\"David\", \"Griswold\", email=\"novachild@gmail.com\",\n    role = \"ctb\")\n  )",
+        "Description": "A colour picker that can be used as an input in 'Shiny' apps\n    or Rmarkdown documents. The colour picker supports alpha opacity, custom\n    colour palettes, and many more options. A Plot Colour Helper tool is\n    available as an 'RStudio' Addin, which helps you pick colours to use in your\n    plots. A more generic Colour Picker 'RStudio' Addin is also provided to let \n    you select colours to use in your R code.",
+        "URL": "https://github.com/daattali/colourpicker,\nhttps://daattali.com/shiny/colourInput/",
+        "BugReports": "https://github.com/daattali/colourpicker/issues",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "ggplot2, htmltools, htmlwidgets (>= 0.7), jsonlite, miniUI (>=\n0.1.1), shiny (>= 0.11.1), shinyjs (>= 2.0.0), utils",
+        "Suggests": "knitr (>= 1.7), rmarkdown, rstudioapi (>= 0.5),\nshinydisconnect",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-08-20 00:23:47 UTC; Dean-X1C",
+        "Author": "Dean Attali [aut, cre] (<https://orcid.org/0000-0002-5645-3493>),\n  David Griswold [ctb]",
+        "Maintainer": "Dean Attali <daattali@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-08-21 08:12:46 UTC",
+        "Built": "R 4.5.0; ; 2025-04-02 08:23:20 UTC; unix"
+      }
+    },
     "commonmark": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3862,6 +3888,76 @@
         "Built": "R 4.5.0; ; 2025-07-22 05:30:41 UTC; unix"
       }
     },
+    "iSEE": {
+      "Source": "Bioconductor",
+      "Repository": "https://bioconductor.org/packages/3.21/bioc",
+      "description": {
+        "Package": "iSEE",
+        "Title": "Interactive SummarizedExperiment Explorer",
+        "Version": "2.20.0",
+        "Date": "2025-04-14",
+        "Authors@R": "c(\n    person(\"Kevin\", \"Rue-Albrecht\", role = c(\"aut\", \"cre\"), email = \"kevinrue67@gmail.com\", comment = c(ORCID = \"0000-0003-3899-3872\")),\n    person(\"Federico\", \"Marini\", role=\"aut\", email=\"marinif@uni-mainz.de\", comment = c(ORCID = '0000-0003-3252-7758')),\n    person(\"Charlotte\", \"Soneson\", role=\"aut\", email=\"charlottesoneson@gmail.com\", comment = c(ORCID = '0000-0003-3833-2169')),\n    person(\"Aaron\", \"Lun\", role=\"aut\", email=\"infinite.monkeys.with.keyboards@gmail.com\", comment = c(ORCID = '0000-0002-3564-4813')))",
+        "Description": "Create an interactive Shiny-based graphical user interface \n    for exploring data stored in SummarizedExperiment objects, including \n    row- and column-level metadata. The interface supports transmission of \n    selections between plots and tables, code tracking, interactive tours, \n    interactive or programmatic initialization, preservation of app state,\n    and extensibility to new panel types via S4 classes. Special attention \n    is given to single-cell data in a SingleCellExperiment object with \n    visualization of dimensionality reduction results.",
+        "Depends": "SummarizedExperiment, SingleCellExperiment",
+        "Imports": "methods, BiocGenerics, S4Vectors, utils, stats, shiny,\nshinydashboard, shinyAce, shinyjs, DT, rintrojs, ggplot2,\nggrepel, colourpicker, igraph, vipor, mgcv, graphics,\ngrDevices, viridisLite, shinyWidgets, listviewer,\nComplexHeatmap, circlize, grid",
+        "Suggests": "testthat, covr, BiocStyle, knitr, rmarkdown, scRNAseq,\nTENxPBMCData, scater, DelayedArray, HDF5Array, RColorBrewer,\nviridis, htmltools, GenomicRanges",
+        "URL": "https://isee.github.io/iSEE/",
+        "BugReports": "https://github.com/iSEE/iSEE/issues",
+        "biocViews": "CellBasedAssays, Clustering, DimensionReduction,\nFeatureExtraction, GeneExpression, GUI, ImmunoOncology,\nShinyApps, SingleCell, Transcription, Transcriptomics,\nVisualization",
+        "License": "MIT + file LICENSE",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "git_url": "https://git.bioconductor.org/packages/iSEE",
+        "git_branch": "RELEASE_3_21",
+        "git_last_commit": "fb79638",
+        "git_last_commit_date": "2025-04-15",
+        "Repository": "Bioconductor 3.21",
+        "Date/Publication": "2025-04-15",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-04-15 21:56:35 UTC; biocbuild",
+        "Author": "Kevin Rue-Albrecht [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-3899-3872>),\n  Federico Marini [aut] (ORCID: <https://orcid.org/0000-0003-3252-7758>),\n  Charlotte Soneson [aut] (ORCID:\n    <https://orcid.org/0000-0003-3833-2169>),\n  Aaron Lun [aut] (ORCID: <https://orcid.org/0000-0002-3564-4813>)",
+        "Maintainer": "Kevin Rue-Albrecht <kevinrue67@gmail.com>",
+        "Built": "R 4.5.0; ; 2025-04-16 03:53:47 UTC; unix"
+      }
+    },
+    "igraph": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "igraph",
+        "Title": "Network Analysis and Visualization",
+        "Version": "2.1.4",
+        "Authors@R": "c(\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-7098-9676\")),\n    person(\"Tamás\", \"Nepusz\", , \"ntamas@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-1451-338X\")),\n    person(\"Vincent\", \"Traag\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-3170-3879\")),\n    person(\"Szabolcs\", \"Horvát\", , \"szhorvat@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-3100-523X\")),\n    person(\"Fabio\", \"Zanini\", , \"fabio.zanini@unsw.edu.au\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-7097-8539\")),\n    person(\"Daniel\", \"Noom\", role = \"aut\"),\n    person(\"Kirill\", \"Müller\", , \"kirill@cynkra.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-1416-3412\")),\n    person(\"Maëlle\", \"Salmon\", role = \"ctb\"),\n    person(\"Michael\", \"Antonov\", role = \"ctb\"),\n    person(\"Chan Zuckerberg Initiative\", role = \"fnd\")\n  )",
+        "Description": "Routines for simple graphs and network analysis. It can\n    handle large graphs very well and provides functions for generating\n    random and regular graphs, graph visualization, centrality methods and\n    much more.",
+        "License": "GPL (>= 2)",
+        "URL": "https://r.igraph.org/, https://igraph.org/,\nhttps://igraph.discourse.group/",
+        "BugReports": "https://github.com/igraph/rigraph/issues",
+        "Depends": "methods, R (>= 3.5.0)",
+        "Imports": "cli, graphics, grDevices, lifecycle, magrittr, Matrix,\npkgconfig (>= 2.0.0), rlang, stats, utils, vctrs",
+        "Suggests": "ape (>= 5.7-0.1), callr, decor, digest, igraphdata, knitr,\nrgl (>= 1.3.14), rmarkdown, scales, stats4, tcltk, testthat,\nvdiffr, withr",
+        "Enhances": "graph",
+        "LinkingTo": "cpp11 (>= 0.5.0)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/build": "roxygen2, devtools, irlba, pkgconfig,\nigraph/igraph.r2cdocs, moodymudskipper/devtag",
+        "Config/Needs/coverage": "covr",
+        "Config/Needs/website": "readr",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "true",
+        "Config/testthat/start-first": "vs-es, scan, vs-operators, weakref,\nwatts.strogatz.game",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2.9000",
+        "SystemRequirements": "libxml2 (optional), glpk (>= 4.57, optional)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-01-22 19:28:33 UTC; kirill",
+        "Author": "Gábor Csárdi [aut] (<https://orcid.org/0000-0001-7098-9676>),\n  Tamás Nepusz [aut] (<https://orcid.org/0000-0002-1451-338X>),\n  Vincent Traag [aut] (<https://orcid.org/0000-0003-3170-3879>),\n  Szabolcs Horvát [aut] (<https://orcid.org/0000-0002-3100-523X>),\n  Fabio Zanini [aut] (<https://orcid.org/0000-0001-7097-8539>),\n  Daniel Noom [aut],\n  Kirill Müller [aut, cre] (<https://orcid.org/0000-0002-1416-3412>),\n  Maëlle Salmon [ctb],\n  Michael Antonov [ctb],\n  Chan Zuckerberg Initiative [fnd]",
+        "Maintainer": "Kirill Müller <kirill@cynkra.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-01-23 10:20:02 UTC",
+        "Built": "R 4.5.0; aarch64-apple-darwin20; 2025-04-01 11:57:29 UTC; unix",
+        "Archs": "igraph.so.dSYM"
+      }
+    },
     "ini": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -4236,6 +4332,33 @@
         "NeedsCompilation": "yes",
         "Packaged": "2025-08-01 06:40:43 UTC; biocbuild",
         "Built": "R 4.5.1; aarch64-apple-darwin20; 2025-08-02 21:05:11 UTC; unix"
+      }
+    },
+    "listviewer": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "listviewer",
+        "Type": "Package",
+        "Title": "'htmlwidget' for Interactive Views of R Lists",
+        "Version": "4.0.0",
+        "Date": "2023-09-30",
+        "Authors@R": "c(\n    person(\"Jos\", \"de Jong\", role = c(\"aut\", \"cph\"), comment = \"jsoneditor.js library in htmlwidgets/jsoneditor, http://github.com/josdejong/jsoneditor/\" ),\n    person(\"Mac\",\" Gainer\", role = c(\"aut\", \"cph\"), comment = \"react-json-view library in htmlwidgets/react-json, https://github.com/mac-s-g/react-json-view\"),\n    person(\"Kent\",\"Russell\", role = c(\"aut\",\"cre\"), comment = \"R interface\" , email = \"kent.russell@timelyportfolio.com\" )\n  )",
+        "Description": "R lists, especially nested lists, can be very difficult to\n    visualize or represent. Sometimes 'str()' is not enough, so this suite of\n    htmlwidgets is designed to help see, understand, and maybe even modify your R\n    lists.  The function 'reactjson()' requires a package\n    'reactR' that can be installed from CRAN or <https://github.com/timelyportfolio/reactR>.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/timelyportfolio/listviewer",
+        "BugReports": "https://github.com/timelyportfolio/listviewer/issues",
+        "Imports": "htmltools, htmlwidgets, shiny",
+        "Suggests": "jsonlite, miniUI, rstudioapi",
+        "Enhances": "reactR",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-09-30 19:00:08 UTC; kentr",
+        "Author": "Jos de Jong [aut, cph] (jsoneditor.js library in\n    htmlwidgets/jsoneditor, http://github.com/josdejong/jsoneditor/),\n  Mac Gainer [aut, cph] (react-json-view library in\n    htmlwidgets/react-json, https://github.com/mac-s-g/react-json-view),\n  Kent Russell [aut, cre] (R interface)",
+        "Maintainer": "Kent Russell <kent.russell@timelyportfolio.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-09-30 19:30:06 UTC",
+        "Built": "R 4.5.0; ; 2025-04-02 04:46:21 UTC; unix"
       }
     },
     "litedown": {
@@ -5315,6 +5438,33 @@
         "Built": "R 4.5.0; aarch64-apple-darwin20; 2025-04-16 04:03:11 UTC; unix"
       }
     },
+    "rintrojs": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "rintrojs",
+        "Type": "Package",
+        "Title": "Wrapper for the 'Intro.js' Library",
+        "Version": "0.3.4",
+        "Authors@R": "c(\n  person(\"Carl\", \"Ganz\", email = \"carlganz@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-2973-3545\")),\n  person(\"Afshin\", \"Mehrabani\", role = c(\"ctb\",\"cph\"), comment = \"intro.js in javascript/introjs\")\n  )",
+        "Description": "A wrapper for the 'Intro.js' library (For more info: <https://introjs.com/>). \n  This package makes it easy to include step-by-step introductions, and clickable hints in a 'Shiny' \n  application. It supports both static introductions in the UI, and programmatic introductions from \n  the server-side. ",
+        "License": "AGPL-3",
+        "Imports": "shiny, jsonlite",
+        "Depends": "R (>= 3.0.0)",
+        "RoxygenNote": "7.2.3",
+        "URL": "https://github.com/carlganz/rintrojs, http://rintrojs.carlganz.com",
+        "BugReports": "https://github.com/carlganz/rintrojs/issues",
+        "Suggests": "testthat, covr",
+        "Config/potools/style": "base",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-01-11 20:46:10 UTC; carlganz",
+        "Author": "Carl Ganz [aut, cre] (<https://orcid.org/0000-0002-2973-3545>),\n  Afshin Mehrabani [ctb, cph] (intro.js in javascript/introjs)",
+        "Maintainer": "Carl Ganz <carlganz@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-01-11 21:30:02 UTC",
+        "Built": "R 4.5.0; ; 2025-04-01 20:32:00 UTC; unix"
+      }
+    },
     "rjson": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -5780,6 +5930,34 @@
         "Built": "R 4.5.0; ; 2025-07-04 07:50:00 UTC; unix"
       }
     },
+    "shinyAce": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "shinyAce",
+        "Type": "Package",
+        "Title": "Ace Editor Bindings for Shiny",
+        "Version": "0.4.4",
+        "Date": "2025-2-2",
+        "Authors@R": "c(\n  person(\"Vincent\", \"Nijs\", role = c(\"aut\", \"cre\"), email = \"radiant@rady.ucsd.edu\"),\n  person(\"Forest\", \"Fang\", role = \"aut\", email = \"forest.fang@outlook.com\"),\n  person(family = \"Trestle Technology, LLC\", role = \"aut\", email = \"cran@trestletechnology.net\"),\n  person(\"Jeff\", \"Allen\", role = \"aut\", email = \"cran@trestletechnology.net\"),\n  person(family = \"Institut de Radioprotection et de Surete Nucleaire\", role = c(\"cph\"), email = \"yann.richet@irsn.fr\"),\n  person(family = \"Ajax.org B.V.\", role = c(\"ctb\", \"cph\"), comment = \"Ace\"))",
+        "Description": "Ace editor bindings to enable a rich text editing environment\n    within Shiny.",
+        "License": "MIT + file LICENSE",
+        "Depends": "R (>= 3.3.0)",
+        "Imports": "shiny (>= 1.0.5), jsonlite, utils, tools",
+        "Suggests": "testthat (>= 2.0.0), dplyr (>= 0.8.3)",
+        "BugReports": "https://github.com/trestletech/shinyAce/issues",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "Language": "en-US",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-02-02 22:59:22 UTC; vnijs",
+        "Author": "Vincent Nijs [aut, cre],\n  Forest Fang [aut],\n  Trestle Technology, LLC [aut],\n  Jeff Allen [aut],\n  Institut de Radioprotection et de Surete Nucleaire [cph],\n  Ajax.org B.V. [ctb, cph] (Ace)",
+        "Maintainer": "Vincent Nijs <radiant@rady.ucsd.edu>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-02-03 00:20:02 UTC",
+        "Built": "R 4.5.0; ; 2025-04-01 20:57:14 UTC; unix"
+      }
+    },
     "shinyWidgets": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -5805,6 +5983,58 @@
         "Repository": "CRAN",
         "Date/Publication": "2025-02-21 12:30:02 UTC",
         "Built": "R 4.5.0; ; 2025-04-01 20:40:21 UTC; unix"
+      }
+    },
+    "shinydashboard": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "shinydashboard",
+        "Title": "Create Dashboards with 'Shiny'",
+        "Version": "0.7.3",
+        "Authors@R": "c(\n    person(\"Winston\", \"Chang\", , \"winston@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Barbara\", \"Borges Ribeiro\", role = \"aut\"),\n    person(, \"Posit Software, PBC\", role = \"cph\"),\n    person(, \"Almasaeed Studio\", role = c(\"ctb\", \"cph\"),\n           comment = \"AdminLTE theme for Bootstrap\"),\n    person(, \"Adobe Systems Incorporated\", role = c(\"ctb\", \"cph\"),\n           comment = \"Source Sans Pro font\")\n  )",
+        "Description": "Create dashboards with 'Shiny'. This package provides a theme\n    on top of 'Shiny', making it easy to create attractive dashboards.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://rstudio.github.io/shinydashboard/,\nhttps://github.com/rstudio/shinydashboard",
+        "BugReports": "https://github.com/rstudio/shinydashboard/issues",
+        "Depends": "R (>= 3.0)",
+        "Imports": "htmltools (>= 0.2.6), promises, shiny (>= 1.0.0), utils",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-04-21 16:14:20 UTC; garrick",
+        "Author": "Winston Chang [aut, cre],\n  Barbara Borges Ribeiro [aut],\n  Posit Software, PBC [cph],\n  Almasaeed Studio [ctb, cph] (AdminLTE theme for Bootstrap),\n  Adobe Systems Incorporated [ctb, cph] (Source Sans Pro font)",
+        "Maintainer": "Winston Chang <winston@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-04-21 21:30:02 UTC",
+        "Built": "R 4.5.0; ; 2025-04-21 22:14:20 UTC; unix"
+      }
+    },
+    "shinyjs": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "shinyjs",
+        "Title": "Easily Improve the User Experience of Your Shiny Apps in Seconds",
+        "Version": "2.1.0",
+        "Authors@R": "person(\"Dean\", \"Attali\", \n    email = \"daattali@gmail.com\",\n    role = c(\"aut\", \"cre\"),\n    comment= c(ORCID=\"0000-0002-5645-3493\"))",
+        "Description": "Perform common useful JavaScript operations in Shiny apps that will\n    greatly improve your apps without having to know any JavaScript. Examples\n    include: hiding an element, disabling an input, resetting an input back to\n    its original value, delaying code execution by a few seconds, and many more\n    useful functions for both the end user and the developer. 'shinyjs' can also\n    be used to easily call your own custom JavaScript functions from R.",
+        "URL": "https://deanattali.com/shinyjs/",
+        "BugReports": "https://github.com/daattali/shinyjs/issues",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "digest (>= 0.6.8), jsonlite, shiny (>= 1.0.0)",
+        "Suggests": "htmltools (>= 0.2.9), knitr (>= 1.7), rmarkdown, shinyAce,\nshinydisconnect, testthat (>= 0.9.1)",
+        "License": "MIT + file LICENSE",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "7.1.1",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-12-21 11:32:22 UTC; Dean-X1C",
+        "Author": "Dean Attali [aut, cre] (<https://orcid.org/0000-0002-5645-3493>)",
+        "Maintainer": "Dean Attali <daattali@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2021-12-23 10:10:02 UTC",
+        "Built": "R 4.5.0; ; 2025-04-01 20:32:03 UTC; unix"
       }
     },
     "sitmo": {
@@ -6726,7 +6956,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "c606fecab115b518edf3c751207636bd"
+      "checksum": "3858ccfa1022508c55f9c0a6f12423f1"
     },
     "initial.R": {
       "checksum": "0cef416db4db8a1436fd38c8037956ec"
