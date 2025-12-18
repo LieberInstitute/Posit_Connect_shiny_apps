@@ -7,6 +7,7 @@ library("HDF5Array")
 library("markdown")
 library("SingleCellExperiment")
 library("iSEE")
+library("SpatialExperiment")
 ## spatialLIBD uses golem
 options("golem.app.prod" = TRUE)
 
