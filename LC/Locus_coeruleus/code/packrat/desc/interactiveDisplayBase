@@ -1,0 +1,41 @@
+Package: interactiveDisplayBase
+Type: Package
+Title: Base package for enabling powerful shiny web displays of
+        Bioconductor objects
+Version: 1.34.0
+Date: 2021-07-30
+Authors@R: c(
+    person("Bioconductor Package", "Maintainer", email="maintainer@bioconductor.org",
+             role="cre"),
+    person("Shawn", "Balcome", role = c("aut"),
+        email = "balc0022@umn.edu"),
+    person("Marc", "Carlson", role = "ctb"),
+    person("Marcel", "Ramos", role = "ctb")
+  )
+Imports: shiny, DT
+Depends: R (>= 2.10), methods, BiocGenerics
+Suggests: knitr, markdown
+Enhances: rstudioapi
+Description: The interactiveDisplayBase package contains the the basic
+        methods needed to generate interactive Shiny based display
+        methods for Bioconductor objects.
+License: Artistic-2.0
+Collate: interactiveDisplayBase.R dataframe.R dot_runApp.R zzz.R
+VignetteBuilder: knitr
+biocViews: GO, GeneExpression, Microarray, Sequencing, Classification,
+        Network, QualityControl, Visualization, Visualization,
+        Genetics, DataRepresentation, GUI, AnnotationData
+RoxygenNote: 7.1.1
+git_url: https://git.bioconductor.org/packages/interactiveDisplayBase
+git_branch: RELEASE_3_15
+git_last_commit: fafbb13
+git_last_commit_date: 2022-04-26
+Date/Publication: 2022-04-26
+NeedsCompilation: no
+Packaged: 2022-04-26 23:05:45 UTC; biocbuild
+Author: Bioconductor Package Maintainer [cre],
+  Shawn Balcome [aut],
+  Marc Carlson [ctb],
+  Marcel Ramos [ctb]
+Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
+Built: R 4.2.0; ; 2022-04-27 14:05:39 UTC; unix
