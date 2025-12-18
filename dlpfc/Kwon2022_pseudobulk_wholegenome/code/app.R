@@ -8,6 +8,7 @@ library("markdown")
 library("SingleCellExperiment")
 library("iSEE")
 library("SpatialExperiment")
+library("scuttle")
 ## spatialLIBD uses golem
 options("golem.app.prod" = TRUE)
 
