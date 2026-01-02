@@ -1,0 +1,46 @@
+Package: DelayedArray
+Title: A unified framework for working transparently with on-disk and
+        in-memory array-like datasets
+Description: Wrapping an array-like object (typically an on-disk object) in
+	a DelayedArray object allows one to perform common array operations
+	on it without loading the object in memory. In order to reduce memory
+	usage and optimize performance, operations on the object are either
+	delayed or executed using a block processing mechanism. Note that this
+	also works on in-memory array-like objects like DataFrame objects
+	(typically with Rle columns), Matrix objects, and ordinary arrays and
+	data frames.
+Version: 0.14.1
+Encoding: UTF-8
+Author: Hervé Pagès <hpages@fredhutch.org>, with contributions from
+	Peter Hickey <peter.hickey@gmail.com> and
+	Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>
+Maintainer: Hervé Pagès <hpages@fredhutch.org>
+biocViews: Infrastructure, DataRepresentation, Annotation,
+        GenomeAnnotation
+Depends: R (>= 3.4), methods, stats4, matrixStats, BiocGenerics (>=
+        0.31.5), S4Vectors (>= 0.25.15), IRanges (>= 2.17.3)
+Imports: stats, Matrix
+LinkingTo: S4Vectors
+Suggests: BiocParallel, HDF5Array, genefilter, SummarizedExperiment,
+        airway, pryr, DelayedMatrixStats, knitr, BiocStyle, RUnit
+License: Artistic-2.0
+VignetteBuilder: knitr
+Collate: utils.R dgCMatrix-utils.R compress_atomic_vector.R
+        Nindex-utils.R array_selection.R aperm2.R bind-arrays.R
+        Array-class.R extract_array.R ArrayGrid-class.R show-utils.R
+        SparseArraySeed-class.R read_block.R mapToGrid.R
+        makeCappedVolumeBox.R blockGrid.R blockApply.R
+        DelayedOp-class.R showtree.R simplify.R DelayedArray-class.R
+        DelayedArray-subsetting.R chunkGrid.R RealizationSink-class.R
+        realize.R DelayedArray-utils.R DelayedMatrix-utils.R
+        DelayedArray-stats.R DelayedMatrix-stats.R RleArraySeed-class.R
+        RleArray-class.R zzz.R
+git_url: https://git.bioconductor.org/packages/DelayedArray
+git_branch: RELEASE_3_11
+git_last_commit: 52230a4
+git_last_commit_date: 2020-07-13
+Date/Publication: 2020-07-15
+NeedsCompilation: yes
+Packaged: 2020-07-16 03:04:15 UTC; biocbuild
+Built: R 4.0.2; i386-w64-mingw32; 2020-07-16 15:20:16 UTC; windows
+Archs: i386, x64
