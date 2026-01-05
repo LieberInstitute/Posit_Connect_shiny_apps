@@ -1,0 +1,121 @@
+
+#This will be the app file for this project
+library("spatialLIBD")
+library("here")
+library("devtools")
+library("HDF5Array")
+library("markdown")
+library("SingleCellExperiment")
+library("iSEE")
+library("shiny")
+## spatialLIBD uses golem
+options("golem.app.prod" = TRUE)
+packageVersion("iSEE")
+
+## You need this to enable shinyapps to install Bioconductor packages
+options(repos = BiocManager::repositories())
+
+
+
+## Load the data
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/sacc/tran2020_sACC/sce_sacc_small.rds"
+if (file.exists(posit_connect_file)) {
+    ## Location for the https://conn1.libd.org/ server
+    sce <- readRDS(posit_connect_file)
+} else {
+    sce <- readRDS(here::here("misc", "region", "sacc", "tran2020_sACC", "processed-data", "sce_sacc_small.rds"))
+}
+
+
+initial <- list()
+
+################################################################################
+# Settings for Reduced dimension plot 1
+################################################################################
+
+initial[["ReducedDimensionPlot1"]] <- new("ReducedDimensionPlot", Type = "PCA", XAxis = 1L, YAxis = 2L,
+                                          ColorByColumnData = "cell_type", ColorByFeatureNameAssay = "logcounts",
+                                          ColorBySampleNameColor = "#FF0000", ShapeByColumnData = "donor",
+                                          SizeByColumnData = "sum", FacetByRow = "---", FacetByColumn = "---",
+                                          ColorBy = "Column data", ColorByDefaultColor = "#000000",
+                                          ColorByFeatureName = "MOBP", ColorByFeatureSource = "---",
+                                          ColorByFeatureDynamicSource = FALSE, ColorBySampleName = "sacc.5161_AAACCCAAGCCAAGGT-1",
+                                          ColorBySampleSource = "---", ColorBySampleDynamicSource = FALSE,
+                                          ShapeBy = "None", SizeBy = "None", SelectionEffect = "Transparent",
+                                          SelectionColor = "#FF0000", SelectionAlpha = 0.1, ZoomData = numeric(0),
+                                          BrushData = list(), VisualBoxOpen = FALSE, VisualChoices = c("Color",
+                                                                                                       "Shape"), ContourAdd = FALSE, ContourColor = "#0000FF", PointSize = 1,
+                                          PointAlpha = 1, Downsample = FALSE, DownsampleResolution = 200,
+                                          FontSize = 1, LegendPosition = "Bottom", PanelId = c(ReducedDimensionPlot = 1L),
+                                          PanelHeight = 600L, PanelWidth = 6L, SelectionBoxOpen = FALSE,
+                                          RowSelectionSource = "---", ColumnSelectionSource = "---",
+                                          DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, RowSelectionType = "Active",
+                                          RowSelectionSaved = 0L, ColumnSelectionDynamicSource = FALSE,
+                                          ColumnSelectionType = "Active", ColumnSelectionSaved = 0L,
+                                          SelectionHistory = list())
+
+################################################################################
+# Settings for Complex heatmap 1
+################################################################################
+
+initial[["ComplexHeatmapPlot1"]] <- new("ComplexHeatmapPlot", Assay = "logcounts", CustomRows = TRUE,
+                                        CustomRowsText = "SNAP25
+MBP
+PCP4", ClusterRows = FALSE,
+                                        ClusterRowsDistance = "spearman", ClusterRowsMethod = "ward.D2",
+                                        DataBoxOpen = FALSE, VisualChoices = "Annotations",
+                                        ColumnData = c("cell_type", "donor"),
+                                        RowData = character(0), CustomBounds = FALSE, LowerBound = NA_real_,
+                                        UpperBound = NA_real_, AssayCenterRows = FALSE, AssayScaleRows = FALSE,
+                                        DivergentColormap = "purple < black < yellow", ShowDimNames = "Rows",
+                                        LegendPosition = "Bottom", LegendDirection = "Horizontal",
+                                        VisualBoxOpen = FALSE, #SelectionEffect = "Color", SelectionColor = "#FF0000",
+                                        PanelId = 1L, PanelHeight = 600L, PanelWidth = 6L, SelectionBoxOpen = FALSE,
+                                        RowSelectionSource = "---", ColumnSelectionSource = "---",
+                                        RowSelectionDynamicSource = FALSE, RowSelectionType = "Active",
+                                        RowSelectionSaved = 0L, ColumnSelectionDynamicSource = FALSE,
+                                        ColumnSelectionType = "Active", ColumnSelectionSaved = 0L,
+                                        SelectionHistory = list())
+
+################################################################################
+# Settings for Row data table 1
+################################################################################
+
+initial[["RowDataTable1"]] <- new("RowDataTable", Selected = "MOBP", Search = "", SearchColumns = c("",
+                                                                                                    "", "", "", "", "", "", "", "", "", "", "", "", "", ""), PanelId = c(RowDataTable = 1L),
+                                  PanelHeight = 600L, PanelWidth = 6L, SelectionBoxOpen = FALSE,
+                                  RowSelectionSource = "---", ColumnSelectionSource = "---",
+                                  DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, RowSelectionType = "Active",
+                                  RowSelectionSaved = 0L, ColumnSelectionDynamicSource = FALSE,
+                                  ColumnSelectionType = "Active", ColumnSelectionSaved = 0L,
+                                  SelectionHistory = list())
+
+################################################################################
+# Settings for Feature assay plot 1
+################################################################################
+
+initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", XAxis = "Column data",
+                                      XAxisColumnData = "cell_type", XAxisFeatureName = "MOBP",
+                                      XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE,
+                                      YAxisFeatureName = "MOBP", YAxisFeatureSource = "RowDataTable1",
+                                      YAxisFeatureDynamicSource = TRUE, ColorByColumnData = "cell_type",
+                                      ColorByFeatureNameAssay = "logcounts", ColorBySampleNameColor = "#FF0000",
+                                      ShapeByColumnData = "donor", SizeByColumnData = "sum", FacetByRow = "---",
+                                      FacetByColumn = "---", ColorBy = "Column data", ColorByDefaultColor = "#000000",
+                                      ColorByFeatureName = "MOBP", ColorByFeatureSource = "---",
+                                      ColorByFeatureDynamicSource = FALSE, ColorBySampleName = "sacc.5161_AAACCCAAGCCAAGGT-1",
+                                      ColorBySampleSource = "---", ColorBySampleDynamicSource = FALSE,
+                                      ShapeBy = "None", SizeBy = "None", SelectionEffect = "Transparent",
+                                      SelectionColor = "#FF0000", SelectionAlpha = 0.1, ZoomData = numeric(0),
+                                      BrushData = list(), VisualBoxOpen = FALSE, VisualChoices = "Color",
+                                      ContourAdd = FALSE, ContourColor = "#0000FF", PointSize = 1,
+                                      PointAlpha = 1, Downsample = FALSE, DownsampleResolution = 200,
+                                      FontSize = 1, LegendPosition = "Bottom", PanelId = c(FeatureAssayPlot = 1L),
+                                      PanelHeight = 600L, PanelWidth = 6L, SelectionBoxOpen = FALSE,
+                                      RowSelectionSource = "---", ColumnSelectionSource = "---",
+                                      DataBoxOpen = FALSE, RowSelectionDynamicSource = FALSE, RowSelectionType = "Active",
+                                      RowSelectionSaved = 0L, ColumnSelectionDynamicSource = FALSE,
+                                      ColumnSelectionType = "Active", ColumnSelectionSaved = 0L,
+                                      SelectionHistory = list())
+
+iSEE(sce, appTitle = "M.N. Tran et al 2020, sACC region https://bit.ly/LIBD10xHuman", initial = initial)
