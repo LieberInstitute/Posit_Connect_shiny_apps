@@ -1,0 +1,10 @@
+name: DLPFC_ASD_postQC
+title:
+username: libd
+account: libd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14649015
+bundleId: 11657648
+url: https://libd.shinyapps.io/DLPFC_ASD_postQC/
+version: 1

@@ -1,0 +1,10 @@
+name: DLPFC_ASD_raw_final
+title:
+username: libd
+account: libd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15622797
+bundleId: 11656647
+url: https://libd.shinyapps.io/DLPFC_ASD_raw_final/
+version: 1

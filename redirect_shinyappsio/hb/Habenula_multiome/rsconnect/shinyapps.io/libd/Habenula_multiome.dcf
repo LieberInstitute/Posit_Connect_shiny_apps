@@ -1,0 +1,10 @@
+name: Habenula_multiome
+title:
+username: libd
+account: libd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14943823
+bundleId: 11657855
+url: https://libd.shinyapps.io/Habenula_multiome/
+version: 1

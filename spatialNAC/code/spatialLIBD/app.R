@@ -22,7 +22,7 @@ if (file.exists(posit_connect_dir)) {
     dir_to_use <- repo_local_dir
 } 
 
-spe <- loadHDF5SummarizedExperiment(
+spe1 <- loadHDF5SummarizedExperiment(
     dir = dir_to_use
 )
 

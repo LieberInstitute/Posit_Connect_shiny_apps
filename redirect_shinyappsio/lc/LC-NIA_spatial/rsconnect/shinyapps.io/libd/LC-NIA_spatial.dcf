@@ -1,0 +1,10 @@
+name: LC-NIA_spatial
+title:
+username: libd
+account: libd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15137361
+bundleId: 11657877
+url: https://libd.shinyapps.io/LC-NIA_spatial/
+version: 1

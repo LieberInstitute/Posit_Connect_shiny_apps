@@ -3,7 +3,7 @@
 library("iSEE")
 library("spatialLIBD")
 library("here")
-library("devtools")
+#library("devtools")
 library("HDF5Array")
 library("scuttle")
 ## spatialLIBD uses golem

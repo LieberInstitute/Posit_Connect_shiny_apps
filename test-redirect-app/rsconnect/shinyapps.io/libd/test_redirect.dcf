@@ -1,0 +1,10 @@
+name: test_redirect
+title:
+username: libd
+account: libd
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15848243
+bundleId: 11075003
+url: https://libd.shinyapps.io/test_redirect/
+version: 1

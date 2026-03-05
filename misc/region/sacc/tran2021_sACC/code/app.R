@@ -24,7 +24,7 @@ if (file.exists(posit_connect_file)) {
 } else {
     sce_small <- readRDS(here::here("misc", "region", "sacc", "tran2021_sACC", "processed-data", "sce_sacc_small.rds"))
 }
-
+sce_small <- readRDS("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/misc/region/sacc/tran2021_sACC/processed-data/sce_sacc_small.rds")
 posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/sacc/tran2021_sACC/cell_colors_sacc.rds"
 if (file.exists(posit_connect_file1)) {
     ## Location for the https://conn1.libd.org/ server
@@ -32,7 +32,7 @@ if (file.exists(posit_connect_file1)) {
 } else {
     cell_colors <- readRDS(here::here("misc", "region", "sacc", "tran2021_sACC", "processed-data", "cell_colors_sacc.rds"))
 }
-
+cell_colors <- readRDS("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/misc/region/sacc/tran2021_sACC/processed-data/cell_colors_sacc.rds")
 ## Related to https://github.com/iSEE/iSEE/issues/568
 colData(sce_small) <- cbind(
     colData(sce_small)[, !colnames(colData(sce_small)) %in% c("donor", "cell_type")],
@@ -158,10 +158,11 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       ColumnSelectionDynamicSource = FALSE, RowSelectionRestrict = FALSE,
                                       ColumnSelectionRestrict = TRUE, SelectionHistory = list())
 
+
 iSEE(
     sce_small,
     appTitle = "M.N. Tran et al 2021, sACC region https://bit.ly/LIBD10xHuman",
-    initial = initial,
+    #initial = initial,
     colormap = ExperimentColorMap(colData = list(
         donor = function(n) {
             cols <- RColorBrewer::brewer.pal(8, "Dark2")
