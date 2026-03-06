@@ -159,7 +159,7 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       ColumnSelectionRestrict = TRUE, SelectionHistory = list())
 
 
-#sce_small <- registerAppOptions(sce_small, color.maxlevels=length(cell_colors[!grepl("drop", names(cell_colors))]))
+sce_small <- registerAppOptions(sce_small, color.maxlevels=length(cell_colors[!grepl("drop", names(cell_colors))]))
 
 iSEE(
     sce_small,
