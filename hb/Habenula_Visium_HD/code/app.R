@@ -13,7 +13,7 @@ options(repos = BiocManager::repositories())
 posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD/spe_norm_filtered_split.rds"
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    sce_small <- readRDS(posit_connect_file)
+    spe <- readRDS(posit_connect_file)
 } else {
     spe = readRDS(here::here("hb", "Habenula_Visium_HD", "processed-data", "spe_norm_filtered_split.rds"))
 }
@@ -27,7 +27,7 @@ if (file.exists(posit_connect_file1)) {
 }
 
 
-posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD/cluster_annotation.csv"
+posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD/leiden_res1_8.csv"
 if (file.exists(posit_connect_file2)) {
     ## Location for the https://conn1.libd.org/ server
     cluster_gf = read_csv(posit_connect_file2)
