@@ -159,10 +159,12 @@ initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcounts", X
                                       ColumnSelectionRestrict = TRUE, SelectionHistory = list())
 
 
+#sce_small <- registerAppOptions(sce_small, color.maxlevels=length(cell_colors[!grepl("drop", names(cell_colors))]))
+
 iSEE(
     sce_small,
     appTitle = "M.N. Tran et al 2021, sACC region https://bit.ly/LIBD10xHuman",
-    #initial = initial,
+    initial = initial,
     colormap = ExperimentColorMap(colData = list(
         donor = function(n) {
             cols <- RColorBrewer::brewer.pal(8, "Dark2")
