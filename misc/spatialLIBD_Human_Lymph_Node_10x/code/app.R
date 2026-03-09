@@ -33,6 +33,6 @@ spatialLIBD::run_app(
     title = "spatialLIBD: human lymph node by 10x Genomics",
     spe_discrete_vars = c(vars[grep("10x_", vars)], "ManualAnnotation"),
     spe_continuous_vars = c("sum_umi", "sum_gene", "expr_chrM", "expr_chrM_ratio"),
-    default_cluster = "10x_graphclust"#,
-    #docs_path = "www"
+    default_cluster = "10x_graphclust",
+    docs_path = "www"
 )
