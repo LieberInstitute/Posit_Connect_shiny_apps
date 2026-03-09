@@ -22,7 +22,7 @@ if (file.exists(posit_connect_file)) {
 } else {
     spe_wrapper <- readRDS(here::here("misc", "spatialLIBD_Human_Lymph_Node_10x", "processed-data", "spe_wrapper.rds"))
 }
-spe_wrapper <- readRDS("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/misc/spatialLIBD_Human_Lymph_Node_10x/processed-data/spe_wrapper.rds")
+
 vars <- colnames(colData(spe_wrapper))
 
 ## Deploy the website
