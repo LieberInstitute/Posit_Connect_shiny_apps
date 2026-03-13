@@ -24,7 +24,6 @@ if (file.exists(posit_connect_file)) {
 } else {
     sce_small <- readRDS(here::here("misc", "region", "sacc", "tran2021_sACC", "processed-data", "sce_sacc_small.rds"))
 }
-sce_small <- readRDS("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/misc/region/sacc/tran2021_sACC/processed-data/sce_sacc_small.rds")
 posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/sacc/tran2021_sACC/cell_colors_sacc.rds"
 if (file.exists(posit_connect_file1)) {
     ## Location for the https://conn1.libd.org/ server
