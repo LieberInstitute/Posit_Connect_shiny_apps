@@ -31,7 +31,6 @@ if (file.exists(posit_connect_file1)) {
 } else {
     cell_colors <- readRDS(here::here("misc", "region", "sacc", "tran2021_sACC", "processed-data", "cell_colors_sacc.rds"))
 }
-cell_colors <- readRDS("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/misc/region/sacc/tran2021_sACC/processed-data/cell_colors_sacc.rds")
 ## Related to https://github.com/iSEE/iSEE/issues/568
 colData(sce_small) <- cbind(
     colData(sce_small)[, !colnames(colData(sce_small)) %in% c("donor", "cell_type")],
