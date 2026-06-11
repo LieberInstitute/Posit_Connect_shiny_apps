@@ -52,15 +52,15 @@ iSEE(
     appTitle = "spatialDLPFC, snRNA-seq",
     initial = initial,
     colormap = ExperimentColorMap(colData = list(
-        # Sample = function(n) {
-        #     cols <- paletteer::paletteer_d(
-        #         palette = "RColorBrewer::Dark2",
-        #         n = length(unique(sce$Sample))
-        #     )
-        #     cols <- as.vector(cols)
-        #     names(cols) <- levels(sce$Sample)
-        #     return(cols)
-        # },
+         Sample = function(n) {
+             cols <- paletteer::paletteer_d(
+                 palette = "RColorBrewer::Dark2",
+                 n = length(unique(sce$Sample))
+             )
+             cols <- as.vector(cols)
+             names(cols) <- levels(sce$Sample)
+             return(cols)
+         },
         cellType_layer = function(n) {
             return(cell_type_colors)
         }
