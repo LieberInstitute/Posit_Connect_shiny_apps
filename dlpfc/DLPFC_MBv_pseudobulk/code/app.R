@@ -42,14 +42,14 @@ source("initial.R", print.eval = TRUE)
 iSEE(
   spe_pseudo,
   appTitle = "pseudobulk DLPFC spatial data, MDD/BPD",
-  initial = initial,
-  colormap = ExperimentColorMap(colData = list(
-    domain = function(n) {
-      cols <- spatial.palette
-    },
-    broad.domain = function(n) {
-      cols <- spatial.palette2
-    }
+  initial = initial#,
+  #colormap = ExperimentColorMap(colData = list(
+  #  domain = function(n) {
+  #    cols <- spatial.palette
+  #  },
+  #  broad.domain = function(n) {
+  #    cols <- spatial.palette2
+  #  }
 
-  ))
+  #))
 )
