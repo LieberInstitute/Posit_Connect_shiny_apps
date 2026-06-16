@@ -41,11 +41,6 @@ source("initial.R", print.eval = TRUE)
 
 
 ecm <- ExperimentColorMap(
-    # Use 'plasma' for gene expression (assays)
-    all_continuous = list(assays = viridis::plasma),
-
-    # Use 'magma' for continuous cell metadata (colData)
-    all_continuous = list(colData = viridis::magma),
 
     # Use standard viridis for everything else
     global_continuous = viridis::viridis
