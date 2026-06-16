@@ -40,11 +40,23 @@ rownames(spe) <- rowData(spe)$gene_name
 source("initial.R", print.eval = TRUE)
 
 
+ecm <- ExperimentColorMap(
+    # Use 'plasma' for gene expression (assays)
+    all_continuous = list(assays = viridis::plasma),
+
+    # Use 'magma' for continuous cell metadata (colData)
+    all_continuous = list(colData = viridis::magma),
+
+    # Use standard viridis for everything else
+    global_continuous = viridis::viridis
+)
+
 #rse_gene <- registerAppOptions(rse_gene, color.maxlevels = length(Sample_ID)
 iSEE(
   spe,
   appTitle = "pseudobulk DLPFC spatial data, MDD/BPD",
-  initial = initial#,
+  initial = initial,
+  colormap = ecm
   #colormap = ExperimentColorMap(colData = list(
   #  domain = function(n) {
   #    cols <- spatial.palette
