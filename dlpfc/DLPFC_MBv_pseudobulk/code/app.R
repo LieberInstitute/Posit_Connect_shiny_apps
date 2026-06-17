@@ -14,6 +14,8 @@ options("golem.app.prod" = TRUE)
 options(repos = BiocManager::repositories())
 
 
+source("iSEE_custom-plot_utils.r")
+
 
 ## Load the data
 posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_MBv_pseudobulk/iSEE_pseudobulk-spe_both-annotations.rds"
@@ -33,6 +35,8 @@ if (file.exists(posit_connect_file)) {
 #lobstr::obj_size(spe_pseudo)
 
 rownames(spe) <- rowData(spe)$gene_name
+rownames(metadata(spe)[[1]]) <- metadata(spe)[[1]]$gene_name
+rownames(metadata(spe)[[2]]) <-	metadata(spe)[[2]]$gene_name
 
 # read in custom functions
 #source("iSEE_custom-plot_utils.r")
@@ -46,11 +50,19 @@ ecm <- ExperimentColorMap(
     global_continuous = viridis::viridis
 )
 
+
+
+GENERATOR <- createCustomPlot(CUSTOM_VIOLIN)
+
+custom.p1 <- GENERATOR(mode="whole-tissue", RowSelectionSource = "RowDataTable1")
+custom.p2 <- GENERATOR(mode="domain-CT")
+custom.p3 <- GENERATOR(mode="domain-SP")
+
 #rse_gene <- registerAppOptions(rse_gene, color.maxlevels = length(Sample_ID)
 iSEE(
   spe,
   appTitle = "pseudobulk DLPFC spatial data, MDD/BPD",
-  initial = initial,
+  initial=c(initial, custom.p1, custom.p2, custom.p3),
   colormap = ecm
   #colormap = ExperimentColorMap(colData = list(
   #  domain = function(n) {
