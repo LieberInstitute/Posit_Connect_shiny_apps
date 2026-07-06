@@ -5,7 +5,6 @@ library("withr")
 rsconnect::writeManifest(
     appDir = here::here("dlpfc", "DLPFC_MBv_pseudobulk", "code"),
     appFiles = c(
-        "app.R",
-        "initial.R"
+        "app.R"
     )
 )
