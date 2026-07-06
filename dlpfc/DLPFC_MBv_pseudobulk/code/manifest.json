@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_US",
-  "platform": "4.6.0",
+  "platform": "4.6.1",
   "metadata": {
     "appmode": "shiny",
     "primary_rmd": null,
@@ -904,8 +904,7 @@
         "Maintainer": "Martin Maechler <mmaechler+Matrix@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2026-03-21 14:40:03 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 23:16:29 UTC; unix",
-        "Archs": "Matrix.so.dSYM"
+        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-06-25 21:54:11 UTC; unix"
       }
     },
     "MatrixGenerics": {
@@ -2422,8 +2421,7 @@
         "Author": "Martin Maechler [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-8685-9910>),\n  Peter Rousseeuw [aut] (Fortran original, ORCID:\n    <https://orcid.org/0000-0002-3807-5353>),\n  Anja Struyf [aut] (S original),\n  Mia Hubert [aut] (S original, ORCID:\n    <https://orcid.org/0000-0001-6398-4850>),\n  Kurt Hornik [trl, ctb] (port to R; maintenance(1999-2000), ORCID:\n    <https://orcid.org/0000-0003-4198-9911>),\n  Matthias Studer [ctb],\n  Pierre Roudier [ctb],\n  Juan Gonzalez [ctb],\n  Kamil Kozlowski [ctb],\n  Erich Schubert [ctb] (fastpam options for pam(), ORCID:\n    <https://orcid.org/0000-0001-9143-4880>),\n  Keefe Murphy [ctb] (volume.ellipsoid({d >= 3}))",
         "Repository": "CRAN",
         "Date/Publication": "2026-02-05 07:40:12 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 15:45:06 UTC; unix",
-        "Archs": "cluster.so.dSYM"
+        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-06-25 21:54:10 UTC; unix"
       }
     },
     "codetools": {
@@ -2444,7 +2442,7 @@
         "Packaged": "2024-03-31 18:18:09 UTC; luke",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-31 20:10:06 UTC",
-        "Built": "R 4.6.0; ; 2026-04-25 15:40:31 UTC; unix"
+        "Built": "R 4.6.1; ; 2026-06-25 21:54:07 UTC; unix"
       }
     },
     "colorspace": {
@@ -4465,8 +4463,7 @@
         "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2026-02-09 06:10:13 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 15:42:18 UTC; unix",
-        "Archs": "lattice.so.dSYM"
+        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-06-25 21:54:07 UTC; unix"
       }
     },
     "lazyeval": {
@@ -4807,8 +4804,7 @@
         "Maintainer": "Simon Wood <simon.wood@r-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2025-11-07 16:30:02 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-26 02:21:22 UTC; unix",
-        "Archs": "mgcv.so.dSYM"
+        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-06-25 21:54:32 UTC; unix"
       }
     },
     "mime": {
@@ -4894,8 +4890,7 @@
         "Maintainer": "R Core Team <R-core@R-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2026-03-27 18:20:48 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 23:15:27 UTC; unix",
-        "Archs": "nlme.so.dSYM"
+        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-06-25 21:54:11 UTC; unix"
       }
     },
     "openssl": {
