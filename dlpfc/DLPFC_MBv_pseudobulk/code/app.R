@@ -4,6 +4,7 @@ library("here")
 library("devtools")
 library("HDF5Array")
 library("markdown")
+library("dplyr")
 library("SingleCellExperiment")
 library("iSEE")
 ## spatialLIBD uses golem
@@ -69,6 +70,6 @@ rowData(spe2) <- addDEGsToRowData(spe2)
 
 iSEE(spe2, initial=initial,
      colormap=ecm,
-     appTitle = "pseudobulk dlPFC spatial data: NTC/MDD/BD"#,
-     #tour=mytour
+     appTitle = "pseudobulk dlPFC spatial data: NTC/MDD/BD",
+     tour=mytour
      )
