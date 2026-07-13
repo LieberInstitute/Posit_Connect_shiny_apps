@@ -20,7 +20,7 @@ posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_MBv
 
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    load(posit_connect_file)
+    spe <- readRDS(posit_connect_file)
 } else {
     spe <- readRDS(here::here("dlpfc", "DLPFC_MBv_pseudobulk", "processed-data", "iSEE_pseudobulk-spe_both-annotations.rds"))
 }
