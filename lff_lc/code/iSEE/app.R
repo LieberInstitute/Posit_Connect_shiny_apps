@@ -12,7 +12,10 @@ options(repos = BiocManager::repositories())
 
 ### define a custom class with a different titling scheme
 setClass("CustomMetadataTable", contains = "ColumnDataTable")
-setMethod(".fullName", "CustomMetadataTable", function(x) "Subset data here")
+setMethod(".fullName", "CustomMetadataTable", function(x) "Subset data from this table for graphs below")
+
+setClass("CustomMetadataPlot", contains = "ColumnDataPlot")
+setMethod(".fullName", "CustomMetadataTable", function(x) "Feature Assay Plot - with data filtered based upon the table at the top")
 
 ## Load the data
 posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/pseudobulk/02b-iSEE_pbulkobj_FOR_SHARING.RDS"

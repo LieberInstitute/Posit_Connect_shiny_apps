@@ -18,7 +18,7 @@ initial[["CustomMetadataTable1"]] <- new("CustomMetadataTable", Selected = "ACHE
 # Settings for Feature assay plot 1
 ################################################################################
 
-initial[["FeatureAssayPlot1"]] <- new("FeatureAssayPlot", Assay = "logcpm", XAxis = "Column data",
+initial[["CustomMetadataPlot1"]] <- new("CustomMetadataPlot", Assay = "logcpm", XAxis = "Column data",
                                       XAxisColumnData = "APOE Carrier Type", XAxisFeatureName = "NDRG2",
                                       XAxisFeatureSource = "---", XAxisFeatureDynamicSource = FALSE,
                                       YAxisFeatureName = "HMGCS1", YAxisFeatureSource = "---",
