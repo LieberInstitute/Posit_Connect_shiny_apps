@@ -15,13 +15,13 @@ setClass("CustomMetadataTable", contains = "ColumnDataTable")
 setMethod(".fullName", "CustomMetadataTable", function(x) "Subset data here")
 
 ## Load the data
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/pseudobulk/02-iSEE_pbulkobj.RDS"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/pseudobulk/02b-iSEE_pbulkobj_FOR_SHARING.RDS"
 
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
     sce <- readRDS(posit_connect_file)
 } else {
-    sce <- readRDS(here::here("lff_lc", "processed-data", "02-iSEE_pbulkobj.RDS"))
+    sce <- readRDS(here::here("lff_lc", "processed-data", "02b-iSEE_pbulkobj_FOR_SHARING.RDS"))
 }
 
 #sce <- readRDS(posit_connect_file)
