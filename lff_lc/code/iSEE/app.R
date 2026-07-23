@@ -9,6 +9,11 @@ options("golem.app.prod" = TRUE)
 ## You need this to enable shinyapps to install Bioconductor packages
 options(repos = BiocManager::repositories())
 
+
+### define a custom class with a different titling scheme
+setClass("CustomMetadataTable", contains = "ColumnDataTable")
+setMethod(".fullName", "CustomMetadataTable", function(x) "Subset data here")
+
 ## Load the data
 posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/pseudobulk/02-iSEE_pbulkobj.RDS"
 
@@ -24,7 +29,7 @@ if (file.exists(posit_connect_file)) {
 #load initial.R setup file for iSEE apps
 #Source
 source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/lff_lc/code/iSEE/initial.R?raw=TRUE")
-
+#source("initial.R")
 
 
 # sce <- readRDS("sce_neuropil_spd.rds")

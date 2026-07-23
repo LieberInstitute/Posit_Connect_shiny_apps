@@ -4,7 +4,7 @@ initial <- list()
 # Settings for Column data table 1
 ################################################################################
 
-initial[["ColumnDataTable1"]] <- new("ColumnDataTable", Selected = "ACHE_SERT_LC_WM_V13B23_284_A1s1",
+initial[["ColumnDataTable1"]] <- new("CustomMetadataTable", Selected = "ACHE_SERT_LC_WM_V13B23_284_A1s1",
                                      Search = "", SearchColumns = c("", "", "", "", "", "", "",
                                                                     "", "", "LC", ""), HiddenColumns = character(0), VersionInfo = list(
                                                                         iSEE = structure(list(c(2L, 20L, 0L)), class = c("package_version",
