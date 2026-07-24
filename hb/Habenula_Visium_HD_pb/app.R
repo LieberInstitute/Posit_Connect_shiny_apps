@@ -27,7 +27,7 @@ cell_type_colors = c(
 
 source("initial.R")
 
-sce_pb = qs_read('sce_pb_shiny.qs2')
+sce_pb = qs_read('/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD_pb/sce_pb_shiny.qs2')
 
 #   Use symbols for rownames but fall back on ENSEMBL for duplicates
 rownames(sce_pb) <- uniquifyFeatureNames(
