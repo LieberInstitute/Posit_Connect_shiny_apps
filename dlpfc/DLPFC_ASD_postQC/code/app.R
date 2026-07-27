@@ -70,7 +70,7 @@ spe_discrete_vars = c(
     "local_outliers",
     "sample_processing",
     sprintf("BayesSpace_PCA_Harmony_k%02d", 2:28),
-    #"SpD_colors",
+    "SpD",
     "num_nuclei_within",
     "num_nuclei_intersect",
     "num_nuclei_centroid_within"
