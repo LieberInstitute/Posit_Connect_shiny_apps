@@ -19,8 +19,11 @@ Before the documentation, this tab displays the [SpatialExperiment](https://bioc
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
   - from the clustering results produced by `spaceranger` one Visium slide at a time. These clusters start with the `10x_` prefix.
   - from your own manual annotation of the spots under `ManualAnnotation`.
-  - resulting from using a shared nearest neighbors approach with 10 neighbors cut at 4 up to 28 clusters. These are `SNN_k10_k4` up to `SNN_k10_k28`.
-  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28.
+  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28. These are `BayesSpace_PCA_Harmony_k02` up to `BayesSpace_PCA_Harmony_k28`.
+  - `SpD`: layer spatial domains - k-means clustering results using k = 11 clusters.
+  - [`Spotsweeper`](https://bioconductor.org/packages/release/bioc/html/SpotSweeper.html) outliers under `local_outliers`.
+  - Number of segmented nuclei under `num_nuclei_within` (the count of nuclei totally within each spot boundary), `num_nuclei_intersect` (the count of nuclei where at least one pixel is within the spot boundary), `num_nuclei_centroid_within` (the count of nuclei whose centroid is within the spot boundary). 
+  
 * `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
 * `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab.
 * `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
