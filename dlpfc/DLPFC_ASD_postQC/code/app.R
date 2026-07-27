@@ -36,12 +36,12 @@ if (file.exists(posit_connect_file2)) {
 } else {
     modeling_results_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "modeling_results-SpD.rds"))
 }
-posit_connect_file3 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/sig_genes_k11.rds"
+posit_connect_file3 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/sig_genes_SpD.rds"
 if (file.exists(posit_connect_file3)) {
     ## Location for the https://conn1.libd.org/ server
     sig_genes_k11 <- readRDS(posit_connect_file3)
 } else {
-    sig_genes_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "sig_genes_k11.rds"))
+    sig_genes_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "sig_genes_SpD.rds"))
 }
 
 
