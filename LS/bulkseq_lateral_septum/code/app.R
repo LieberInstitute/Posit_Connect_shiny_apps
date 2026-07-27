@@ -22,7 +22,7 @@ if (file.exists(posit_connect_file)) {
 } else {
     load(here::here("LS", "bulkseq_lateral_septum", "processed-data", "rse_gene_TrkB_KO_LS_n8_wm.Rdata"))
 }
-load("/Users/ryan.miller/Documents/projects/code/Posit_Connect_shiny_apps/LS/bulkseq_lateral_septum/processed-data/rse_gene_TrkB_KO_LS_n8_wm.Rdata")
+
 
 source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/LS/bulkseq_lateral_septum/code/initial.R?raw=TRUE")
 

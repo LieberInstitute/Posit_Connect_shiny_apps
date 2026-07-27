@@ -23,6 +23,9 @@ if (file.exists(posit_connect_file)) {
     sce <- readRDS(here::here("LC", "locus-c_snRNA-seq", "processed-data", "LC_singleNucleus_SCE_EHub.rds"))
 }
 
+## Make unique gene names
+rownames(sce) <-
+    uniquifyFeatureNames(rowData(sce)$gene_id, rowData(sce)$gene_name)
 
 source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/LC/locus-c_snRNA-seq/code/initial.R?raw=TRUE")
 

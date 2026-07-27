@@ -6726,25 +6726,22 @@
   },
   "files": {
     "app.R": {
-      "checksum": "fc69a6dff516144cf27699f231b66aa9"
+      "checksum": "65c50c99d85a60a46aecf98e2d651a1f"
     },
     "www/documentation_sce_layer.md": {
-      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+      "checksum": "f12a7d3f9ae978eb0b0b9eff5b9a295f"
     },
     "www/documentation_spe.md": {
-      "checksum": "65e48e8a631c65e8c1eedef302e512ff"
+      "checksum": "d4fb6ed8151dda449fc7762ea2ac5501"
     },
     "www/favicon.ico": {
       "checksum": "a75c851e872e6572ae90c64b89966c59"
     },
     "www/footer.html": {
-      "checksum": "823a922ff7aa8dbbddd420d3af467ceb"
-    },
-    "www/README.html": {
-      "checksum": "d0f6aede5578689c9125fada04bc542c"
+      "checksum": "64704a9b365ee1a9e30819048a1a84d3"
     },
     "www/README.md": {
-      "checksum": "6537c551975e37e1058d4486b3ed4015"
+      "checksum": "a575d92b4f4d038d1e1561704c7538da"
     }
   },
   "users": null

@@ -3,43 +3,31 @@ Spot-level `spatialLIBD` documentation
 
 This document describes the spot-level portion of the shiny web application made by the  [`spatialLIBD`](https://bioconductor.org/packages/spatialLIBD) Bioconductor package. You can either find the documentation about this package through [Bioconductor](https://bioconductor.org/packages/spatialLIBD) or at the [`spatialLIBD` documentation website](http://lieberinstitute.github.io/spatialLIBD). Below we explain the options common across tabs and each of the tabs at the spot-level data.
 
-## Slides and videos
+## Documentation video
 
-You might find the following slides useful for understanding the features from this part of the web application. 
-
-<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/dde92cd6dfc04f9589770e074915658f" title="BioTuring_spatialLIBD" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 420;" data-ratio="1.3333333333333333"></iframe> 
-
-These slides were part of our 2021-04-27 webinar for BioTuring that you can watch from [their website](https://bioturing.com/sources/webinar/60752954a433e26dd8affcbd) or YouTube:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S8884Kde-1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-A recording of an earlier version of this talk is also available on YouTube.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aD2JU-vUv54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-You might also be interested in this video demonstration of `spatialLIBD` for the [LIBD rstats club](http://research.libd.org/rstatsclub/).
+You might be interested in this video demonstration of `spatialLIBD` for the [LIBD rstats club](http://research.libd.org/rstatsclub/).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LZ2kvCiRVdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Raw summary
 
-Before the documentation, this tab displays the [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment) object that contains the spot-level data. It's basically useful to know that the data has been loaded and that you can start navigating the app.
-
-Throughout the rest of this document, we'll refer to this object by the name `spe`.
+Before the documentation, this tab displays the [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment) object that contains the spot-level data. It's basically useful to know that the data has been loaded and that you can start navigating the app. Throughout the rest of this document, we'll refer to this object by the name `spe`.
 
 ## Common options
 
 * `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name.
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
-  - from the graph based clustering results produced by `spaceranger` one Visium slide at a time. These clusters are saved as `10x_graphclust`.
+  - from the clustering results produced by `spaceranger` one Visium slide at a time. These clusters start with the `10x_` prefix.
   - from your own manual annotation of the spots under `ManualAnnotation`.
+  - resulting from using a shared nearest neighbors approach with 10 neighbors cut at 4 up to 28 clusters. These are `SNN_k10_k4` up to `SNN_k10_k28`.
+  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28.
 * `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
 * `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab.
 * `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
 * `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
 * `Spot transparency level`: the transparency of the spots in the visualizations. It can be useful if the spot colors are blocking the background image.
 * `Minimum count value`: Values from the selected `continuous variable to plot` at or below this threshold will not be displayed.
-* `Gene color scale`: Whether to use the color blind friendly palette (`viridis`) or to use a custom palette that we used for our `paper`. Other options from the [viridisLite R package](https://sjmgarnier.github.io/viridisLite/reference/viridis.html#details) are also supported.
+* `Gene color scale`: Whether to use the color blind friendly palette (`viridis`) or to use a custom palette that we used for the _HumanPilot_ `paper` (Maynard, Collado-Torres, et al, 2021). Other options from the [viridisLite R package](https://sjmgarnier.github.io/viridisLite/reference/viridis.html#details) are also supported.
 * `Gene color direction`: whether colors should be ordered from darkest to lightest or in the reverse direction.
 
 We will cover the download button and upload CSV options at the end of this document.
@@ -117,4 +105,4 @@ These CSV files with your manual annotations can be re-uploaded to `spatialLIBD`
 
 In summary, the order in which you re-upload the CSV files matters as newer uploads will overwrite any duplicated spots from previous CSV files.
 
-We also recommend saving your work often in case you lose connection to `spatialLIBD`. Though you could always run this website locally by following the [Using spatialLIBD with 10x Genomics public datasets](http://research.libd.org/spatialLIBD/articles/TenX_data_download.html) vignette document/tutorial.
+We also recommend saving your work often in case you lose connection to `spatialLIBD`.
