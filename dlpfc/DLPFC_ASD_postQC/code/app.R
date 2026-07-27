@@ -57,6 +57,9 @@ colnames(colData(spe)) <- vars <- gsub("X10x", "10x", vars)
 #colnames(colData(spe))
 #getwd()
 
+## add names to colors
+names(spe_pb_k11$SpD_colors) <- spe_pb_k11$SpD
+
 spe_discrete_vars = c(
     "ManualAnnotation",
     "in_tissue",
