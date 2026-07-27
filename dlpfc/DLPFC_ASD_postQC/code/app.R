@@ -22,19 +22,19 @@ if (file.exists(posit_connect_file)) {
     spe <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "spe_shiny.rds"))
 }
 
-posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/spe_pseudobulk-BayesSpace_PCA_Harmony_k11.rds"
+posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/spe_pseudobulk-SpD.rds"
 if (file.exists(posit_connect_file1)) {
     ## Location for the https://conn1.libd.org/ server
     spe_pb_k11 <- readRDS(posit_connect_file1)
 } else {
-    spe_pb_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "spe_pseudobulk-BayesSpace_PCA_Harmony_k11.rds"))
+    spe_pb_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "spe_pseudobulk-SpD.rds"))
 }
-posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/modeling_results-BayesSpace_PCA_Harmony_k11.rds"
+posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/modeling_results-SpD.rds"
 if (file.exists(posit_connect_file2)) {
     ## Location for the https://conn1.libd.org/ server
     modeling_results_k11 <- readRDS(posit_connect_file2)
 } else {
-    modeling_results_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "modeling_results-BayesSpace_PCA_Harmony_k11.rds"))
+    modeling_results_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "modeling_results-SpD.rds"))
 }
 posit_connect_file3 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/sig_genes_k11.rds"
 if (file.exists(posit_connect_file3)) {
@@ -46,7 +46,7 @@ if (file.exists(posit_connect_file3)) {
 
 
 ## define spatialLIBD column
-spe_pb_k11$spatialLIBD <- spe_pb_k11$BayesSpace_PCA_Harmony_k11
+spe_pb_k11$spatialLIBD <- spe_pb_k11$SpD
 #spe_pb_k09$spatialLIBD <- spe_pb_k09$BayesSpace_PCA_Harmony_k09
 
 
@@ -69,8 +69,11 @@ spe_discrete_vars = c(
     "qc_anno_all",#vars[grep("^qc_", vars)],
     "local_outliers",
     "sample_processing",
-    sprintf("BayesSpace_PCA_Harmony_k%02d", 2:28) #,
-    #sprintf("BayesSpace_Markers_k%02d", c(2,11))
+    sprintf("BayesSpace_PCA_Harmony_k%02d", 2:28),
+    #"SpD_colors",
+    "num_nuclei_within",
+    "num_nuclei_intersect",
+    "num_nuclei_centroid_within"
 )
 
 spatialLIBD::run_app(
@@ -79,6 +82,7 @@ spatialLIBD::run_app(
     modeling_results = modeling_results_k11,
     sig_genes = sig_genes_k11,
     spe_discrete_vars = spe_discrete_vars,
+    title = "DLPFC ASD, Visium CytAssist, Sp11",
     spe_continuous_vars = c(
         "sum_umi",
         "sum_gene",
@@ -86,7 +90,7 @@ spatialLIBD::run_app(
         "expr_chrM_ratio",
         "edge_distance"
     ),
-    default_cluster = "BayesSpace_PCA_Harmony_k11",
+    default_cluster = "SpD",
     docs_path = "www"
 )
 
