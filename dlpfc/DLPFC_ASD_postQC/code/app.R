@@ -60,20 +60,30 @@ colnames(colData(spe)) <- vars <- gsub("X10x", "10x", vars)
 ## add names to colors
 names(spe_pb_k11$SpD_colors) <- spe_pb_k11$SpD
 
+reducedDims(spe)$`10x_pca` <- NULL
+reducedDims(spe)$`10x_tsne` <- NULL
+reducedDims(spe)$`10x_umap` <- NULL
+reducedDims(spe_pb_k11)$`10x_pca` <- NULL
+reducedDims(spe_pb_k11)$`10x_tsne` <- NULL
+reducedDims(spe_pb_k11)$`10x_umap` <- NULL
+
+
+# model_colors <- c("#FE00FA", "#1CFFCE", "#B00068", "#2ED9FF", "#E4E1E3", "#FEAF16", "#3283FE", "#90AD1C", "#F6222E", "#16FF32")
+# names(model_colors) <- levels(spe$SpD)
 spe_discrete_vars = c(
-    "ManualAnnotation",
+    #"ManualAnnotation",
     "in_tissue",
-    vars[grep("^10x_", vars)],
-    vars[grep("^scran_", vars)],
-    #"edge_spots",
-    "scran_low_lib_size_edge",
-    "scran_qc_anno",
-    "ss_qc_anno", #vars[grep("^ss_", vars)],
-    "qc_anno_all",#vars[grep("^qc_", vars)],
-    "local_outliers",
+    #vars[grep("^10x_", vars)],
+    #vars[grep("^scran_", vars)],
+    #"scran_low_lib_size_edge",
+    #"scran_qc_anno",
+    #"ss_qc_anno", #vars[grep("^ss_", vars)],
+    #"qc_anno_all",#vars[grep("^qc_", vars)],
+    #"local_outliers",
     "sample_processing",
-    sprintf("BayesSpace_PCA_Harmony_k%02d", 2:28),
     "SpD",
+    sprintf("BayesSpace_PCA_Harmony_k%02d", 2:28),
+    #"SpD_colors",
     "num_nuclei_within",
     "num_nuclei_intersect",
     "num_nuclei_centroid_within"
