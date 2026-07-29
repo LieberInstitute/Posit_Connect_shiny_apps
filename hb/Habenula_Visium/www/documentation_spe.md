@@ -1,7 +1,4 @@
-Spot-level `spatialLIBD` documentation
-======================================
-
-This document describes the spot-level portion of the shiny web application made by the  [`spatialLIBD`](https://bioconductor.org/packages/spatialLIBD) Bioconductor package. You can either find the documentation about this package through [Bioconductor](https://bioconductor.org/packages/spatialLIBD) or at the [`spatialLIBD` documentation website](http://lieberinstitute.github.io/spatialLIBD). Below we explain the options common across tabs and each of the tabs at the spot-level data.
+This document describes this Shiny web application made by the  [`spatialLIBD`](https://bioconductor.org/packages/spatialLIBD) Bioconductor package. You can either find the documentation about this package through [Bioconductor](https://bioconductor.org/packages/spatialLIBD) or at the [`spatialLIBD` documentation website](http://lieberinstitute.github.io/spatialLIBD). Below we explain the options common across tabs.
 
 ## Documentation video
 
@@ -17,12 +14,21 @@ Before the documentation, this tab displays the [SpatialExperiment](https://bioc
 
 * `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name.
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
-  - from the clustering results produced by `spaceranger` one Visium slide at a time. These clusters start with the `10x_` prefix.
-  - from your own manual annotation of the spots under `ManualAnnotation`.
-  - resulting from using a shared nearest neighbors approach with 10 neighbors cut at 4 up to 28 clusters. These are `SNN_k10_k4` up to `SNN_k10_k28`.
-  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28.
+  - `ManualAnnotation`: your own annotations of each spot.
+  - `brain_id`: the specific donor from which this sample came.
+  - `sex`: biological sex for this donor.
+  - `ethnicity`: donor ancestry: African or European for these samples.
+  - `SNN_k10_*`: clustering results from a shared-nearest-neighbor approach with 10 neighbors, ran with 4 to 28 clusters, inclusive.
+  - `BayesSpace_harmony_k*`: clustering results using BayesSpace on batch-corrected data and 2 through 28 clusters, inclusive.
 * `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
-* `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab.
+* `Continuous variable to plot`: which gene or continuous variable to visualize in the gene tabs as well as on the `clusters (interactive)` tab. The following options exist:
+  - `sum_umi`: total number of reads present in a spot.
+  - `sum_gene`: total number of genes with nonzero expression in a spot.
+  - `expr_chrM`: sum of chrM counts in a spot.
+  - `expr_chrM_ratio`: ratio of `expr_chrM` / `sum_umi`.
+  - `age`: donor age in years.
+  - `pmi`: post-mortem interval in hours.
+  - `rin`: RNA integrity number.
 * `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
 * `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
 * `Spot transparency level`: the transparency of the spots in the visualizations. It can be useful if the spot colors are blocking the background image.
@@ -66,7 +72,7 @@ spatialLIBD::vis_grid_clus()
 
 ## Gene (static)
 
-This tab is similar to `clusters (static)` but instead of displaying discrete values (like clusters), it displays continuous values such as the gene expression of a given gene or the number of cells per spot. By default, spots whose value is below or at 0 are not shown, which makes it easier for you to distinguish points with low values from those below the threshold of your interest (controlled by `minimum count value`). The points can be colored in two different color scales. You can also choose to see the background image and continuous values side to side.
+This tab is similar to `clusters (static)` but instead of displaying discrete values (like clusters), it displays continuous values such as the gene expression of a given gene or the number of bins per spot. By default, spots whose value is below or at 0 are not shown, which makes it easier for you to distinguish points with low values from those below the threshold of your interest (controlled by `minimum count value`). The points can be colored in two different color scales. You can also choose to see the background image and continuous values side to side.
 
 ```{r}
 ## Reproduce locally with
