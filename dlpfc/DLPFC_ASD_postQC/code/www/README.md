@@ -14,7 +14,7 @@ Thank you for your interest in our work!
 
 ## Study Design
 
-<img src="img/DLPFC_ASD_GA.png" width="1000px" align="left"/>
+<img src="https://research.libd.org/dlpfc_asd/img/DLPFC_ASD_GA.png" width="1000px" align="left"/>
 
 **Overview of spatial transcriptomic study design and differential expression (DE) workflow.**
 **(A)** Study design showing human dorsolateral prefrontal cortex (dLPFC) tissue sampling from 8 neurotypical control (NTC) and 8 autism spectrum disorder (ASD) donors, hematoxylin and eosin (H&E) staining, and spatial transcriptomic profiling using 10x Genomics Visium CytAssist (scale bar = 2 mm).
