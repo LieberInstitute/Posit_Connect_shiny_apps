@@ -6,29 +6,31 @@
 
 Welcome to the `DLPFC_ASD` project! 🧠
 
-In this work, we investigated spatially resolved molecular alterations in the dorsolateral prefrontal cortex (dLPFC) of individuals with autism spectrum disorder (ASD) compared with neurotypical controls (NTC) using 10x Genomics Visium CytAssist. We identified spatial domains (SpDs) to generate a layer-resolved molecular map of the dLPFC. We then performed pseudobulk differential expression analyses at both the cortex-wide and SpD laminar-specific levels. This framework enabled the characterization of baseline ASD-associated transcriptional differences together with mitochondrial-associated (MitoRatio) transcriptional responses within individual SpDs.
+In this work, we investigated spatially resolved molecular alterations in the dorsolateral prefrontal cortex (dLPFC) of individuals with autism spectrum disorder (ASD) compared with neurotypical controls (NTC) using 10x Genomics Visium CytAssist. We identified spatial domains (SpDs) to generate a layer-resolved molecular map of the dLPFC. We then performed pseudobulk differential expression analyses at both the cortex-wide and SpD laminar-specific levels. This framework enabled the characterization of baseline ASD-NTC differences across the cortex together with SpD-specific alterations in gene expression associated with mitochondrial ratio (MitoRatio) in ASD.
 
-This work is being was performed by members of [Leonardo
-Collado-Torres](http://lcolladotor.github.io/), [Kristen R.
-Maynard](https://www.libd.org/team/kristen-maynard-phd/), [Stephanie C. Page](https://www.libd.org/team/stephanie-cerceo-page-phd/) and [Keri
-Martinowich](https://www.libd.org/team/keri-martinowich-phd/), teams at the
-[Lieber Institute for Brain Development](libd.org). 
+This work is being was performed by members of [Leonardo Collado-Torres](http://lcolladotor.github.io/), [Kristen R. Maynard](https://www.libd.org/team/kristen-maynard-phd/), [Stephanie C. Page](https://www.libd.org/team/stephanie-cerceo-page-phd/) and [Keri Martinowich](https://www.libd.org/team/keri-martinowich-phd/), teams at the [Lieber Institute for Brain Development](libd.org). 
 
 Thank you for your interest in our work!
 
 ## Study Design
 
-<img src="https://research.libd.org/dlpfc_asd/img/DLPFC_ASD_GA.png" width="1000px" align="left"/>
+<img src="img/DLPFC_ASD_GA.png" width="1000px" align="left"/>
 
-Overview of the study design and spatial transcriptomic analysis workflow. Human dLPFC tissue from 8 ASD and 8 NTC donors was profiled using Visium v2 technology. The schematic summarizes tissue processing, SpD annotation, pseudobulk aggregation, and the two differential expression frameworks used for downstream analyses.
+**Overview of spatial transcriptomic study design and differential expression (DE) workflow.**
+**(A)** Study design showing human dorsolateral prefrontal cortex (dLPFC) tissue sampling from 8 neurotypical control (NTC) and 8 autism spectrum disorder (ASD) donors, hematoxylin and eosin (H&E) staining, and spatial transcriptomic profiling using 10x Genomics Visium CytAssist (scale bar = 2 mm).
+**(B)** Representative granular cortex region showing annotated laminar spatial domains (SpDs).
+**(C)** Spatial registration of the study dataset to a manually annotated dLPFC spatial transcriptomic reference dataset from [Maynard.*et*. *al*](https://doi.org/10.1038/s41593-020-00787-0), visualized as a registration heatmap.
+**(D)** Mean mitochondrial ratio (MitoRatio) across SpDs, stratified by diagnosis. Points represent the mean MitoRatio across donors within each diagnosis group, and shaded ribbons indicate standard error of the mean (SEM).
+**(E)** Schematic of the pseudobulk DE framework, where spatial transcriptomic counts were aggregated by donor within each SpD. The layer adjusted model (LAM) was used to identify baseline ASD–NTC differences across the cortex.
+**(F)** Schematic of the layer specific interaction model (LSIM) pseudobulk DE framework used to test whether the relationship between gene expression and increasing MitoRatio differed between ASD and NTC samples. Representative regression plots display covariate-adjusted gene expression values against MitoRatio with separate fitted regression lines for ASD and NTC samples.
 
 ## Interactive Websites
 
 We provide the following interactive websites to explore the DLPFC ASD data:
 
--   🔭 [DLPFC_ASD](https://interactive.libd.org/DLPFC_ASD_postQC/): Visium v2 data for 16 samples post-QC w/ clustering and modeling results.
+-   🔭 [DLPFC_ASD](https://interactive.libd.org/DLPFC_ASD/): Visium v2 data for 16 samples post-QC w/ clustering and modeling results.
 
--   🔭 [DLPFC_ASD_Pre_QC](https://libd.shinyapps.io/DLPFC_ASD_raw_final/): Visium v2 data for 16 samples pre-QC drops (including out-tissue spots).
+-   🔭 [DLPFC_ASD_PreQC](https://interactive.libd.org/DLPFC_ASD_preQC/): Visium v2 data for 16 samples pre-QC drops (including out-tissue spots).
 
 -   👀 [DLPFC_ASD_pseudobulk](https://interactive.libd.org/DLPFC_ASD_pesudobulk/): Visium v2 pseudobulked data used for differential expression(DE) analysis.
 
@@ -40,12 +42,8 @@ All of these interactive websites are powered by open source software, namely:
 ### Local `spatialLIBD` apps
 
 If you are interested in running the
-[`spatialLIBD`](https://doi.org/10.1186/s12864-022-08601-w) applications
-locally, you can do so thanks to the
-[`spatialLIBD::run_app()`](http://research.libd.org/spatialLIBD/reference/run_app.html),
-which you can also use with your own data as shown in our [vignette for
-publicly available datasets provided by 10x
-Genomics](http://bioconductor.org/packages/release/data/experiment/vignettes/spatialLIBD/inst/doc/TenX_data_download.html).
+[`spatialLIBD`](https://doi.org/10.1186/s12864-022-08601-w) applications locally, you can do so thanks to the
+[`spatialLIBD::run_app()`](http://research.libd.org/spatialLIBD/reference/run_app.html), which you can also use with your own data as shown in our [vignette for publicly available datasets provided by 10x Genomics](http://bioconductor.org/packages/release/data/experiment/vignettes/spatialLIBD/inst/doc/TenX_data_download.html).
 
 ``` 
 ## Run this web application locally with:
@@ -145,4 +143,3 @@ sce <- HDF5Array::loadHDF5SummarizedExperiment(here::here("processed-data", "04_
 ## Internal
 
 -   JHPCE location: `/dcs05/lieber/lcolladotor/DLPFC_ASD_LIBD4100/dlpfc_asd`.
-
