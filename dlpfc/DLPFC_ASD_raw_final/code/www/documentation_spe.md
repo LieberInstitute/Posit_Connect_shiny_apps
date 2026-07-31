@@ -19,9 +19,9 @@ Before the documentation, this tab displays the [SpatialExperiment](https://bioc
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
   - from the clustering results produced by `spaceranger` one Visium slide at a time. These clusters start with the `10x_` prefix.
   - from your own manual annotation of the spots under `ManualAnnotation`.
-  - resulting from using a shared nearest neighbors approach with 10 neighbors cut at 4 up to 28 clusters. These are `SNN_k10_k4` up to `SNN_k10_k28`.
-  - [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28.
-* `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
+  - [`Spotsweeper`](https://bioconductor.org/packages/release/bioc/html/SpotSweeper.html) outliers under `ss_qc_anno`.
+  - [scran](https://f1000research.com/articles/5-2122/v2) identified outlier spots start with the `scran_` prefix.
+  - all the quality control categories that were used to drop spots before downstream analysis under `qc_anno_all`.
 * `Continuous variable to plot`: which gene or continuous variable (such as the cell count, the ratio of the mitochondrial chromosome expression) to visualize in the gene tabs as well as on the `clusters (interactive)` tab.
 * `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
 * `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
