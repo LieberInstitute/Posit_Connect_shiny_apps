@@ -56,6 +56,7 @@ spatialLIBD::run_app(
         "expr_chrM_ratio" # ,
         # "edge_distance"
     ),
+    title = "DLPFC ASD, Visium v2, PreQC",
     default_cluster = "10x_graphclust",
     docs_path = "www"
 )
