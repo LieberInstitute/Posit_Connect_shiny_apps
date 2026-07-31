@@ -5,6 +5,7 @@ library(qs2)
 
 #   For interactive testing at JHPCE
 # setwd(here('code', '12_apps_and_sharing', 'shiny_HD_app'))
+setwd('/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD')
 
 discrete_vars = c(
     'ManualAnnotation', 'ficture_cluster', 'banksy_cluster', 'cell_type',
