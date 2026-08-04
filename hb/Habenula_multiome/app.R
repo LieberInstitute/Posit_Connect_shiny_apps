@@ -11,6 +11,7 @@ library(DT)
 
 # For testing at JHPCE
 # setwd(here::here("code", "16_shiny_app"))
+setwd('/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_multiome')
 
 source("app_core.R")
 
