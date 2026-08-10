@@ -8,6 +8,7 @@ library("markdown")
 library(data.table)
 library(ggplot2)
 library(shiny)
+library(R.utils)
 ## spatialLIBD uses golem
 options("golem.app.prod" = TRUE)
 
