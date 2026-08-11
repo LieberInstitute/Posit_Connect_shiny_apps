@@ -26,7 +26,6 @@ if (file.exists(posit_connect_file)) {
     dt <- fread(here::here("lff_lc", "processed-data", "03-Simple_pbulk_expression_viewerdata.txt.gz"))
 }
 
-
 ## specify genes available, specify metadata columns available
 metadata_cols <- c("APOE.Carrier.Type","Domain","Ancestry","APOE.Genotype","Sex","Age","Est.Pct.AA.Genomic.Ancestry","sample_id","brnum","tissueNMscore")
 
@@ -144,7 +143,9 @@ server <- function(input, output, session) {
     })
 
     # Generate the requested plot
+    # Generate the requested plot
     output$gene_plot <- renderPlot({
+        # p_dt only updates when the 'Generate Plot' button is clicked
         p_dt <- plot_data()
 
         if (nrow(p_dt) == 0) {
@@ -153,74 +154,79 @@ server <- function(input, output, session) {
             return()
         }
 
-        # Calculate title values
-        n_plotted <- uniqueN(p_dt$sample_id)
-        n_dropped <- attr(p_dt, "nDroppedNMsamps")
+        # isolate() prevents premature re-rendering when UI dropdowns are changed
+        # before the button is clicked.
+        isolate({
+            # 1. Extract the plotted gene directly from the filtered data for the title
+            plotted_gene <- p_dt$gene_name[1]
 
-        # Construct the plot title
-        base_title <- paste0("Expression of ", input$gene, " (", n_plotted, " tissue sections")
-        if (!is.na(n_dropped)) {
-            plot_title <- paste0(base_title, ";\nnot showing ", n_dropped, " tissue sections with zero/unreliable NM score)")
-        } else {
-            plot_title <- paste0(base_title, ")")
-        }
+            # Calculate title values
+            n_plotted <- uniqueN(p_dt$sample_id)
+            n_dropped <- attr(p_dt, "nDroppedNMsamps")
 
-        # Check if the chosen x-axis variable is continuous
-        is_continuous <- is.numeric(p_dt[[input$xaxis]])
-
-        if (is_continuous) {
-            ### SCATTER PLOT LOGIC (Continuous X) ###
-
-            # Build base aesthetics.
-            # Passing color here ensures geom_smooth groups the trendlines by the color variable.
-            base_aes <- list(x = rlang::sym(input$xaxis), y = rlang::sym("expression"))
-            if (input$color != "None") base_aes$color <- rlang::sym(input$color)
-
-            p <- ggplot(p_dt, do.call(aes, base_aes))
-
-            # Add points (mapping shape locally if required)
-            if (input$shape != "None") {
-                p <- p + geom_point(aes(shape = !!rlang::sym(input$shape)), alpha = 0.8)
+            # Construct the plot title
+            base_title <- paste0("Expression of ", plotted_gene, " (", n_plotted, " tissue sections")
+            if (!is.na(n_dropped)) {
+                plot_title <- paste0(base_title, "; not showing ", n_dropped, " tissue sections with zero/unreliable NM score)")
             } else {
-                p <- p + geom_point(alpha = 0.8)
+                plot_title <- paste0(base_title, ")")
             }
 
-            # Add trendline if checkbox is checked
-            if (!is.null(input$show_trendline) && input$show_trendline) {
-                # Using lm for a standard linear trendline
-                p <- p + geom_smooth(method = "lm", se = FALSE)
-            }
+            # Check if the chosen x-axis variable is continuous
+            is_continuous <- is.numeric(p_dt[[input$xaxis]])
 
-        } else {
-            ### VIOLIN PLOT LOGIC (Categorical X) ###
+            if (is_continuous) {
+                ### SCATTER PLOT LOGIC (Continuous X) ###
 
-            # Dynamically build aesthetic mappings for individual points
-            point_aes <- list()
-            if (input$color != "None") point_aes$color <- rlang::sym(input$color)
-            if (input$shape != "None") point_aes$shape <- rlang::sym(input$shape)
+                # Build base aesthetics
+                base_aes <- list(x = rlang::sym(input$xaxis), y = rlang::sym("expression"))
+                if (input$color != "None") base_aes$color <- rlang::sym(input$color)
 
-            # Base violin plot with no fill
-            p <- ggplot(p_dt, aes(x = .data[[input$xaxis]], y = expression)) +
-                geom_violin(fill = NA, trim = FALSE, color = "black")
+                p <- ggplot(p_dt, do.call(aes, base_aes))
 
-            # Conditionally add jittered points based on aesthetic mapping choices
-            if (length(point_aes) > 0) {
-                p <- p + geom_jitter(do.call(aes, point_aes), width = 0.2, height = 0, alpha = 0.8)
+                # Add points (mapping shape locally if required)
+                if (input$shape != "None") {
+                    p <- p + geom_point(aes(shape = !!rlang::sym(input$shape)), alpha = 0.8)
+                } else {
+                    p <- p + geom_point(alpha = 0.8)
+                }
+
+                # Add trendline if checkbox is checked
+                if (!is.null(input$show_trendline) && input$show_trendline) {
+                    p <- p + geom_smooth(method = "lm", se = FALSE)
+                }
+
             } else {
-                p <- p + geom_jitter(width = 0.2, height = 0, alpha = 0.8)
+                ### VIOLIN PLOT LOGIC (Categorical X) ###
+
+                # Dynamically build aesthetic mappings for individual points
+                point_aes <- list()
+                if (input$color != "None") point_aes$color <- rlang::sym(input$color)
+                if (input$shape != "None") point_aes$shape <- rlang::sym(input$shape)
+
+                # Base violin plot with no fill
+                p <- ggplot(p_dt, aes(x = .data[[input$xaxis]], y = expression)) +
+                    geom_violin(fill = NA, trim = FALSE, color = "black")
+
+                # Conditionally add jittered points based on aesthetic mapping choices
+                if (length(point_aes) > 0) {
+                    p <- p + geom_jitter(do.call(aes, point_aes), width = 0.2, height = 0, alpha = 0.8)
+                } else {
+                    p <- p + geom_jitter(width = 0.2, height = 0, alpha = 0.8)
+                }
             }
-        }
 
-        # Conditionally apply faceting (applies to both plot types)
-        if (input$facet != "None") {
-            p <- p + facet_wrap(as.formula(paste("~", input$facet)))
-        }
+            # Conditionally apply faceting (applies to both plot types)
+            if (input$facet != "None") {
+                p <- p + facet_wrap(as.formula(paste("~", input$facet)))
+            }
 
-        # Final plot rendering with simple formatting
-        p + theme_classic() +
-            labs(title = plot_title,
-                 x = input$xaxis,
-                 y = "Expression")
+            # Final plot rendering with simple formatting
+            p + theme_classic() +
+                labs(title = plot_title,
+                     x = input$xaxis,
+                     y = "Expression")
+        })
     })
 }
 
