@@ -1,0 +1,234 @@
+
+#This will be the app file for this project
+library("spatialLIBD")
+library("here")
+library("devtools")
+library("HDF5Array")
+library("markdown")
+library(data.table)
+library(ggplot2)
+library(shiny)
+library(R.utils)
+## spatialLIBD uses golem
+options("golem.app.prod" = TRUE)
+
+## You need this to enable shinyapps to install Bioconductor packages
+options(repos = BiocManager::repositories())
+
+
+
+## Load the data
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/lff_LC/pbulk_expression/03-Simple_pbulk_expression_viewerdata.txt.gz"
+if (file.exists(posit_connect_file)) {
+    ## Location for the https://conn1.libd.org/ server
+    dt <- fread(posit_connect_file)
+} else {
+    dt <- fread(here::here("lff_lc", "processed-data", "03-Simple_pbulk_expression_viewerdata.txt.gz"))
+}
+
+## specify genes available, specify metadata columns available
+metadata_cols <- c("APOE.Carrier.Type","Domain","Ancestry","APOE.Genotype","Sex","Age","Est.Pct.AA.Genomic.Ancestry","sample_id","brnum","tissueNMscore")
+
+## dynamic determination of which cols are categorical
+is_categorical <- sapply(dt[, ..metadata_cols], function(x) is.character(x) | is.factor(x) | is.logical(x))
+cat_metadata_cols <- names(is_categorical)[is_categorical]
+
+all_genes <- unique(dt$gene_name)
+
+ui <- fluidPage(
+    titlePanel("Gene Expression Viewer"),
+
+    sidebarLayout(
+        sidebarPanel(
+            # selectizeInput with JS to immediately clear the selection upon clicking/focusing
+            selectizeInput("gene", "Gene (required):",
+                           choices = all_genes,
+                           options = list(
+                               onInitialize = I('function() { this.on("focus", function() { this.clear(); }); }')
+                           )),
+
+            selectInput("xaxis", "X axis variable (required):", choices = metadata_cols),
+
+            # Conditional UI element that will only render if the x-axis variable is numeric
+            uiOutput("trendline_ui"),
+
+            selectInput("shape", "Shape points by:", choices = c("None", cat_metadata_cols)),
+            selectInput("color", "Color points by (and trendline points by, if x is continuous):", choices = c("None", metadata_cols)),
+            selectInput("facet", "Faceting variable:", choices = c("None", cat_metadata_cols)),
+
+            hr(),
+
+            selectInput("filter_var1", "Filtering variable 1:", choices = c("None", cat_metadata_cols)),
+            uiOutput("filter_levels1_ui"),
+
+            selectInput("filter_var2", "Filtering variable 2:", choices = c("None", cat_metadata_cols)),
+            uiOutput("filter_levels2_ui"),
+
+            hr(),
+            actionButton("plot_btn", "Generate Plot")
+        ),
+
+        mainPanel(
+            plotOutput("gene_plot")
+        )
+    )
+)
+
+# 3. Define the Server logic
+server <- function(input, output, session) {
+
+    # Dynamic UI to toggle the trendline if the x-axis is continuous
+    output$trendline_ui <- renderUI({
+        req(input$xaxis)
+        if (is.numeric(dt[[input$xaxis]])) {
+            checkboxInput("show_trendline", "Show Trendline", value = TRUE)
+        }
+    })
+
+    # Dynamic UI for Filter 1 levels (using multiple selection)
+    # Dynamic UI for Filter 1 levels
+    output$filter_levels1_ui <- renderUI({
+        req(input$filter_var1 != "None")
+        levels_choices <- unique(dt[[input$filter_var1]])
+        checkboxGroupInput("filter_levels1",
+                           paste("Select levels for", input$filter_var1, ":"),
+                           choices = levels_choices,
+                           selected = levels_choices)
+    })
+
+    # Dynamic UI for Filter 2 levels
+    output$filter_levels2_ui <- renderUI({
+        req(input$filter_var2 != "None")
+        levels_choices <- unique(dt[[input$filter_var2]])
+
+        checkboxGroupInput("filter_levels2",
+                           paste("Select levels for", input$filter_var2, ":"),
+                           choices = levels_choices,
+                           selected = levels_choices)
+    })
+
+
+    # Reactive event triggered by the Plot button
+    plot_data <- eventReactive(input$plot_btn, {
+        req(input$gene, input$gene != "") # Ensure a gene is actually selected
+
+        # Subset data.table by the required gene name
+        sub_dt <- dt[gene_name == input$gene]
+
+        # Evaluate Filter 1
+        if (input$filter_var1 != "None" && !is.null(input$filter_levels1)) {
+            sub_dt <- sub_dt[get(input$filter_var1) %in% input$filter_levels1]
+        }
+
+        # Evaluate Filter 2
+        if (input$filter_var2 != "None" && !is.null(input$filter_levels2)) {
+            sub_dt <- sub_dt[get(input$filter_var2) %in% input$filter_levels2]
+        }
+
+        # Use-case specific filter for tissueNMscore--exclude tissue sections without
+        # NM if we're going to plot by NM.
+        selected_aes_vars <- c(input$xaxis, input$shape, input$color, input$facet)
+        nDroppedNMsamps <- NA
+
+        if ("tissueNMscore" %in% selected_aes_vars) {
+            n_samps_before <- uniqueN(sub_dt$sample_id)
+            sub_dt <- sub_dt[tissueNMscore >= 0.02]
+            n_samps_after <- uniqueN(sub_dt$sample_id)
+            nDroppedNMsamps <- n_samps_before - n_samps_after
+        }
+        # Store dropped sample count as an attribute for the rendering step
+        attr(sub_dt, "nDroppedNMsamps") <- nDroppedNMsamps
+
+        return(sub_dt)
+    })
+
+    # Generate the requested plot
+    # Generate the requested plot
+    output$gene_plot <- renderPlot({
+        # p_dt only updates when the 'Generate Plot' button is clicked
+        p_dt <- plot_data()
+
+        if (nrow(p_dt) == 0) {
+            plot.new()
+            title("No data available for the selected filters.")
+            return()
+        }
+
+        # isolate() prevents premature re-rendering when UI dropdowns are changed
+        # before the button is clicked.
+        isolate({
+            # 1. Extract the plotted gene directly from the filtered data for the title
+            plotted_gene <- p_dt$gene_name[1]
+
+            # Calculate title values
+            n_plotted <- uniqueN(p_dt$sample_id)
+            n_dropped <- attr(p_dt, "nDroppedNMsamps")
+
+            # Construct the plot title
+            base_title <- paste0("Expression of ", plotted_gene, " (", n_plotted, " tissue sections")
+            if (!is.na(n_dropped)) {
+                plot_title <- paste0(base_title, "; not showing ", n_dropped, " tissue sections with zero/unreliable NM score)")
+            } else {
+                plot_title <- paste0(base_title, ")")
+            }
+
+            # Check if the chosen x-axis variable is continuous
+            is_continuous <- is.numeric(p_dt[[input$xaxis]])
+
+            if (is_continuous) {
+                ### SCATTER PLOT LOGIC (Continuous X) ###
+
+                # Build base aesthetics
+                base_aes <- list(x = rlang::sym(input$xaxis), y = rlang::sym("expression"))
+                if (input$color != "None") base_aes$color <- rlang::sym(input$color)
+
+                p <- ggplot(p_dt, do.call(aes, base_aes))
+
+                # Add points (mapping shape locally if required)
+                if (input$shape != "None") {
+                    p <- p + geom_point(aes(shape = !!rlang::sym(input$shape)), alpha = 0.8)
+                } else {
+                    p <- p + geom_point(alpha = 0.8)
+                }
+
+                # Add trendline if checkbox is checked
+                if (!is.null(input$show_trendline) && input$show_trendline) {
+                    p <- p + geom_smooth(method = "lm", se = FALSE)
+                }
+
+            } else {
+                ### VIOLIN PLOT LOGIC (Categorical X) ###
+
+                # Dynamically build aesthetic mappings for individual points
+                point_aes <- list()
+                if (input$color != "None") point_aes$color <- rlang::sym(input$color)
+                if (input$shape != "None") point_aes$shape <- rlang::sym(input$shape)
+
+                # Base violin plot with no fill
+                p <- ggplot(p_dt, aes(x = .data[[input$xaxis]], y = expression)) +
+                    geom_violin(fill = NA, trim = FALSE, color = "black")
+
+                # Conditionally add jittered points based on aesthetic mapping choices
+                if (length(point_aes) > 0) {
+                    p <- p + geom_jitter(do.call(aes, point_aes), width = 0.2, height = 0, alpha = 0.8)
+                } else {
+                    p <- p + geom_jitter(width = 0.2, height = 0, alpha = 0.8)
+                }
+            }
+
+            # Conditionally apply faceting (applies to both plot types)
+            if (input$facet != "None") {
+                p <- p + facet_wrap(as.formula(paste("~", input$facet)))
+            }
+
+            # Final plot rendering with simple formatting
+            p + theme_classic() +
+                labs(title = plot_title,
+                     x = input$xaxis,
+                     y = "Expression")
+        })
+    })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
