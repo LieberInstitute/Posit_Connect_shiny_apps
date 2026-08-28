@@ -3,6 +3,7 @@ library(markdown)
 library(here)
 library(HDF5Array)
 library(SpatialFeatureExperiment)
+library(fftwtools)
 #library(qs2)
 
 #   For interactive testing at JHPCE
