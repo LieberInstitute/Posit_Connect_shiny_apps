@@ -8,16 +8,16 @@ library(SpatialFeatureExperiment)
 #   For interactive testing at JHPCE
 # setwd(here('code', '12_apps_and_sharing', 'shiny_HD_app'))
 
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/nac/NAC_AP/VisiumHD_sfe"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/nac/NAC_AP/VisiumHD_spe"
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
     spe <- HDF5Array::loadHDF5SummarizedExperiment(posit_connect_file)
 } else {
-    spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("nac", "NAC_AP", "processed-data", "VisiumHD_sfe"))
+    spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("nac", "NAC_AP", "processed-data", "VisiumHD_spe"))
 }
 
 
-spe = as(spe,"SpatialExperiment")
+#spe = as(spe,"SpatialExperiment")
 
 ## spatialLIBD uses golem
 options("golem.app.prod" = TRUE)
@@ -27,7 +27,7 @@ options(repos = BiocManager::repositories())
 
 
 discrete_vars = c(
-    'Sample', 'Barcode', 'sample_id', 'labels',
+    'Sample', 'Barcode', 'sample_id', 'labels', "log10_sum",
     'pruned.labels', 'snRNA_label', 'Spatial_Domain', 'spatial_0.4'
 )
 continuous_vars = c(
@@ -43,7 +43,7 @@ colnames(rowData(spe))[colnames(rowData(spe)) == "Symbol"] <- "gene_name"
 rowData(spe)$gene_search <- paste0(rowData(spe)$gene_name, "; ", rowData(spe)$gene_id)
 #rowData(spe)$gene_search <- rowData(spe)$gene_id
 
-spe = as(spe,"SpatialExperiment")
+#spe = as(spe,"SpatialExperiment")
 
 colData(spe)$ManualAnnotation <- "NA"
 colData(spe)$key <- rownames(colData(spe))
@@ -51,21 +51,16 @@ colData(spe)$key <- rownames(colData(spe))
 
 rownames(spe) <- rowData(spe)$gene_id
 
-vars <- colnames(colData(spe))
+
 
 colnames(spatialCoords(spe))[colnames(spatialCoords(spe)) == "X"] <- "pxl_col_in_fullres"
 colnames(spatialCoords(spe))[colnames(spatialCoords(spe)) == "Y"] <- "pxl_row_in_fullres"
+spe$array_row = as.integer(seq(0, 3000, length.out = ncol(spe)))
+spe$array_col = as.integer(seq(0, 3000, length.out = ncol(spe)))
+spe$exclude_overlapping = FALSE
 
-#vis_gene(spe,geneid = "ENSG00000187634")
+vars <- colnames(colData(spe))
 
-#   Load objects
-#spe = qs_read('spe_shiny.qs2')
-#modeling_results = qs_read('modeling_results.qs2')
-#sce_pb = qs_read('sce_pb_shiny.qs2')
-#sig_genes = qs_read('sig_genes_shiny.qs2')
-
-#stopifnot(all(all_vars_pb %in% colnames(colData(sce_pb))))
-#colData(sce_pb) = colData(sce_pb)[, all_vars_pb]
 
 ## Deploy the website
 run_app(
@@ -77,16 +72,7 @@ run_app(
     spe_discrete_vars = discrete_vars,
     spe_continuous_vars = continuous_vars,
     default_cluster = "Spatial_Domain",
+    is_stitched = TRUE,
     docs_path = 'www'
 )
 
-#SpatialExperiment::readImgData
-#SpatialExperiment::readImgData(spe)
-
-#spe1 <- readRDS(here::here("nac", "NAC_AP", "processed-data", "spe_norm.Rds"))
-
-
-#("gene_id", "gene_name", "gene_search")
-#"ID"     "Symbol"
-#rowData(spe1)
-#colnames(rowData(spe))
