@@ -4,6 +4,7 @@ library(qs2)
 
 #   For interactive testing at JHPCE
 # setwd(here::here('code', '04_shiny'))
+setwd('/r_data/lcollado/Posit_Connect_shiny_apps/illumina_early_access')
 
 discrete_vars = c('^ManualAnnotation$', '^banksy')
 continuous_vars = c(
