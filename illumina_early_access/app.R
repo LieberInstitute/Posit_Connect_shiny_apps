@@ -4,11 +4,20 @@ library(qs2)
 
 #   For interactive testing at JHPCE
 # setwd(here::here('code', '04_shiny'))
-setwd('/r_data/lcollado/Posit_Connect_shiny_apps/illumina_early_access')
 
 discrete_vars = c('^ManualAnnotation$', '^banksy')
 continuous_vars = c(
     'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio'
+)
+# Polychrome::glasbey.colors(28)[2:28] but without the import
+cluster_colors = c(
+    `1` = "#0000FF", `2` = "#FF0000", `3` = "#00FF00", `4` = "#000033", 
+    `5` = "#FF00B6", `6` = "#005300", `7` = "#FFD300", `8` = "#009FFF", 
+    `9` = "#9A4D42", `10` = "#00FFBE", `11` = "#783FC1", `12` = "#1F9698", 
+    `13` = "#FFACFD", `14` = "#B1CC71", `15` = "#F1085C", `16` = "#FE8F42", 
+    `17` = "#DD00FF", `18` = "#201A01", `19` = "#720055", `20` = "#766C95", 
+    `21` = "#02AD24", `22` = "#C8FF00", `23` = "#886C00", `24` = "#FFB79F", 
+    `25` = "#858567", `26` = "#A10300", `27` = "#14F9FF"
 )
 
 ## spatialLIBD uses golem
@@ -27,6 +36,10 @@ spe_pb$banksy = factor(
     levels = as.character(sort(unique(as.numeric(spe_pb$banksy))))
 )
 spe_pb$banksy_lam0_2_res2 = spe_pb$banksy
+spe_pb$banksy = NULL
+
+spe_pb$banksy_lam0_2_res2_colors = cluster_colors[spe_pb$banksy_lam0_2_res2]
+spe$banksy_lam0_2_res2_colors = cluster_colors[spe$banksy_lam0_2_res2]
 
 #   Fake registration stats just to get the app to run. The idea is that there's
 #   no clean way to compute pairwise or ANOVA modeling stats with one sample (at
