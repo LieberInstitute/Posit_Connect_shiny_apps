@@ -7,12 +7,12 @@ library("here")
 #    "~/Downloads/spatial_md_thalamus/spatial_app/spe_clustered")
 
 ## Load the data
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/final_spe_clustered"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/VisiumHD_sfe"
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
     spe <- HDF5Array::loadHDF5SummarizedExperiment(posit_connect_file)
 } else {
-    spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("thalamus", "MD_thalamus", "processed-data", "final_spe_clustered"))
+    spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("thalamus", "NAC_AP", "processed-data", "VisiumHD_sfe"))
 }
 
 # CODE TO WRAP THE SPE WITH IN-TISSUE AND OUT-TISSUE SPOTS NONE FILTERED
