@@ -15,7 +15,7 @@ Before the documentation, this tab displays the [SpatialExperiment](https://bioc
 * `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name.
 * `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
   - `ManualAnnotation`: your own annotations of each cell.
-  - `Leiden`: Leiden clusters computed in the Illumina DRAGEN pipeline
+  - `banksy_lam[lambda]_res[resolution]`: Banksy clusters computed using a particular lambda value and resolution. Lambda `0_2` and `0_8` represent cell types and spatial domains, respectively. Higher Leiden resolutions tend to yield more clusters.
 * `Reduced dimensions`: which reduced dimension to visualize on the `clusters (interactive)` tab. Only the first two dimensions will be shown.
 * `Continuous variable to plot`: which gene or continuous variable to visualize in the gene tabs as well as on the `clusters (interactive)` tab. The following options exist:
   - `sum_umi`: total number of reads present in a cell.
