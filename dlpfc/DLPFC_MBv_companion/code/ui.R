@@ -4,6 +4,7 @@ suppressPackageStartupMessages({
   library(markdown)
   library(SpatialExperiment)
   library("here")
+  library("ggplot2")
 })
 set.seed(1234)
 
