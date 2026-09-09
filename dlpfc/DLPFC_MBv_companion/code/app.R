@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
     library("here")
     library("ggplot2")
     library(ggbeeswarm)
+    library(rstatix)
 })
 set.seed(1234)
 
