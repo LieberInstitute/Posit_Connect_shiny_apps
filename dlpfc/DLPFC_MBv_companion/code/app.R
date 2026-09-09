@@ -5,6 +5,7 @@ suppressPackageStartupMessages({
     library(SpatialExperiment)
     library("here")
     library("ggplot2")
+    library(ggbeeswarm)
 })
 set.seed(1234)
 
