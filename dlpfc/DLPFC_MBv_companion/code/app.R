@@ -5,8 +5,8 @@ suppressPackageStartupMessages({
     library(SpatialExperiment)
     library("here")
     library("ggplot2")
-    library(ggbeeswarm)
-    library(rstatix)
+    library(ggpubr)
+    library(gridExtra)
 })
 set.seed(1234)
 

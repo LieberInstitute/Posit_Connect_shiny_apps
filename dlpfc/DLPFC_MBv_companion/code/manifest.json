@@ -1083,30 +1083,6 @@
         "Archs": "base64enc.so.dSYM"
       }
     },
-    "beeswarm": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "beeswarm",
-        "Title": "The Bee Swarm Plot, an Alternative to Stripchart",
-        "Description": "The bee swarm plot is a one-dimensional scatter plot like\n    \"stripchart\", but with closely-packed, non-overlapping points. ",
-        "Version": "0.4.0",
-        "Date": "2021-05-07",
-        "Authors@R": "c(\n    person(\"Aron\", \"Eklund\", , \"aroneklund@gmail.com\",\n           role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-0861-1001\")),\n    person(\"James\", \"Trimble\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-7282-8745\"))\n    )",
-        "Imports": "stats, graphics, grDevices, utils",
-        "NeedsCompilation": "yes",
-        "License": "Artistic-2.0",
-        "URL": "https://github.com/aroneklund/beeswarm",
-        "BugReports": "https://github.com/aroneklund/beeswarm/issues",
-        "Packaged": "2021-05-07 08:52:45 UTC; aron",
-        "Author": "Aron Eklund [aut, cre] (<https://orcid.org/0000-0003-0861-1001>),\n  James Trimble [aut] (<https://orcid.org/0000-0001-7282-8745>)",
-        "Maintainer": "Aron Eklund <aroneklund@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2021-06-01 21:40:02 UTC",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 16:57:36 UTC; unix",
-        "Archs": "beeswarm.so.dSYM"
-      }
-    },
     "bit": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1925,34 +1901,6 @@
         "Built": "R 4.6.0; ; 2026-04-25 15:40:57 UTC; unix"
       }
     },
-    "ggbeeswarm": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "ggbeeswarm",
-        "Type": "Package",
-        "Title": "Categorical Scatter (Violin Point) Plots",
-        "Version": "0.7.3",
-        "Date": "2025-11-28",
-        "Authors@R": "c(\n    person(given=\"Erik\", family=\"Clarke\", role=c(\"aut\", \"cre\"), email=\"erikclarke@gmail.com\"),\n    person(given=\"Scott\", family=\"Sherrill-Mix\", role=c(\"aut\"), email=\"sherrillmix@gmail.com\"),\n    person(given=\"Charlotte\", family=\"Dawson\", role=c(\"aut\"), email=\"csdaw@outlook.com\"))",
-        "Description": "Provides two methods of plotting categorical scatter plots such\n    that the arrangement of points within a category reflects the density of\n    data at that region, and avoids over-plotting.",
-        "URL": "https://github.com/eclarke/ggbeeswarm",
-        "BugReports": "https://github.com/eclarke/ggbeeswarm/issues",
-        "Encoding": "UTF-8",
-        "License": "GPL (>= 3)",
-        "Depends": "R (>= 3.5.0), ggplot2 (>= 3.3.0)",
-        "Imports": "beeswarm, lifecycle, vipor, cli",
-        "Suggests": "gridExtra",
-        "RoxygenNote": "7.3.3",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-11-29 00:53:34 UTC; erik",
-        "Author": "Erik Clarke [aut, cre],\n  Scott Sherrill-Mix [aut],\n  Charlotte Dawson [aut]",
-        "Maintainer": "Erik Clarke <erikclarke@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2025-11-29 06:10:25 UTC",
-        "Built": "R 4.6.0; ; 2026-04-26 06:28:22 UTC; unix"
-      }
-    },
     "ggplot2": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1986,6 +1934,122 @@
         "Built": "R 4.6.0; ; 2026-04-26 05:16:05 UTC; unix"
       }
     },
+    "ggpubr": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "ggpubr",
+        "Type": "Package",
+        "Title": "'ggplot2' Based Publication Ready Plots",
+        "Version": "1.0.0",
+        "Date": "2026-07-06",
+        "Authors@R": "c(\n    person(\"Alboukadel\", \"Kassambara\", role = c(\"aut\", \"cre\"), email = \"alboukadel.kassambara@gmail.com\"),\n    person(\"Laszlo\", \"Erdey\", role = \"ctb\", email = \"erdey.laszlo@econ.unideb.hu\",\n           comment = \"Faculty of Economics and Business, University of Debrecen, Hungary\"))",
+        "Author": "Alboukadel Kassambara [aut, cre],\n  Laszlo Erdey [ctb] (Faculty of Economics and Business, University of\n    Debrecen, Hungary)",
+        "Maintainer": "Alboukadel Kassambara <alboukadel.kassambara@gmail.com>",
+        "Description": "The 'ggplot2' package is excellent and flexible for elegant data\n    visualization in R. However the default generated plots require some formatting\n    before we can send them for publication. Furthermore, to customize a 'ggplot',\n    the syntax is opaque and this raises the level of difficulty for researchers\n    with no advanced R programming skills. 'ggpubr' provides some easy-to-use\n    functions for creating and customizing 'ggplot2'-based publication ready plots.\n    This version includes modern R ecosystem compatibility updates and customizable\n    p-value formatting presets (APA, AMA, NEJM, Lancet, GraphPad, and scientific\n    notation) for publication workflows, plus robust sparse-subset handling in\n    statistical annotation layers such as 'stat_compare_means()' and 'geom_pwc()',\n    with informative per-group skip diagnostics for non-comparable subsets.",
+        "License": "GPL (>= 2)",
+        "LazyData": "TRUE",
+        "Encoding": "UTF-8",
+        "Depends": "R (>= 4.1.0), ggplot2 (>= 3.5.2)",
+        "Imports": "ggrepel (>= 0.9.2), grid, ggsci, stats, utils, tidyr (>=\n1.3.2), purrr, dplyr (>= 1.2.0), cowplot (>= 1.2.0), ggsignif,\nscales, gridExtra, glue, polynom, rlang (>= 1.1.7), rstatix (>=\n1.0.0), tibble, magrittr",
+        "Suggests": "grDevices, knitr, RColorBrewer, gtable, testthat",
+        "URL": "https://rpkgs.datanovia.com/ggpubr/,\nhttps://github.com/kassambara/ggpubr",
+        "BugReports": "https://github.com/kassambara/ggpubr/issues",
+        "RoxygenNote": "7.3.3",
+        "Collate": "'utilities_color.R' 'utilities_base.R' 'desc_statby.R'\n'utilities.R' 'add_summary.R' 'annotate_figure.R' 'as_ggplot.R'\n'as_npc.R' 'axis_scale.R' 'background_image.R' 'bgcolor.R'\n'border.R' 'p_format_utils.R' 'compare_means.R' 'create_aes.R'\n'diff_express.R' 'facet.R' 'font.R' 'gene_citation.R'\n'gene_expression.R' 'geom_bracket.R' 'geom_exec.R'\n'utils-aes.R' 'utils_stat_test_label.R' 'geom_pwc.R'\n'get_breaks.R' 'get_coord.R' 'get_legend.R' 'get_palette.R'\n'ggadd.R' 'ggadjust_pvalue.R' 'ggarrange.R' 'ggballoonplot.R'\n'ggpar.R' 'ggbarplot.R' 'ggboxplot.R' 'ggdensity.R' 'ggpie.R'\n'ggdonutchart.R' 'stat_conf_ellipse.R' 'stat_chull.R'\n'ggdotchart.R' 'ggdotplot.R' 'ggecdf.R' 'ggerrorplot.R'\n'ggexport.R' 'gghistogram.R' 'ggline.R' 'ggmaplot.R'\n'ggpaired.R' 'ggparagraph.R' 'ggpubr-package.R' 'ggpubr_args.R'\n'ggpubr_options.R' 'ggqqplot.R' 'utilities_label.R'\n'stat_cor.R' 'stat_stars.R' 'ggscatter.R' 'ggscatterhist.R'\n'ggstripchart.R' 'ggsummarystats.R' 'ggtext.R' 'ggtexttable.R'\n'ggviolin.R' 'gradient_color.R' 'grids.R' 'npc_to_data_coord.R'\n'reexports.R' 'rotate.R' 'rotate_axis_text.R' 'rremove.R'\n'set_palette.R' 'shared_docs.R' 'show_line_types.R'\n'show_point_shapes.R' 'stat_anova_test.R'\n'stat_central_tendency.R' 'stat_compare_means.R'\n'stat_friedman_test.R' 'stat_kruskal_test.R' 'stat_mean.R'\n'stat_overlay_normal_density.R' 'stat_pvalue_manual.R'\n'stat_regline_equation.R' 'stat_welch_anova_test.R'\n'text_grob.R' 'theme_pubr.R' 'theme_transparent.R'\n'utils-geom-signif.R' 'utils-pipe.R' 'utils-tidyr.R' 'zzz.R'",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-07-06 10:18:45 UTC; kassambara",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-07-06 15:00:02 UTC",
+        "Built": "R 4.6.1; ; 2026-07-06 19:23:37 UTC; unix"
+      }
+    },
+    "ggrepel": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "ggrepel",
+        "Version": "0.9.8",
+        "Authors@R": "c(\n    person(\"Kamil\", \"Slowikowski\", email = \"kslowikowski@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-2843-6370\")),\n    person(\"Teun\", \"van den Brand\", role = \"ctb\", comment = c(ORCID = \"0000-0002-9335-7468\")),\n    person(\"Alicia\", \"Schep\", role = \"ctb\", comment = c(ORCID = \"0000-0002-3915-0618\")),\n    person(\"Sean\", \"Hughes\", role = \"ctb\", comment = c(ORCID = \"0000-0002-9409-9405\")),\n    person(\"Trung Kien\", \"Dang\", role = \"ctb\", comment = c(ORCID = \"0000-0001-7562-6495\")),\n    person(\"Saulius\", \"Lukauskas\", role = \"ctb\"),\n    person(\"Jean-Olivier\", \"Irisson\", role = \"ctb\", comment = c(ORCID = \"0000-0003-4920-3880\")),\n    person(\"Zhian N\", \"Kamvar\", role = \"ctb\", comment = c(ORCID = \"0000-0003-1458-7108\")),\n    person(\"Thompson\", \"Ryan\", role = \"ctb\", comment = c(ORCID = \"0000-0002-0450-8181\")),\n    person(\"Dervieux\", \"Christophe\", role = \"ctb\", comment = c(ORCID = \"0000-0003-4474-2498\")),\n    person(\"Yutani\", \"Hiroaki\", role = \"ctb\"),\n    person(\"Pierre\", \"Gramme\", role = \"ctb\"),\n    person(\"Amir Masoud\", \"Abdol\", role = \"ctb\"),\n    person(\"Malcolm\", \"Barrett\", role = \"ctb\", comment = c(ORCID = \"0000-0003-0299-5825\")),\n    person(\"Robrecht\", \"Cannoodt\", role = \"ctb\", comment = c(ORCID = \"0000-0003-3641-729X\")),\n    person(\"Michał\", \"Krassowski\", role = \"ctb\", comment = c(ORCID = \"0000-0002-9638-7785\")),\n    person(\"Michael\", \"Chirico\", role = \"ctb\", comment = c(ORCID = \"0000-0003-0787-087X\")),\n    person(\"Pedro\", \"Aphalo\", role = \"ctb\", comment = c(ORCID = \"0000-0003-3385-972X\")),\n    person(\"Francis\", \"Barton\", role = \"ctb\")\n    )",
+        "Title": "Automatically Position Non-Overlapping Text Labels with\n'ggplot2'",
+        "Description": "Provides text and label geoms for 'ggplot2' that help to avoid\n    overlapping text labels. Labels repel away from each other and away from the\n    data points.",
+        "Depends": "R (>= 4.1.0), ggplot2 (>= 3.5.2)",
+        "Imports": "grid, Rcpp, rlang (>= 1.1.6), S7, scales (>= 1.4.0), withr (>=\n3.0.2)",
+        "Suggests": "knitr, rmarkdown, testthat, svglite, vdiffr, gridExtra, ggpp,\npatchwork, devtools, prettydoc, ggbeeswarm, dplyr, magrittr,\nreadr, stringr, marquee, rsvg, sf",
+        "VignetteBuilder": "knitr",
+        "License": "GPL-3 | file LICENSE",
+        "URL": "https://ggrepel.slowkow.com/, https://github.com/slowkow/ggrepel",
+        "BugReports": "https://github.com/slowkow/ggrepel/issues",
+        "RoxygenNote": "7.3.3",
+        "LinkingTo": "Rcpp",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2026-03-16 17:37:05 UTC; ks38",
+        "Author": "Kamil Slowikowski [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-2843-6370>),\n  Teun van den Brand [ctb] (ORCID:\n    <https://orcid.org/0000-0002-9335-7468>),\n  Alicia Schep [ctb] (ORCID: <https://orcid.org/0000-0002-3915-0618>),\n  Sean Hughes [ctb] (ORCID: <https://orcid.org/0000-0002-9409-9405>),\n  Trung Kien Dang [ctb] (ORCID: <https://orcid.org/0000-0001-7562-6495>),\n  Saulius Lukauskas [ctb],\n  Jean-Olivier Irisson [ctb] (ORCID:\n    <https://orcid.org/0000-0003-4920-3880>),\n  Zhian N Kamvar [ctb] (ORCID: <https://orcid.org/0000-0003-1458-7108>),\n  Thompson Ryan [ctb] (ORCID: <https://orcid.org/0000-0002-0450-8181>),\n  Dervieux Christophe [ctb] (ORCID:\n    <https://orcid.org/0000-0003-4474-2498>),\n  Yutani Hiroaki [ctb],\n  Pierre Gramme [ctb],\n  Amir Masoud Abdol [ctb],\n  Malcolm Barrett [ctb] (ORCID: <https://orcid.org/0000-0003-0299-5825>),\n  Robrecht Cannoodt [ctb] (ORCID:\n    <https://orcid.org/0000-0003-3641-729X>),\n  Michał Krassowski [ctb] (ORCID:\n    <https://orcid.org/0000-0002-9638-7785>),\n  Michael Chirico [ctb] (ORCID: <https://orcid.org/0000-0003-0787-087X>),\n  Pedro Aphalo [ctb] (ORCID: <https://orcid.org/0000-0003-3385-972X>),\n  Francis Barton [ctb]",
+        "Maintainer": "Kamil Slowikowski <kslowikowski@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-03-17 08:30:38 UTC",
+        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-26 11:08:07 UTC; unix",
+        "Archs": "ggrepel.so.dSYM"
+      }
+    },
+    "ggsci": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "ggsci",
+        "Type": "Package",
+        "Title": "Scientific Journal and Sci-Fi Themed Color Palettes for\n'ggplot2'",
+        "Version": "5.2.0",
+        "Authors@R": "c(\n    person(\"Nan\", \"Xiao\", email = \"me@nanx.me\", role = c(\"aut\", \"cre\", \"cph\"),\n           comment = c(ORCID = \"0000-0002-0250-5673\")),\n    person(\"Joshua\", \"Cook\", email = \"joshuacook0023@gmail.com\", role = \"ctb\"),\n    person(\"Clara\", \"Jégousse\", email = \"cat3@hi.is\", role = \"ctb\"),\n    person(\"Hui\", \"Chen\", email = \"huichen@zju.edu.cn\", role = \"ctb\"),\n    person(\"Miaozhu\", \"Li\", email = \"miaozhu.li@duke.edu\", role = \"ctb\"),\n    person(\"iTerm2-Color-Schemes contributors\", role = c(\"ctb\", \"cph\"),\n           comment = \"iTerm2-Color-Schemes project\"),\n    person(\"Winston\", \"Chang\", role = c(\"ctb\", \"cph\"),\n           comment = \"staticimports.R\")\n    )",
+        "Maintainer": "Nan Xiao <me@nanx.me>",
+        "Description": "A collection of 'ggplot2' color palettes inspired by\n    plots in scientific journals, data visualization libraries,\n    science fiction movies, and TV shows.",
+        "License": "GPL (>= 3)",
+        "URL": "https://nanx.me/ggsci/, https://github.com/nanxstats/ggsci",
+        "BugReports": "https://github.com/nanxstats/ggsci/issues",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "ggplot2 (>= 2.0.0), grDevices, rlang, scales",
+        "Suggests": "gridExtra, knitr, ragg, rmarkdown",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "Config/roxygen2/version": "8.0.0",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-07-30 05:46:42 UTC; nanx",
+        "Author": "Nan Xiao [aut, cre, cph] (ORCID:\n    <https://orcid.org/0000-0002-0250-5673>),\n  Joshua Cook [ctb],\n  Clara Jégousse [ctb],\n  Hui Chen [ctb],\n  Miaozhu Li [ctb],\n  iTerm2-Color-Schemes contributors [ctb, cph] (iTerm2-Color-Schemes\n    project),\n  Winston Chang [ctb, cph] (staticimports.R)",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-07-30 14:00:08 UTC",
+        "Built": "R 4.6.1; ; 2026-07-30 18:13:50 UTC; unix"
+      }
+    },
+    "ggsignif": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "ggsignif",
+        "Title": "Significance Brackets for 'ggplot2'",
+        "Version": "0.6.4",
+        "Authors@R": "\n  c(\n    person(given = \"Constantin\",\n           family = \"Ahlmann-Eltze\",\n           role = c(\"aut\", \"cre\", \"ctb\"),\n           email = \"artjom31415@googlemail.com\",\n           comment = c(ORCID = \"0000-0002-3762-068X\", Twitter = \"@const_ae\")),\n    person(given = \"Indrajeet\",\n           family = \"Patil\",\n           role = c(\"aut\", \"ctb\"),\n           email = \"patilindrajeet.science@gmail.com\",\n           comment = c(ORCID = \"0000-0003-1995-6531\", Twitter = \"@patilindrajeets\"))\n  )",
+        "Description": "Enrich your 'ggplots' with group-wise comparisons.\n    This package provides an easy way to indicate if two groups are\n    significantly different. Commonly this is shown by a bracket on top\n    connecting the groups of interest which itself is annotated with the\n    level of significance (NS, *, **, ***).  The package provides a single\n    layer (geom_signif()) that takes the groups for comparison and the\n    test (t.test(), wilcox.text() etc.) as arguments and adds the\n    annotation to the plot.",
+        "License": "GPL-3 | file LICENSE",
+        "URL": "https://const-ae.github.io/ggsignif/,\nhttps://github.com/const-ae/ggsignif",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "Imports": "ggplot2 (>= 3.3.5)",
+        "Suggests": "knitr, rmarkdown, testthat, vdiffr (>= 1.0.2)",
+        "RoxygenNote": "7.2.1",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "true",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-10-13 13:31:09 UTC; ahlmanne",
+        "Author": "Constantin Ahlmann-Eltze [aut, cre, ctb]\n    (<https://orcid.org/0000-0002-3762-068X>, @const_ae),\n  Indrajeet Patil [aut, ctb] (<https://orcid.org/0000-0003-1995-6531>,\n    @patilindrajeets)",
+        "Maintainer": "Constantin Ahlmann-Eltze <artjom31415@googlemail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-10-13 14:41:57 UTC",
+        "Built": "R 4.6.0; ; 2026-04-26 11:08:12 UTC; unix"
+      }
+    },
     "glue": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2016,6 +2080,30 @@
         "Date/Publication": "2026-04-17 05:11:01 UTC",
         "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-25 15:39:32 UTC; unix",
         "Archs": "glue.so.dSYM"
+      }
+    },
+    "gridExtra": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "gridExtra",
+        "Authors@R": "c(person(\"Baptiste\", \"Auguie\",\n    email = \"baptiste.auguie@vuw.ac.nz\",\n    role = c(\"aut\", \"cre\")), person(\"Anton\", \"Antonov\",\n    email = \"tonytonov@gmail.com\",\n    role = c(\"ctb\")))",
+        "License": "GPL (>= 2)",
+        "Title": "Miscellaneous Functions for \"Grid\" Graphics",
+        "Type": "Package",
+        "Description": "Provides a number of user-level functions to work with \"grid\"\n    graphics, notably to arrange multiple grid-based plots on a page, and draw\n    tables.",
+        "Version": "2.3.1",
+        "VignetteBuilder": "knitr",
+        "Imports": "gtable, grid, grDevices, graphics, utils",
+        "Suggests": "ggplot2, egg, lattice, knitr, testthat",
+        "RoxygenNote": "6.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-06-25 06:16:42 UTC; hornik",
+        "Author": "Baptiste Auguie [aut, cre],\n  Anton Antonov [ctb]",
+        "Maintainer": "Baptiste Auguie <baptiste.auguie@vuw.ac.nz>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-06-25 08:54:51 UTC",
+        "Built": "R 4.6.1; ; 2026-06-25 09:06:55 UTC; unix"
       }
     },
     "gtable": {
@@ -2978,6 +3066,28 @@
         "Built": "R 4.6.0; ; 2026-04-25 15:40:59 UTC; unix"
       }
     },
+    "polynom": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "polynom",
+        "Version": "1.4-1",
+        "Title": "A Collection of Functions to Implement a Class for Univariate\nPolynomial Manipulations",
+        "Authors@R": "c(person(\"Bill\", \"Venables\", role = c(\"aut\", \"cre\"),\n                    email = \"Bill.Venables@gmail.com\",\n                    comment = \"S original\"),\n             person(\"Kurt\", \"Hornik\", role = \"aut\",\n                    email = \"Kurt.Hornik@R-project.org\",\n                    comment = \"R port\"),\n             person(\"Martin\", \"Maechler\", role = \"aut\",\n                    email = \"maechler@stat.math.ethz.ch\",\n                    comment = \"R port\"))",
+        "Description": "A collection of functions to implement a class for univariate\n  polynomial manipulations.",
+        "Imports": "stats, graphics",
+        "License": "GPL-2",
+        "NeedsCompilation": "no",
+        "Author": "Bill Venables [aut, cre] (S original),\n  Kurt Hornik [aut] (R port),\n  Martin Maechler [aut] (R port)",
+        "Maintainer": "Bill Venables <Bill.Venables@gmail.com>",
+        "Suggests": "knitr, rmarkdown",
+        "VignetteBuilder": "knitr",
+        "Packaged": "2022-04-11 02:34:34 UTC; Bill",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-04-11 03:00:02 UTC",
+        "Built": "R 4.6.0; ; 2026-04-25 15:41:17 UTC; unix"
+      }
+    },
     "promises": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3728,31 +3838,6 @@
         "Archs": "vctrs.so.dSYM"
       }
     },
-    "vipor": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "vipor",
-        "Type": "Package",
-        "Title": "Plot Categorical Data Using Quasirandom Noise and Density\nEstimates",
-        "Version": "0.4.7",
-        "Date": "2023-12-15",
-        "Author": "Scott Sherrill-Mix, Erik Clarke",
-        "Maintainer": "Scott Sherrill-Mix <ssm@msu.edu>",
-        "Description": "Generate a violin point plot, a combination of a violin/histogram\n    plot and a scatter plot by offsetting points within a category based on their\n    density using quasirandom noise.",
-        "License": "GPL (>= 2)",
-        "LazyData": "True",
-        "Depends": "R (>= 3.5.0)",
-        "Imports": "stats, graphics",
-        "Suggests": "testthat, beeswarm, lattice, ggplot2, beanplot, vioplot,\nggbeeswarm,",
-        "RoxygenNote": "7.2.3",
-        "NeedsCompilation": "no",
-        "Packaged": "2023-12-16 03:56:56 UTC; scott",
-        "Repository": "CRAN",
-        "Date/Publication": "2023-12-18 14:30:02 UTC",
-        "Built": "R 4.6.0; ; 2026-04-25 17:36:28 UTC; unix"
-      }
-    },
     "viridisLite": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3899,7 +3984,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "5456e1aeb22e4d3befa251b6f44cceda"
+      "checksum": "0f97c1f6e0945683a9315d2de5f613ae"
     },
     "www/graphical_abstract-1.png": {
       "checksum": "6e9d89986e2ac21a3b93ef92d025802c"
