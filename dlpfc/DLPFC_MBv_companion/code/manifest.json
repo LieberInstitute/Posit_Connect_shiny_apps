@@ -4061,13 +4061,34 @@
   },
   "files": {
     "app.R": {
-      "checksum": "517c1441eed8035466eb3edcddde4dbb"
+      "checksum": "25898074460accd0ca3f401fe9fab339"
+    },
+    "markdown/landingpage.md": {
+      "checksum": "c67d8879f332620b05ade0d7f8b6e875"
+    },
+    "markdown/methods_1.md": {
+      "checksum": "fc64afca8c61c417212ddc92ac97e0c0"
+    },
+    "markdown/methods_2.md": {
+      "checksum": "3d73a0bd1d56621a0434b8ebad8d3934"
+    },
+    "markdown/methods_3.md": {
+      "checksum": "18a5ee9616207bf93b8f923dd003f50c"
+    },
+    "markdown/methods_4.md": {
+      "checksum": "a432875e00133a48439d4217c30a8bf9"
+    },
+    "markdown/methods_5.md": {
+      "checksum": "5eb029ab74c7810af348eff81129f22b"
+    },
+    "markdown/methods_6.md": {
+      "checksum": "518833ef07253dcff87bfe3aa4b5e733"
     },
     "www/graphical_abstract-1.png": {
-      "checksum": "6e9d89986e2ac21a3b93ef92d025802c"
+      "checksum": "c91e2e39ef7dcda4733adee0fe0328bc"
     },
     "www/pseudobulk-pipeline.png": {
-      "checksum": "6a2382fb39646de4ac4f658616c8c6e7"
+      "checksum": "6dd70d2a611b37aa2ddee9f9eeca2331"
     }
   },
   "users": null

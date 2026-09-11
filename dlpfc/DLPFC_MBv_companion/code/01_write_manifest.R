@@ -9,6 +9,10 @@ rsconnect::writeManifest(
         withr::with_dir(
             here::here("dlpfc", "DLPFC_MBv_companion", "code"),
             dir("www", full.names = TRUE)
+        ),
+        withr::with_dir(
+            here::here("dlpfc", "DLPFC_MBv_companion", "code"),
+            dir("markdown", full.names = TRUE)
         )
     )
 )
