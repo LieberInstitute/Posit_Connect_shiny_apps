@@ -15,6 +15,7 @@ if (file.exists(posit_connect_file)) {
     spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("thalamus", "NAC_AP", "processed-data", "final_spe_clustered"))
 }
 
+
 # CODE TO WRAP THE SPE WITH IN-TISSUE AND OUT-TISSUE SPOTS NONE FILTERED
 
 ## To install new spatialLIBD 1.15.4 (development version):
