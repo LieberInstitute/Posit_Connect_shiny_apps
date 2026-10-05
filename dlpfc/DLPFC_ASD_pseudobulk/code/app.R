@@ -23,9 +23,9 @@ anyDuplicated(rowData(spe_pseudo)$gene_name)
 # 56.41 MB
 
 ## Set column names for point labels in iSEE hover
-colnames(sce_pseudo) <- paste(
-    sce_pseudo$sample_id,
-    sce_pseudo$SpD,
+colnames(spe_pseudo) <- paste(
+    spe_pseudo$sample_id,
+    spe_pseudo$SpD,
     sep = "_"
 )
 
