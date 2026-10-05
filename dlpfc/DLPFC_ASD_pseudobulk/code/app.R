@@ -22,6 +22,13 @@ anyDuplicated(rowData(spe_pseudo)$gene_name)
 # lobstr::obj_size(spe_pseudo)
 # 56.41 MB
 
+## Set column names for point labels in iSEE hover
+colnames(sce_pseudo) <- paste(
+    sce_pseudo$sample_id,
+    sce_pseudo$SpD,
+    sep = "_"
+)
+
 #source("initial.R", echo = TRUE, max.deparse.length = 500)
 source("https://github.com/LieberInstitute/Posit_Connect_shiny_apps/blob/devel/dlpfc/DLPFC_ASD_pseudobulk/code/initial.R?raw=TRUE", print.eval = TRUE)
 
@@ -38,7 +45,7 @@ colData(spe_pseudo) <- cbind(
 
 iSEE(
     spe_pseudo,
-    appTitle = "DLPFC_ASD, Visium-CytAssist, Sp11, pseudobulked",
+    appTitle = "DLPFC_ASD, Visium-CytAssist, Sp09, pseudobulked",
     initial = initial,
     colormap = ExperimentColorMap(colData = list(
         SpD = function(n) {
