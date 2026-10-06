@@ -25,28 +25,28 @@ if (file.exists(posit_connect_file)) {
 posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/spe_pseudobulk-SpD.rds"
 if (file.exists(posit_connect_file1)) {
     ## Location for the https://conn1.libd.org/ server
-    spe_pb_k11 <- readRDS(posit_connect_file1)
+    spe_pb_k09 <- readRDS(posit_connect_file1)
 } else {
-    spe_pb_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "spe_pseudobulk-SpD.rds"))
+    spe_pb_k09 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "spe_pseudobulk-SpD.rds"))
 }
 posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/modeling_results-SpD.rds"
 if (file.exists(posit_connect_file2)) {
     ## Location for the https://conn1.libd.org/ server
-    modeling_results_k11 <- readRDS(posit_connect_file2)
+    modeling_results_k09 <- readRDS(posit_connect_file2)
 } else {
-    modeling_results_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "modeling_results-SpD.rds"))
+    modeling_results_k09 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "modeling_results-SpD.rds"))
 }
 posit_connect_file3 <- "/r_data/lcollado/Posit_Connect_shiny_apps/dlpfc/DLPFC_ASD_postQC/sig_genes_SpD.rds"
 if (file.exists(posit_connect_file3)) {
     ## Location for the https://conn1.libd.org/ server
-    sig_genes_k11 <- readRDS(posit_connect_file3)
+    sig_genes_k09 <- readRDS(posit_connect_file3)
 } else {
-    sig_genes_k11 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "sig_genes_SpD.rds"))
+    sig_genes_k09 <- readRDS(here::here("dlpfc", "DLPFC_ASD_postQC", "processed-data", "sig_genes_SpD.rds"))
 }
 
 
 ## define spatialLIBD column
-spe_pb_k11$spatialLIBD <- spe_pb_k11$SpD
+spe_pb_k09$spatialLIBD <- spe_pb_k09$SpD
 #spe_pb_k09$spatialLIBD <- spe_pb_k09$BayesSpace_PCA_Harmony_k09
 
 
@@ -58,14 +58,62 @@ colnames(colData(spe)) <- vars <- gsub("X10x", "10x", vars)
 #getwd()
 
 ## add names to colors
-names(spe_pb_k11$SpD_colors) <- spe_pb_k11$SpD
+names(spe_pb_k09$SpD_colors) <- spe_pb_k09$SpD
 
+## code to fix geneset heatmap with pairwise test colors
+SpD_colors <- spe_pb_k09$SpD_colors
+names(SpD_colors) <- spe_pb_k09$SpD
+
+pairwise_tests <- sub(
+    "^t_stat_",
+    "",
+    grep("^t_stat_", colnames(modeling_results_k09$pairwise), value = TRUE)
+)
+
+pairwise_colors <- setNames(
+    vapply(
+        pairwise_tests,
+        function(x) {
+            groups <- strsplit(x, "-", fixed = TRUE)[[1]]
+
+            grDevices::colorRampPalette(
+                c(SpD_colors[groups[1]], SpD_colors[groups[2]])
+            )(3)[2]
+        },
+        character(1)
+    ),
+    pairwise_tests
+)
+
+SpD_colors <- c(
+    SpD_colors,
+    pairwise_colors
+)
+
+length(SpD_colors) # 180
+setMethod(
+    "[[",
+    signature(x = "SpatialExperiment", i = "character", j = "missing"),
+    function(x, i, j) {
+        if (length(i) == 1 && i == "SpD_colors") {
+            return(SpD_colors)
+        }
+
+        callNextMethod()
+    }
+)
+
+length(spe_pb_k09[["SpD_colors"]]) # 180
+
+length(colData(spe_pb_k09)$SpD_colors) # 144
+
+## drop the 10x reduced dims
 reducedDims(spe)$`10x_pca` <- NULL
 reducedDims(spe)$`10x_tsne` <- NULL
 reducedDims(spe)$`10x_umap` <- NULL
-reducedDims(spe_pb_k11)$`10x_pca` <- NULL
-reducedDims(spe_pb_k11)$`10x_tsne` <- NULL
-reducedDims(spe_pb_k11)$`10x_umap` <- NULL
+reducedDims(spe_pb_k09)$`10x_pca` <- NULL
+reducedDims(spe_pb_k09)$`10x_tsne` <- NULL
+reducedDims(spe_pb_k09)$`10x_umap` <- NULL
 
 
 # model_colors <- c("#FE00FA", "#1CFFCE", "#B00068", "#2ED9FF", "#E4E1E3", "#FEAF16", "#3283FE", "#90AD1C", "#F6222E", "#16FF32")
@@ -91,11 +139,11 @@ spe_discrete_vars = c(
 
 spatialLIBD::run_app(
     spe = spe,
-    sce_layer = spe_pb_k11,
-    modeling_results = modeling_results_k11,
-    sig_genes = sig_genes_k11,
+    sce_layer = spe_pb_k09,
+    modeling_results = modeling_results_k09,
+    sig_genes = sig_genes_k09,
     spe_discrete_vars = spe_discrete_vars,
-    title = "DLPFC ASD, Visium CytAssist, Sp11",
+    title = "DLPFC ASD, Visium CytAssist, Sp09",
     spe_continuous_vars = c(
         "sum_umi",
         "sum_gene",

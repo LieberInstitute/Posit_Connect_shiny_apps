@@ -56,9 +56,10 @@ sig_genes <-
 
 In this panel you can visualize the layer-level data (`sce_layer`) across reduced dimensionality representations derived from the gene expression data from the layer-level pseudo-bulked data. Select which dimensionality reduction method to use with `Reduced Dimension` (PCA, TSNE, UMAP, etc) then `Color by` to choose which variable to color data by. The options are:
 
-* [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results from k = 2 to 28. These are `BayesSpace_PCA_Harmony_k02` up to `BayesSpace_PCA_Harmony_k28`.
-* `SpD`: layer spatial domains - k-means clustering results using k = 11 clusters. 
-* sample information such as the `sample_id` which is the sample ID, `array` whether its A or D of the slide, `sample_processing` (whether it's the first or second sample processing batch), `round` (the rounds in the sample processing batch), or `diagnosis` (Autism or Neurotypical).
+* [`BayesSpace`](https://bioconductor.org/packages/BayesSpace) results at k = 9.
+* `SpD`: layer annotations to k-means clustering results using k = 9 clusters. 
+* sample information such as the `sample_id` which is the sample ID, `array` whether its A or D of the slide, `sample_processing` whether it's the first or second sample processing batch, `round` (the rounds in the sample processing batch), `age`, `sex`, or `diagnosis` (Autism or Neurotypical).
+* Continuous variables such as the `nspots` which is the aggretated spot count, `expr_chrM_ratio` (ratio of the mitochondrial chromosome expression), `pseudo_sum_umi` (`sum_umi` after pseudobulking the data), or `RIN` (RNA integrity number).
 
 ```{r}
 ## Reproduce locally with
