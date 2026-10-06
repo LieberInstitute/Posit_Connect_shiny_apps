@@ -44,14 +44,7 @@ computed with `PRECAST`.
 
 ## Study Design
 
-This app explores the 5 donors (10 samples) for which Visium HD was performed.
-It allows viewing of gene expression, spatial clusters, cell types, and more,
-overlayed with the H&E image captured for each sample.
-
-All samples are oriented with dorsal up (ventral down) and medial left 
-(lateral right). Sample IDs include the donor ID (e.g. Br9090) and the tissue
-section (1 or 2), since for each of the five donors two spatially adjacent
-replicates were taken.<img src="http://research.libd.org/Hb_multiome/img/study_overview.png" width="1000px" align="left" />
+<img src="http://research.libd.org/Hb_multiome/img/study_overview.png" width="1000px" align="left" />
 
 **Multi-omic mapping of the human Hb**. (**A**) A schematic showing the
 cutting scheme to allow for smFISH/RNAscope, VisiumHD, and snMultiome.
@@ -147,8 +140,9 @@ software labeled by emojis:
 
 The Zenodo Archive for this project can be found
 [here](https://doi.org/10.5281/zenodo.23019505). Project data was also
-uploaded to the [NeMO](https://nemoarchive.org/) and can be found here
-(TODO).
+uploaded to the [NeMO](https://nemoarchive.org/) and can be found
+[here](https://assets.nemoarchive.org/col-av55so6) (collection
+`nemo:col-av55so6`).
 
 The major R objects for each analysis are also available through
 `spatialLIBD::fetch_data()` as of `spatialLIBD` version `1.25.5`. We
