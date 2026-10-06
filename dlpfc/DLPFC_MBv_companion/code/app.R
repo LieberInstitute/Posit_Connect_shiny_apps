@@ -75,8 +75,8 @@ myitems = list(
     accordion_panel("Step 2: Pseudobulk processing", includeMarkdown(methods2)),
     accordion_panel("Step 3: Differential expression (DE) pre-processing", includeMarkdown(methods3)),
     accordion_panel("Step 4: DE modeling", includeMarkdown(methods4)),
-    accordion_panel("Why do some gene expression differences look significant, but DE results indicate that they are not?", includeMarkdown(methods5)),
-    accordion_panel("Why are the lowest pseudobulk expression values not equal to zero?", includeMarkdown(methods6))
+    accordion_panel("FAQ: Why do some gene expression differences look significant, but DE results indicate that they are not?", includeMarkdown(methods5)),
+    accordion_panel("FAQ: Why are the lowest pseudobulk expression values not equal to zero?", includeMarkdown(methods6))
 )
 
 ui <- page_navbar(title = "MBv Pseudobulk Companion App",
@@ -105,7 +105,7 @@ ui <- page_navbar(title = "MBv Pseudobulk Companion App",
                                                       placeholder = 'Start typing to select from list of available genes',
                                                       onInitialize = I('function() { this.setValue(""); }')
                                                   )),
-                                   p("Use the bar to select a gene to plot. Gene selection is possible for 21,080 genes that include about 7,000 genes lowly expressed in SRT but highly expressed in snRNAseq from the dlPFC. Only the subset of genes included in DE modeling have statistics available (see 'Pseudobulk Methods Details' tab for more information)."),
+                                   p("Use the bar above to select a gene to plot (e.g. SST). Gene selection is possible for 21,080 genes and includes about 7,000 genes lowly expressed in SRT but highly expressed in snRNAseq from the dlPFC. Only the subset of genes included in DE modeling have statistics available (see 'Pseudobulk Methods Details' tab for more information)."),
                                    p("Plots present pseudobulk data, where spot-level RNAseq counts are aggregated for each annotated domain within each donor. Pseudobulk counts were then normalized and transformed (logcount expression, ", tags$em("y", .noWS="outside"), "-axis). Pseudobulk processing occurred separately for the domain", tags$sub("SP", .noWS = "outside"), " and domain", tags$sub("CT", .noWS = "outside"), " annotation strategies."),
                                    p("Each point represents a single pseudobulk sample corresponding to each domain identified within each donor. Points are colored based on diagnosis group (DX). Crossbar indicates the mean +/- SD."),
                                    p("For a complete list of statistics for all tested genes please see our ", tags$a(href = "https://www.google.com", target = "_blank", "Supplementary Tables"), ".")
