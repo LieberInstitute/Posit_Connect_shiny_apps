@@ -1,0 +1,17 @@
+<center>
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=m4f1BNc3bfVtJSz6sYMWVMJfTShjKfM19A7QR6XaqCk&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff' data-external="1"></script>
+</center>
+<script>
+// spatialLIBD expects an empty string, not null, when no reduction is selected.
+(function () {
+    const select = document.getElementById('reduced_name');
+    if (!select || select.options.length) return;
+    select.add(new Option('None (not included)', '', true, true));
+    const config = document.querySelector('script[data-for="reduced_name"]');
+    if (config) {
+        const settings = JSON.parse(config.textContent);
+        settings.allowEmptyOption = true;
+        config.textContent = JSON.stringify(settings);
+    }
+}());
+</script>
