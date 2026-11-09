@@ -59,7 +59,7 @@ colors = cluster_colors(levels(spe[[main_cluster_var]]))
 spe_pb[[paste0(main_cluster_var, '_colors')]] = colors[
     as.character(spe_pb[[main_cluster_var]])
 ]
-stopifnot(!anyNA(spe_pb[[main_cluster_var]]), length(reducedDims(spe)) == 0L)
+stopifnot(!anyNA(spe_pb[[main_cluster_var]]))
 run_app(
     spe,
     sce_layer = spe_pb,
