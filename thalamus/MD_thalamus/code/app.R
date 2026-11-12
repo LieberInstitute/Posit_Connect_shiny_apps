@@ -98,7 +98,7 @@ spatialLIBD::run_app(
   ),
   default_cluster = "spatial_domain",
   auto_crop_default = FALSE,
-  docs_path = here::here("thalamus", "MD_thalamus", "code", "www")
+  docs_path = "www"
 )
 
 ## Note. If fails to read the rds object, go to Session Menu -> Set Working Directory -> To source File location
