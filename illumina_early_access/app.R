@@ -7,6 +7,7 @@ library(qs2)
 setwd('/r_data/lcollado/Posit_Connect_shiny_apps/illumina_early_access')
 
 discrete_vars = c('^ManualAnnotation$', '^banksy')
+default_cluster = 'banksy_lam0_2_hvg_2'
 continuous_vars = c(
     'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio'
 )
@@ -36,11 +37,17 @@ spe_pb$banksy = factor(
     spe_pb$banksy,
     levels = as.character(sort(unique(as.numeric(spe_pb$banksy))))
 )
-spe_pb$banksy_lam0_2_res2 = spe_pb$banksy
+if (!default_cluster %in% colnames(colData(spe))) {
+    stop('Missing default cluster column in spe: ', default_cluster,
+         '. Rebuild and copy the updated spe_shiny.qs2.')
+}
+spe_pb[[default_cluster]] = spe_pb$banksy
 spe_pb$banksy = NULL
 
-spe_pb$banksy_lam0_2_res2_colors = cluster_colors[spe_pb$banksy_lam0_2_res2]
-spe$banksy_lam0_2_res2_colors = cluster_colors[spe$banksy_lam0_2_res2]
+spe_pb[[paste0(default_cluster, '_colors')]] =
+    cluster_colors[as.character(spe_pb[[default_cluster]])]
+spe[[paste0(default_cluster, '_colors')]] =
+    cluster_colors[as.character(spe[[default_cluster]])]
 
 #   Fake registration stats just to get the app to run. The idea is that there's
 #   no clean way to compute pairwise or ANOVA modeling stats with one sample (at
@@ -70,7 +77,7 @@ run_app(
         grepl(paste(discrete_vars, collapse = "|"), colnames(colData(spe)))
     ],
     spe_continuous_vars = continuous_vars,
-    default_cluster = "banksy_lam0_2_res2",
+    default_cluster = default_cluster,
     docs_path = 'www',
     is_stitched = TRUE
 )
