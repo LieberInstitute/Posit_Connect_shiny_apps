@@ -1,2 +1,4 @@
 spe_clustered
 final_spe_clustered
+*.rds
+*.Rdata
