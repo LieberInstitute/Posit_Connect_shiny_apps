@@ -7,14 +7,40 @@ library("here")
 #    "~/Downloads/spatial_md_thalamus/spatial_app/spe_clustered")
 
 ## Load the data
-posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/final_spe_clustered"
+posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/spe_shiny.rds"
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    spe <- HDF5Array::loadHDF5SummarizedExperiment(posit_connect_file)
+    spe <- readRDS(posit_connect_file)
 } else {
-    spe <- HDF5Array::loadHDF5SummarizedExperiment(here::here("thalamus", "NAC_AP", "processed-data", "final_spe_clustered"))
+    spe <- readRDS(here::here("thalamus", "MD_thalamus", "processed-data", "spe_shiny.rds"))
 }
 
+posit_connect_file1 <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/spe_pseudobulk-spatial_domain.rds"
+if (file.exists(posit_connect_file1)) {
+    ## Location for the https://conn1.libd.org/ server
+    spe_pb_k12 <- readRDS(posit_connect_file1)
+} else {
+    spe_pb_k12 <- readRDS(here::here("thalamus", "MD_thalamus", "processed-data", "spe_pseudobulk-spatial_domain.rds"))
+}
+
+posit_connect_file2 <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/modeling_results-spatial_domain.rds"
+if (file.exists(posit_connect_file2)) {
+    ## Location for the https://conn1.libd.org/ server
+    modeling_results_k12 <- readRDS(posit_connect_file2)
+} else {
+    modeling_results_k12 <- readRDS(here::here("thalamus", "MD_thalamus", "processed-data", "modeling_results-spatial_domain.rds"))
+}
+
+posit_connect_file3 <- "/r_data/lcollado/Posit_Connect_shiny_apps/thalamus/MD_Thalamus/sig_genes-spatial_domain.rds"
+if (file.exists(posit_connect_file3)) {
+    ## Location for the https://conn1.libd.org/ server
+    sig_genes_k12 <- readRDS(posit_connect_file3)
+} else {
+    sig_genes_k12 <- readRDS(here::here("thalamus", "MD_thalamus", "processed-data", "sig_genes-spatial_domain.rds"))
+}
+
+
+names(spe_pb_k12$spatial_domain_colors) <- spe_pb_k12$spatial_domain
 
 # CODE TO WRAP THE SPE WITH IN-TISSUE AND OUT-TISSUE SPOTS NONE FILTERED
 
@@ -52,33 +78,27 @@ vars <- colnames(colData(spe))
 #colnames(colData(spe))
 #getwd()
 
+spe_discrete_vars = c(
+  "in_tissue",
+  "spatial_domain",
+  sprintf("PCAHarmony_offset_k12")
+)
+
 spatialLIBD::run_app(
   spe = spe,
-  sce_layer = NULL,
-  modeling_results = NULL,
-  sig_genes = NULL,
-  spe_discrete_vars = c(
-    "ManualAnnotation",
-    "overlaps_tissue",
-    vars[grep("^10x_", vars)],
-    vars[grep("^scran_", vars)],
-    vars[grep("^PCAHarmony_", vars)],
-    #"edge_spots",
-    vars[grep("^ss_", vars)],
-    vars[grep("^qc_", vars)]
-    # vars[grep("^SNN_k10", vars)],
-    # vars[grep("^BayesSpace_harmony_", vars)]
-  ),
+  sce_layer = spe_pb_k12,
+  modeling_results = modeling_results_k12,
+  sig_genes = sig_genes_k12,
+  spe_discrete_vars = spe_discrete_vars,
+  title = "MD-Thalamus, Visium CytAssist, spatial_domain_k12",
   spe_continuous_vars = c(
     "sum_umi",
-    "sum_gene",
     "expr_chrM",
-    "expr_chrM_ratio" # ,
-    # "edge_distance"
+    "expr_chrM_ratio"
   ),
-  default_cluster = "10x_graphclust",
+  default_cluster = "spatial_domain",
   auto_crop_default = FALSE,
-  docs_path = "www"
+  docs_path = here::here("thalamus", "MD_thalamus", "code", "www")
 )
 
 ## Note. If fails to read the rds object, go to Session Menu -> Set Working Directory -> To source File location

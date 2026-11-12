@@ -752,38 +752,6 @@
         "Built": "R 4.6.0; ; 2026-04-25 15:52:16 UTC; unix"
       }
     },
-    "HDF5Array": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "HDF5Array",
-        "Title": "HDF5 datasets as array-like objects in R",
-        "Description": "The HDF5Array package is an HDF5 backend for DelayedArray objects.\n\tIt implements the HDF5Array, H5SparseMatrix, H5ADMatrix, and\n\tTENxMatrix classes, 4 convenient and memory-efficient array-like\n\tcontainers for representing and manipulating either: (1) a conventional\n\t(a.k.a. dense) HDF5 dataset, (2) an HDF5 sparse matrix (stored in\n\tCSR/CSC/Yale format), (3) the central matrix of an h5ad file (or any\n\tmatrix in the /layers group), or (4) a 10x Genomics sparse matrix.\n\tAll these containers are DelayedArray extensions and thus support all\n\toperations (delayed or block-processed) supported by DelayedArray\n\tobjects.",
-        "biocViews": "Infrastructure, DataRepresentation, DataImport, Sequencing,\nRNASeq, Coverage, Annotation, GenomeAnnotation, SingleCell,\nImmunoOncology",
-        "URL": "https://bioconductor.org/packages/HDF5Array",
-        "BugReports": "https://github.com/Bioconductor/HDF5Array/issues",
-        "Version": "1.40.0",
-        "License": "Artistic-2.0",
-        "Encoding": "UTF-8",
-        "Authors@R": "person(\"Hervé\", \"Pagès\", role=c(\"aut\", \"cre\"),\n\t\t  email=\"hpages.on.github@gmail.com\",\n\t\t  comment=c(ORCID=\"0009-0002-8272-4522\"))",
-        "Depends": "R (>= 3.4), methods, SparseArray (>= 1.7.5), DelayedArray (>=\n0.33.5), h5mread (>= 1.3.3)",
-        "Imports": "utils, stats, tools, Matrix, BiocGenerics (>= 0.51.2),\nS4Vectors, IRanges, S4Arrays (>= 1.1.1), rhdf5",
-        "Suggests": "BiocParallel, GenomicRanges, SummarizedExperiment (>=\n1.15.1), h5vcData, ExperimentHub, TENxBrainData, zellkonverter,\nGenomicFeatures, SingleCellExperiment, DelayedMatrixStats,\ngenefilter, RSpectra, RUnit, knitr, rmarkdown, BiocStyle",
-        "VignetteBuilder": "knitr",
-        "Collate": "utils.R h5utils.R HDF5ArraySeed-class.R HDF5Array-class.R\nReshapedHDF5ArraySeed-class.R ReshapedHDF5Array-class.R\ndump-management.R writeHDF5Array.R\nsaveHDF5SummarizedExperiment.R H5SparseMatrixSeed-class.R\nH5SparseMatrix-class.R H5ADMatrixSeed-class.R\nH5ADMatrix-class.R TENxMatrixSeed-class.R TENxMatrix-class.R\nwriteTENxMatrix.R zzz.R",
-        "git_url": "https://git.bioconductor.org/packages/HDF5Array",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "6539afc",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "NeedsCompilation": "no",
-        "Packaged": "2026-04-28 22:29:38 UTC; biocbuild",
-        "Author": "Hervé Pagès [aut, cre] (ORCID: <https://orcid.org/0009-0002-8272-4522>)",
-        "Maintainer": "Hervé Pagès <hpages.on.github@gmail.com>",
-        "Built": "R 4.6.0; ; 2026-04-29 04:46:06 UTC; unix"
-      }
-    },
     "IRanges": {
       "Source": "Bioconductor",
       "Repository": "https://bioconductor.org/packages/3.23/bioc",
@@ -1198,41 +1166,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2020-02-06 12:10:08 UTC",
         "Built": "R 4.6.0; ; 2026-04-25 16:00:55 UTC; unix"
-      }
-    },
-    "Rhdf5lib": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "Rhdf5lib",
-        "Type": "Package",
-        "Title": "hdf5 library as an R package",
-        "Version": "2.0.0",
-        "Authors@R": "c(\n    person(\n      \"Mike\", \"Smith\",\n      role = \"ctb\",\n      comment = c(ORCID = \"0000-0002-7800-3848\")\n    ),\n    person(\n      \"Hugo\", \"Gruson\",\n      role = \"cre\",\n      email = \"hugo.gruson@embl.de\",\n      comment = c(ORCID = \"0000-0002-4094-1476\"))\n    ,\n    person(\n      given = \"The HDF Group\",\n      role = \"cph\"\n    )\n  )",
-        "Description": "Provides C and C++ hdf5 libraries.",
-        "License": "Artistic-2.0",
-        "Copyright": "vendor/hdf5/COPYING",
-        "LazyLoad": "true",
-        "VignetteBuilder": "knitr",
-        "Depends": "R (>= 4.2.0)",
-        "Suggests": "BiocStyle, knitr, rmarkdown, tinytest, mockery",
-        "URL": "https://github.com/Huber-group-EMBL/Rhdf5lib",
-        "BugReports": "https://github.com/Huber-group-EMBL/Rhdf5lib/issues",
-        "LinkingTo": "biocmake",
-        "NeedsCompilation": "yes",
-        "Encoding": "UTF-8",
-        "biocViews": "Infrastructure",
-        "RoxygenNote": "7.3.3",
-        "git_url": "https://git.bioconductor.org/packages/Rhdf5lib",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "21f3087",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "Packaged": "2026-04-28 23:18:20 UTC; biocbuild",
-        "Author": "Mike Smith [ctb] (ORCID: <https://orcid.org/0000-0002-7800-3848>),\n  Hugo Gruson [cre] (ORCID: <https://orcid.org/0000-0002-4094-1476>),\n  The HDF Group [cph]",
-        "Maintainer": "Hugo Gruson <hugo.gruson@embl.de>",
-        "Built": "R 4.6.0; ; 2026-04-29 04:58:48 UTC; unix"
       }
     },
     "Rhtslib": {
@@ -1919,38 +1852,6 @@
         "Built": "R 4.6.0; ; 2026-04-26 11:09:34 UTC; unix"
       }
     },
-    "biocmake": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "biocmake",
-        "Version": "1.4.0",
-        "Date": "2025-11-22",
-        "Title": "CMake for Bioconductor",
-        "Description": "\n    Manages the installation of CMake for building Bioconductor packages.\n    This avoids the need for end-users to manually install CMake on their system.\n    No action is performed if a suitable version of CMake is already available.",
-        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"cre\", \"aut\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
-        "License": "MIT + file LICENSE",
-        "Encoding": "UTF-8",
-        "VignetteBuilder": "knitr",
-        "Imports": "utils, tools, dir.expiry",
-        "Suggests": "knitr, rmarkdown, BiocStyle, testthat",
-        "biocViews": "Infrastructure",
-        "URL": "https://github.com/LTLA/biocmake",
-        "BugReports": "https://github.com/LTLA/biocmake/issues",
-        "RoxygenNote": "7.3.2",
-        "git_url": "https://git.bioconductor.org/packages/biocmake",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "6b43087",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "NeedsCompilation": "no",
-        "Packaged": "2026-04-28 21:31:22 UTC; biocbuild",
-        "Author": "Aaron Lun [cre, aut]",
-        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
-        "Built": "R 4.6.0; ; 2026-04-29 04:34:50 UTC; unix"
-      }
-    },
     "bit": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2615,36 +2516,6 @@
         "Archs": "digest.so.dSYM"
       }
     },
-    "dir.expiry": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "dir.expiry",
-        "Version": "1.20.0",
-        "Date": "2024-10-17",
-        "Title": "Managing Expiration for Cache Directories",
-        "Description": "Implements an expiration system for access to versioned directories.\n    Directories that have not been accessed by a registered function within a certain time frame are deleted.\n    This aims to reduce disk usage by eliminating obsolete caches generated by old versions of packages.",
-        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"aut\", \"cre\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
-        "License": "GPL-3",
-        "Imports": "utils, filelock",
-        "Suggests": "rmarkdown, knitr, testthat, BiocStyle",
-        "biocViews": "Software, Infrastructure",
-        "VignetteBuilder": "knitr",
-        "RoxygenNote": "7.3.2",
-        "Encoding": "UTF-8",
-        "git_url": "https://git.bioconductor.org/packages/dir.expiry",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "b9df09a",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "NeedsCompilation": "no",
-        "Packaged": "2026-04-28 21:58:56 UTC; biocbuild",
-        "Author": "Aaron Lun [aut, cre]",
-        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
-        "Built": "R 4.6.0; ; 2026-04-29 04:40:36 UTC; unix"
-      }
-    },
     "doParallel": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3270,40 +3141,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2024-10-25 13:20:02 UTC",
         "Built": "R 4.6.0; ; 2026-04-26 02:18:41 UTC; unix"
-      }
-    },
-    "h5mread": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "h5mread",
-        "Title": "A fast HDF5 reader",
-        "Description": "The main function in the h5mread package is h5mread(), which\n\tallows reading arbitrary data from an HDF5 dataset into R, similarly\n\tto what the h5read() function from the rhdf5 package does.\n\tIn the case of h5mread(), the implementation has been optimized to\n\tmake it as fast and memory-efficient as possible.",
-        "biocViews": "Infrastructure, DataRepresentation, DataImport",
-        "URL": "https://bioconductor.org/packages/h5mread",
-        "BugReports": "https://github.com/Bioconductor/h5mread/issues",
-        "Version": "1.4.0",
-        "License": "Artistic-2.0",
-        "Encoding": "UTF-8",
-        "Authors@R": "person(\"Hervé\", \"Pagès\", role=c(\"aut\", \"cre\"),\n\t          email=\"hpages.on.github@gmail.com\",\n\t\t  comment=c(ORCID=\"0009-0002-8272-4522\"))",
-        "Depends": "R (>= 4.5), methods, rhdf5, BiocGenerics, SparseArray",
-        "Imports": "stats, tools, rhdf5filters, S4Vectors, IRanges, S4Arrays",
-        "LinkingTo": "Rhdf5lib, S4Vectors",
-        "SystemRequirements": "GNU make",
-        "Suggests": "BiocParallel, ExperimentHub, TENxBrainData, HDF5Array,\ntestthat, knitr, rmarkdown, BiocStyle",
-        "VignetteBuilder": "knitr",
-        "Collate": "utils.R h5dim.R H5File-class.R h5ls.R H5DSetDescriptor-class.R\nuaselection.R h5mread.R h5summarize.R h5mread_from_reshaped.R\nh5dimscales.R h5writeDimnames.R zzz.R",
-        "git_url": "https://git.bioconductor.org/packages/h5mread",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "8295c41",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "NeedsCompilation": "yes",
-        "Packaged": "2026-04-28 22:25:51 UTC; biocbuild",
-        "Author": "Hervé Pagès [aut, cre] (ORCID: <https://orcid.org/0009-0002-8272-4522>)",
-        "Maintainer": "Hervé Pagès <hpages.on.github@gmail.com>",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-29 04:45:55 UTC; unix"
       }
     },
     "here": {
@@ -4526,77 +4363,6 @@
         "Archs": "restfulr.so.dSYM"
       }
     },
-    "rhdf5": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Type": "Package",
-        "Package": "rhdf5",
-        "Title": "R Interface to HDF5",
-        "Version": "2.56.0",
-        "Authors@R": "c(\n    person(\"Bernd\", \"Fischer\", role = \"aut\"),\n    person(\"Mike\", \"Smith\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-7800-3848\", \"Maintainer from 2017 to 2025\")),\n    person(\"Gregoire\", \"Pau\", role = \"aut\"),\n    person(\"Martin\", \"Morgan\", role = \"ctb\"),\n    person(\"Daniel\", \"van Twisk\", role = \"ctb\"),\n    person(\"Hugo\", \"Gruson\", , \"hugo.gruson@embl.de\", role = \"cre\",\n           comment = c(ORCID = \"0000-0002-4094-1476\")),\n    person(\"German Network for Bioinformatics Infrastructure - de.NBI\", role = \"fnd\")\n  )",
-        "Description": "This package provides an interface between HDF5 and R.\n    HDF5's main features are the ability to store and access very large\n    and/or complex datasets and a wide variety of metadata on mass storage\n    (disk) through a completely portable file format. The rhdf5 package is\n    thus suited for the exchange of large and/or complex datasets between\n    R and other software package, and for letting R applications work on\n    datasets that are larger than the available RAM.",
-        "License": "Artistic-2.0",
-        "URL": "https://huber-group-embl.github.io/rhdf5/,\nhttps://github.com/Huber-group-EMBL/rhdf5",
-        "BugReports": "https://github.com/Huber-group-EMBL/rhdf5/issues",
-        "Depends": "methods, R (>= 4.0.0)",
-        "Imports": "rhdf5filters (>= 1.15.5), Rhdf5lib (>= 1.33.3)",
-        "Suggests": "bench, BiocParallel, BiocStyle, bit64, curl, dplyr, ggplot2,\nknitr, rmarkdown, testthat, withr",
-        "LinkingTo": "Rhdf5lib",
-        "VignetteBuilder": "knitr",
-        "biocViews": "Infrastructure, DataImport",
-        "Encoding": "UTF-8",
-        "LazyLoad": "true",
-        "Roxygen": "list(markdown = TRUE)",
-        "RoxygenNote": "7.3.3",
-        "SystemRequirements": "GNU make",
-        "git_url": "https://git.bioconductor.org/packages/rhdf5",
-        "git_branch": "RELEASE_3_23",
-        "git_last_commit": "cef3c44",
-        "git_last_commit_date": "2026-04-28",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-04-28",
-        "NeedsCompilation": "yes",
-        "Packaged": "2026-04-28 23:19:55 UTC; biocbuild",
-        "Author": "Bernd Fischer [aut],\n  Mike Smith [aut] (ORCID: <https://orcid.org/0000-0002-7800-3848>,\n    Maintainer from 2017 to 2025),\n  Gregoire Pau [aut],\n  Martin Morgan [ctb],\n  Daniel van Twisk [ctb],\n  Hugo Gruson [cre] (ORCID: <https://orcid.org/0000-0002-4094-1476>),\n  German Network for Bioinformatics Infrastructure - de.NBI [fnd]",
-        "Maintainer": "Hugo Gruson <hugo.gruson@embl.de>",
-        "Built": "R 4.6.0; aarch64-apple-darwin23; 2026-04-29 04:57:11 UTC; unix"
-      }
-    },
-    "rhdf5filters": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.23/bioc",
-      "description": {
-        "Package": "rhdf5filters",
-        "Type": "Package",
-        "Title": "HDF5 Compression Filters",
-        "Version": "1.24.1",
-        "Authors@R": "c(\n        person(\"Mike\", \"Smith\",\n               role = c(\"aut\", \"ccp\"),\n               comment = c(ORCID = \"0000-0002-7800-3848\")\n        ),\n        person(\"Hugo\", \"Gruson\",\n               role = \"cre\",\n               email = \"hugo.gruson@embl.de\",\n               comment = c(ORCID = \"0000-0002-4094-1476\")\n        )\n    )",
-        "Description": "Provides a collection of additional compression filters\n        for HDF5 datasets. The package is intended to provide seamless\n        integration with rhdf5, however the compiled filters can also\n        be used with external applications.",
-        "License": "BSD_2_clause + file LICENSE",
-        "LazyLoad": "true",
-        "VignetteBuilder": "knitr",
-        "Suggests": "BiocStyle, knitr, rmarkdown, testthat, rhdf5 (>= 2.47.7)",
-        "SystemRequirements": "GNU make",
-        "URL": "https://github.com/Huber-group-EMBL/rhdf5filters",
-        "BugReports": "https://github.com/Huber-group-EMBL/rhdf5filters/issues",
-        "LinkingTo": "Rhdf5lib",
-        "RoxygenNote": "7.3.2",
-        "Encoding": "UTF-8",
-        "biocViews": "Infrastructure, DataImport",
-        "Config/pak/sysreqs": "make",
-        "Repository": "Bioconductor 3.23",
-        "Date/Publication": "2026-07-28 15:32:46 UTC",
-        "RemoteUrl": "https://github.com/bioc/rhdf5filters",
-        "RemoteRef": "RELEASE_3_23",
-        "RemoteSha": "997ad765fb2694e99a8c201359df7f00e41afb59",
-        "NeedsCompilation": "yes",
-        "Packaged": "2026-07-28 21:53:37 UTC; root",
-        "Author": "Mike Smith [aut, ccp] (ORCID: <https://orcid.org/0000-0002-7800-3848>),\n  Hugo Gruson [cre] (ORCID: <https://orcid.org/0000-0002-4094-1476>)",
-        "Maintainer": "Hugo Gruson <hugo.gruson@embl.de>",
-        "Built": "R 4.6.1; aarch64-apple-darwin23; 2026-07-28 21:55:32 UTC; unix"
-      }
-    },
     "rjson": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -5690,7 +5456,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "e31a1909d3003b37884c1459627a4169"
+      "checksum": "6acca2c4de4fb5fa95923f3d435de5b2"
     },
     "www/documentation_sce_layer.md": {
       "checksum": "f12a7d3f9ae978eb0b0b9eff5b9a295f"
@@ -5705,7 +5471,7 @@
       "checksum": "64704a9b365ee1a9e30819048a1a84d3"
     },
     "www/README.md": {
-      "checksum": "a575d92b4f4d038d1e1561704c7538da"
+      "checksum": "d35d7e60983b606f56cd596c228f044f"
     }
   },
   "users": null
