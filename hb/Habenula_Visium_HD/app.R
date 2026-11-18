@@ -2,6 +2,8 @@ library(spatialLIBD)
 library(markdown)
 library(qs2)
 
+setwd("/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD")
+
 discrete_vars = c(
     'ManualAnnotation', 'ficture_cluster', 'banksy_cluster', 'cell_type',
     'cell_type_colors'
@@ -18,9 +20,7 @@ all_vars_pb = c(
 options("golem.app.prod" = TRUE)
 
 #   Load objects
-dataset <- spatialLIBD::open_app_dataset(
-    "/r_data/lcollado/Posit_Connect_shiny_apps/hb/Habenula_Visium_HD/app_inputs"
-)
+dataset <- spatialLIBD::open_app_dataset("app_inputs")
 modeling_results = qs_read('modeling_results.qs2')
 sce_pb = qs_read('sce_pb_shiny.qs2')
 sig_genes = qs_read('sig_genes_shiny.qs2')
