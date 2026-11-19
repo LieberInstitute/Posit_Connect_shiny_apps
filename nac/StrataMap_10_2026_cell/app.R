@@ -18,7 +18,8 @@ main_cluster_var = 'celltyping_0_4'
 options('golem.app.prod' = TRUE)
 options(repos = BiocManager::repositories())
 
-spe = qs_read('spe.qs2')
+dataset = open_app_dataset('app_inputs')
+spe = dataset$spe
 spe_pb = qs_read('spe_pb_cell.qs2')
 modeling_results = qs_read('modeling_results_cell.qs2')
 sig_genes = qs_read('sig_genes_cell.qs2')
@@ -46,22 +47,23 @@ cluster_colors = function(labels) {
     if (n > 36L) colors = c(colors, grDevices::hcl.colors(n - 36L, 'Dynamic'))
     setNames(colors[seq_len(n)], labels)
 }
-for (variable in spe_discrete_vars) {
-    if (!is.factor(spe[[variable]])) spe[[variable]] = factor(spe[[variable]])
-    colors = cluster_colors(levels(spe[[variable]]))
-    spe[[paste0(variable, '_colors')]] = colors[as.character(spe[[variable]])]
+if (!is.factor(spe[[main_cluster_var]])) {
+    spe[[main_cluster_var]] = factor(spe[[main_cluster_var]])
 }
-
+colors = cluster_colors(levels(spe[[main_cluster_var]]))
+spe[[paste0(main_cluster_var, '_colors')]] = colors[
+    as.character(spe[[main_cluster_var]])
+]
 spe_pb[[main_cluster_var]] = factor(
     spe_pb[[main_cluster_var]], levels = levels(spe[[main_cluster_var]])
 )
-colors = cluster_colors(levels(spe[[main_cluster_var]]))
 spe_pb[[paste0(main_cluster_var, '_colors')]] = colors[
     as.character(spe_pb[[main_cluster_var]])
 ]
 stopifnot(!anyNA(spe_pb[[main_cluster_var]]))
+dataset$spe = spe
 run_app(
-    spe,
+    dataset = dataset,
     sce_layer = spe_pb,
     modeling_results = modeling_results,
     sig_genes = sig_genes,

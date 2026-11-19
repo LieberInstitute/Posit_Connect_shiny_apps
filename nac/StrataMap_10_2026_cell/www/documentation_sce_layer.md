@@ -23,43 +23,28 @@ You might also be interested in this video demonstration of `spatialLIBD` for th
 
 ## Raw summary
 
-Before the documentation, this tab displays the [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment) object that contains the cell-type-level data (layer-level in other `spatialLIBD` apps). It's basically useful to know that the data has been loaded and that you can start navigating the app. If you wish to download this data, use the following command.
+This tab summarizes the NAc cell-type pseudobulk data and model results. From
+the `NAc_cell` app directory in the project checkout, load the same inputs with:
 
 ```{r}
-## Check that you have a recent version of spatialLIBD installed
-stopifnot(packageVersion("spatialLIBD") >= "1.11.6")
-
-## Download sce data
-sce_pseudo <- spatialLIBD::fetch_data(type = "habenula_atlas_HD_pseudobulk")
-```
-
-Throughout the rest of this document, we'll refer to this object by the name `sce_pseudo`.
-
-This tab also shows the statistical modeling results, described below, that you can access locally and re-shape using the following code.
-
-```{r}
-## Reproduce locally with
-modeling_results <- fetch_data("habenula_atlas_HD_modeling_results")
-sig_genes <- spatialLIBD::sig_genes_extract_all(
-    n = nrow(sce_pseudo), # n = 1000 was used in the app for performance
-    modeling_results = modeling_results,
-    sce_layer = sce_pseudo
-)
+sce_pseudo <- qs2::qs_read("spe_pb_cell.qs2")
+modeling_results <- qs2::qs_read("modeling_results_cell.qs2")
+sig_genes <- qs2::qs_read("sig_genes_cell.qs2")
 ```
 
 ## Common options
 
 * `Model results`: the statistical modeling results to use. We computed three different types of models:
-  1. `enrichment`: one cell type against all the the other cell types. Results in t-statistics.
-  2. `pairwise`: one cell type against another one. Results in t-statistics with two-sided p-values. These are empty, because they can't be meaningfully computed with one sample.
-  3. `anova`: changes among the cell types (adjusting for the mean expression) using the data from all cell types (`all`). Note that great changes between the white matter and grey matter will greatly influence these results. These are empty, because they can't be meaningfully computed with one sample.
+  1. `enrichment`: one cell-typing cluster against the rest; reports t-statistics.
+  2. `pairwise`: one cell-typing cluster against another; reports t-statistics with two-sided p-values.
+  3. `anova`: tests for expression differences across all cell-typing clusters (`all`).
 
 ## Reduced dim
 
 In this panel you can visualize the cell-type-level data (`sce_pseudo`) across reduced dimensionality representations derived from the gene expression data from the cell-type-level pseudo-bulked data. Select which dimensionality reduction method to use with `Reduced Dimension` (PCA or UMAP). Then use `Color by` to choose which variable to color data by, which can be useful to identify groups of pseudo-bulked samples. The `colData` columns are:
 
 * `celltyping_0_4`: main BANKSY cell-typing cluster.
-* `sum_umi`: total number of reads present in a pseudobulked sample.
+* `sum_umi`: total number of UMIs in a pseudobulked sample.
 * `sum_gene`: total number of genes with nonzero expression in a pseudobulked sample.
 * `expr_chrM`: sum of chrM counts in a pseudobulked sample.
 * `expr_chrM_ratio`: ratio of `expr_chrM` / `sum_umi`.
