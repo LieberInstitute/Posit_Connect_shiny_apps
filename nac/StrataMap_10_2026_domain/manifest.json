@@ -98,6 +98,40 @@
         "Built": "R 4.5.1; ; 2026-07-21 17:12:45 UTC; unix"
       }
     },
+    "BPCells": {
+      "Source": "BPCells",
+      "Repository": "https://bnprks.r-universe.dev",
+      "description": {
+        "Package": "BPCells",
+        "Title": "Single Cell Counts Matrices to PCA",
+        "Version": "0.3.1",
+        "Authors@R": "c(\n    person(given = \"Benjamin\",\n           family = \"Parks\",\n           role = c(\"aut\", \"cre\", \"cph\"),\n           email = \"bparks@alumni.stanford.edu\",\n           comment = c(ORCID = \"0000-0002-0261-7472\")),\n    person(\"Immanuel\", \"Abdi\", role = \"aut\"),\n    person(\"Stanford University\", role=c(\"cph\", \"fnd\")),\n    person(\"Genentech, Inc.\", role=c(\"cph\", \"fnd\")))",
+        "Description": "> Efficient operations for single cell ATAC-seq fragments\n        and RNA counts matrices. Interoperable with standard file\n        formats, and introduces efficient bit-packed formats that allow\n        large storage savings and increased read speeds.",
+        "License": "Apache-2.0 or MIT",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.3.2",
+        "Roxygen": "list(markdown = TRUE)",
+        "URL": "https://bnprks.github.io/BPCells,\nhttps://github.com/bnprks/BPCells",
+        "LinkingTo": "Rcpp, RcppEigen",
+        "Imports": "methods, grDevices, magrittr, Matrix, Rcpp, rlang, tools,\nvctrs, lifecycle, stringr, tibble, dplyr (>= 1.0.0), tidyr,\nreadr, ggplot2 (>= 3.4.0), scales, patchwork, scattermore,\nggrepel, RColorBrewer, hexbin",
+        "Suggests": "IRanges, GenomicRanges, matrixStats, igraph, RcppHNSW,\nRcppAnnoy",
+        "Depends": "R (>= 4.0.0)",
+        "Config/Needs/website": "pkgdown, devtools, uwot, irlba, RcppHNSW, igraph,\nBiocManager, bioc::BSgenome.Hsapiens.UCSC.hg38,\ngithub::GreenleafLab/motifmatchr,\ngithub::GreenleafLab/chromVARmotifs, png, magrittr",
+        "Config/pak/sysreqs": "libicu-dev libx11-dev",
+        "Repository": "https://bnprks.r-universe.dev",
+        "Date/Publication": "2026-10-26 06:24:38 UTC",
+        "RemoteUrl": "https://github.com/bnprks/BPCells",
+        "RemoteRef": "HEAD",
+        "RemoteSha": "5f2a5d21a21f6e75cf3650dee8b65f6220f50a41",
+        "RemoteSubdir": "r",
+        "NeedsCompilation": "yes",
+        "Packaged": "2026-10-26 06:52:31 UTC; root",
+        "Author": "Benjamin Parks [aut, cre, cph] (ORCID:\n    <https://orcid.org/0000-0002-0261-7472>),\n  Immanuel Abdi [aut],\n  Stanford University [cph, fnd],\n  Genentech, Inc. [cph, fnd]",
+        "Maintainer": "Benjamin Parks <bparks@alumni.stanford.edu>",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-11-18 20:22:02 UTC; unix"
+      }
+    },
     "Biobase": {
       "Source": "Bioconductor",
       "Repository": "https://bioconductor.org/packages/3.22/bioc",
@@ -1270,6 +1304,39 @@
         "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-07-24 20:25:49 UTC; unix"
       }
     },
+    "Rigraphlib": {
+      "Source": "Bioconductor",
+      "Repository": "https://bioconductor.org/packages/3.22/bioc",
+      "description": {
+        "Package": "Rigraphlib",
+        "Type": "Package",
+        "Version": "1.2.0",
+        "Date": "2025-08-21",
+        "Title": "igraph library as an R package",
+        "License": "GPL-3",
+        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"cre\", \"aut\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
+        "Description": "\n    Vendors the igraph C source code and builds it into a static library.\n    Other Bioconductor packages can link to libigraph.a in their own C/C++ code.\n    This is intended for packages wrapping C/C++ libraries that depend on the igraph C library and cannot be easily adapted to use the igraph R package.",
+        "LinkingTo": "biocmake",
+        "Suggests": "BiocStyle, knitr, rmarkdown, testthat",
+        "VignetteBuilder": "knitr",
+        "biocViews": "Clustering, GraphAndNetwork",
+        "NeedsCompilation": "yes",
+        "URL": "https://github.com/libscran/Rigraphlib",
+        "BugReports": "https://github.com/libscran/Rigraphlib/issues",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "git_url": "https://git.bioconductor.org/packages/Rigraphlib",
+        "git_branch": "RELEASE_3_22",
+        "git_last_commit": "e14ac37",
+        "git_last_commit_date": "2025-10-29",
+        "Repository": "Bioconductor 3.22",
+        "Date/Publication": "2025-10-29",
+        "Packaged": "2025-10-30 06:04:29 UTC; biocbuild",
+        "Author": "Aaron Lun [cre, aut]",
+        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
+        "Built": "R 4.5.1; ; 2026-11-18 20:34:34 UTC; unix"
+      }
+    },
     "Rsamtools": {
       "Source": "Bioconductor",
       "Repository": "https://bioconductor.org/packages/3.22/bioc",
@@ -1916,6 +1983,38 @@
         "Built": "R 4.5.1; ; 2026-07-24 20:28:29 UTC; unix"
       }
     },
+    "biocmake": {
+      "Source": "Bioconductor",
+      "Repository": "https://bioconductor.org/packages/3.22/bioc",
+      "description": {
+        "Package": "biocmake",
+        "Version": "1.2.0",
+        "Date": "2025-08-21",
+        "Title": "CMake for Bioconductor",
+        "Description": "\n    Manages the installation of CMake for building Bioconductor packages.\n    This avoids the need for end-users to manually install CMake on their system.\n    No action is performed if a suitable version of CMake is already available.",
+        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"cre\", \"aut\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "VignetteBuilder": "knitr",
+        "Imports": "utils, tools, dir.expiry",
+        "Suggests": "knitr, rmarkdown, BiocStyle, testthat",
+        "biocViews": "Infrastructure",
+        "URL": "https://github.com/LTLA/biocmake",
+        "BugReports": "https://github.com/LTLA/biocmake/issues",
+        "RoxygenNote": "7.3.2",
+        "git_url": "https://git.bioconductor.org/packages/biocmake",
+        "git_branch": "RELEASE_3_22",
+        "git_last_commit": "ee210d0",
+        "git_last_commit_date": "2025-10-29",
+        "Repository": "Bioconductor 3.22",
+        "Date/Publication": "2025-10-29",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-10-30 02:47:14 UTC; biocbuild",
+        "Author": "Aaron Lun [cre, aut]",
+        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
+        "Built": "R 4.5.1; ; 2026-11-18 20:21:51 UTC; unix"
+      }
+    },
     "bit": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2171,6 +2270,35 @@
         "Repository": "CRAN",
         "Date/Publication": "2026-04-09 09:50:18 UTC",
         "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-07-21 17:04:09 UTC; unix"
+      }
+    },
+    "clipr": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "clipr",
+        "Title": "Read and Write from the System Clipboard",
+        "Version": "0.8.1",
+        "Authors@R": "c(\n    person(\"Matthew\", \"Lincoln\", , \"matthew.d.lincoln@gmail.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-4387-3384\")),\n    person(\"Louis\", \"Maddox\", role = \"ctb\"),\n    person(\"Steve\", \"Simpson\", role = \"ctb\"),\n    person(\"Jennifer\", \"Bryan\", role = \"ctb\")\n  )",
+        "Description": "Simple utility functions to read from and write to\n    the Windows, OS X, and X11 clipboards.",
+        "License": "GPL-3",
+        "URL": "https://github.com/mdlincoln/clipr,\nhttp://matthewlincoln.net/clipr/",
+        "BugReports": "https://github.com/mdlincoln/clipr/issues",
+        "Imports": "utils",
+        "Suggests": "covr, knitr, rmarkdown, rstudioapi (>= 0.5), testthat (>=\n2.0.0)",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.3.3",
+        "SystemRequirements": "xclip (https://github.com/astrand/xclip) or xsel\n(http://www.vergenet.net/~conrad/software/xsel/) for accessing\nthe X11 clipboard, or wl-clipboard\n(https://github.com/bugaevc/wl-clipboard) for systems using\nWayland.",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-05-25 05:04:26 UTC; mlincoln",
+        "Author": "Matthew Lincoln [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-4387-3384>),\n  Louis Maddox [ctb],\n  Steve Simpson [ctb],\n  Jennifer Bryan [ctb]",
+        "Maintainer": "Matthew Lincoln <matthew.d.lincoln@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-05-25 05:50:02 UTC",
+        "Built": "R 4.5.1; ; 2026-08-04 13:14:48 UTC; unix"
       }
     },
     "clue": {
@@ -2560,6 +2688,36 @@
         "Repository": "CRAN",
         "Date/Publication": "2025-11-19 13:20:08 UTC",
         "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-07-21 17:04:26 UTC; unix"
+      }
+    },
+    "dir.expiry": {
+      "Source": "Bioconductor",
+      "Repository": "https://bioconductor.org/packages/3.22/bioc",
+      "description": {
+        "Package": "dir.expiry",
+        "Version": "1.18.0",
+        "Date": "2024-10-17",
+        "Title": "Managing Expiration for Cache Directories",
+        "Description": "Implements an expiration system for access to versioned directories.\n    Directories that have not been accessed by a registered function within a certain time frame are deleted.\n    This aims to reduce disk usage by eliminating obsolete caches generated by old versions of packages.",
+        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"aut\", \"cre\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
+        "License": "GPL-3",
+        "Imports": "utils, filelock",
+        "Suggests": "rmarkdown, knitr, testthat, BiocStyle",
+        "biocViews": "Software, Infrastructure",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "7.3.2",
+        "Encoding": "UTF-8",
+        "git_url": "https://git.bioconductor.org/packages/dir.expiry",
+        "git_branch": "RELEASE_3_22",
+        "git_last_commit": "6d768b3",
+        "git_last_commit_date": "2025-10-29",
+        "Repository": "Bioconductor 3.22",
+        "Date/Publication": "2025-10-29",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-10-30 03:37:50 UTC; biocbuild",
+        "Author": "Aaron Lun [aut, cre]",
+        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
+        "Built": "R 4.5.1; ; 2026-11-18 20:21:44 UTC; unix"
       }
     },
     "doParallel": {
@@ -3210,6 +3368,31 @@
         "Built": "R 4.5.1; ; 2026-07-21 17:11:46 UTC; unix"
       }
     },
+    "hexbin": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "hexbin",
+        "Version": "1.28.6",
+        "Title": "Hexagonal Binning Routines",
+        "Authors@R": "c(person(given = \"Dan\",\n                      family = \"Carr\",\n                      role = \"aut\",\n                      email = \"dcarr@voxel.galaxy.gmu.edu\"),\n               person(given = c(\"Nicholas\"),\n                      family = \"Lewin-Koh\",\n                      role = \"aut\"),\n               person(given = \"Martin\",\n                      family = \"Maechler\",\n                      role = \"aut\",\n                      email = \"maechler@stat.math.ethz.ch\"),\n               person(given = \"Deepayan\",\n                      family = \"Sarkar\",\n                      role = \"aut\",\n                      email = \"deepayan.sarkar@r-project.org\"),\n               person(given = \"Edzer\",\n                      family = \"Pebesma\",\n                      role = \"cre\",\n                      comment = c(ORCID = \"0000-0001-8049-7069\"),\n                      email = \"edzer.pebesma@uni-muenster.de\"))",
+        "Depends": "R (>= 2.0.1), methods",
+        "Imports": "lattice, grid, graphics, grDevices, stats, utils",
+        "Suggests": "marray, affy, Biobase, limma, knitr",
+        "Description": "Binning and plotting functions for hexagonal bins.",
+        "Collate": "lattice.R BTC.R BTY.R grid.hexagons.R grid.hexlegend.R hbox.R\nhdiffplot.R hexbinList.R hexbinplot.R hexbin.s4.R hexpanel.R\nhexplom.R hexPlotMA.R hexutil.R hexViewport.R HO.R LINGRAY.R\nLOCS.R MAG.R RB.R smoothHexbin.R",
+        "License": "GPL-2",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "URL": "https://github.com/edzer/hexbin",
+        "Packaged": "2026-07-28 09:53:32 UTC; edzer",
+        "Author": "Dan Carr [aut],\n  Nicholas Lewin-Koh [aut],\n  Martin Maechler [aut],\n  Deepayan Sarkar [aut],\n  Edzer Pebesma [cre] (ORCID: <https://orcid.org/0000-0001-8049-7069>)",
+        "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-07-28 10:50:07 UTC",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-11-18 20:21:45 UTC; unix"
+      }
+    },
     "highr": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3236,6 +3419,34 @@
         "Repository": "CRAN",
         "Date/Publication": "2026-03-06 06:30:47 UTC",
         "Built": "R 4.5.1; ; 2026-07-21 17:15:19 UTC; unix"
+      }
+    },
+    "hms": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "hms",
+        "Title": "Pretty Time of Day",
+        "Date": "2025-10-11",
+        "Version": "1.1.4",
+        "Authors@R": "c(\n    person(\"Kirill\", \"Müller\", , \"kirill@cynkra.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-1416-3412\")),\n    person(\"R Consortium\", role = \"fnd\"),\n    person(\"Posit Software, PBC\", role = \"fnd\",\n           comment = c(ROR = \"03wc8by49\"))\n  )",
+        "Description": "Implements an S3 class for storing and formatting time-of-day\n    values, based on the 'difftime' class.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://hms.tidyverse.org/, https://github.com/tidyverse/hms",
+        "BugReports": "https://github.com/tidyverse/hms/issues",
+        "Imports": "cli, lifecycle, methods, pkgconfig, rlang (>= 1.0.2), vctrs\n(>= 0.3.8)",
+        "Suggests": "crayon, lubridate, pillar (>= 1.1.0), testthat (>= 3.0.0)",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.3.9000",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-10-16 19:10:16 UTC; kirill",
+        "Author": "Kirill Müller [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-1416-3412>),\n  R Consortium [fnd],\n  Posit Software, PBC [fnd] (ROR: <https://ror.org/03wc8by49>)",
+        "Maintainer": "Kirill Müller <kirill@cynkra.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-10-17 05:10:11 UTC",
+        "Built": "R 4.5.1; ; 2026-08-04 13:14:50 UTC; unix"
       }
     },
     "htmltools": {
@@ -4042,6 +4253,34 @@
         "Built": "R 4.5.1; ; 2026-07-24 20:34:25 UTC; unix"
       }
     },
+    "patchwork": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "patchwork",
+        "Type": "Package",
+        "Title": "The Composer of Plots",
+        "Version": "1.3.2",
+        "Authors@R": "\n    person(given = \"Thomas Lin\",\n           family = \"Pedersen\",\n           role = c(\"cre\", \"aut\"),\n           email = \"thomasp85@gmail.com\",\n           comment = c(ORCID = \"0000-0002-5147-4711\"))",
+        "Maintainer": "Thomas Lin Pedersen <thomasp85@gmail.com>",
+        "Description": "The 'ggplot2' package provides a strong API for sequentially \n    building up a plot, but does not concern itself with composition of multiple\n    plots. 'patchwork' is a package that expands the API to allow for \n    arbitrarily complex composition of plots by, among others, providing \n    mathematical operators for combining multiple plots. Other packages that try \n    to address this need (but with a different approach) are 'gridExtra' and \n    'cowplot'.",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "Imports": "ggplot2 (>= 3.0.0), gtable (>= 0.3.6), grid, stats, grDevices,\nutils, graphics, rlang (>= 1.0.0), cli, farver",
+        "RoxygenNote": "7.3.2",
+        "URL": "https://patchwork.data-imaginist.com,\nhttps://github.com/thomasp85/patchwork",
+        "BugReports": "https://github.com/thomasp85/patchwork/issues",
+        "Suggests": "knitr, rmarkdown, gridGraphics, gridExtra, ragg, testthat (>=\n2.1.0), vdiffr, covr, png, gt (>= 0.11.0)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "gifski",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-08-25 08:14:43 UTC; thomas",
+        "Author": "Thomas Lin Pedersen [cre, aut] (ORCID:\n    <https://orcid.org/0000-0002-5147-4711>)",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-08-25 10:00:02 UTC",
+        "Built": "R 4.5.1; ; 2026-08-04 13:15:26 UTC; unix"
+      }
+    },
     "pheatmap": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -4176,6 +4415,31 @@
         "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-07-21 17:12:13 UTC; unix"
       }
     },
+    "prettyunits": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "prettyunits",
+        "Title": "Pretty, Human Readable Formatting of Quantities",
+        "Version": "1.2.0",
+        "Authors@R": "c(\n  person(\"Gabor\", \"Csardi\", email=\"csardi.gabor@gmail.com\", role=c(\"aut\", \"cre\")),\n  person(\"Bill\", \"Denney\", email=\"wdenney@humanpredictions.com\", role=c(\"ctb\"), comment=c(ORCID=\"0000-0002-5759-428X\")),\n  person(\"Christophe\", \"Regouby\", email=\"christophe.regouby@free.fr\", role=c(\"ctb\"))\n  )",
+        "Description": "Pretty, human readable formatting of quantities.\n    Time intervals: '1337000' -> '15d 11h 23m 20s'.\n    Vague time intervals: '2674000' -> 'about a month ago'.\n    Bytes: '1337' -> '1.34 kB'.\n    Rounding: '99' with 3 significant digits -> '99.0'\n    p-values: '0.00001' -> '<0.0001'.\n    Colors: '#FF0000' -> 'red'.\n    Quantities: '1239437' -> '1.24 M'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/r-lib/prettyunits",
+        "BugReports": "https://github.com/r-lib/prettyunits/issues",
+        "Depends": "R(>= 2.10)",
+        "Suggests": "codetools, covr, testthat",
+        "RoxygenNote": "7.2.3",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-09-24 10:53:19 UTC; gaborcsardi",
+        "Author": "Gabor Csardi [aut, cre],\n  Bill Denney [ctb] (<https://orcid.org/0000-0002-5759-428X>),\n  Christophe Regouby [ctb]",
+        "Maintainer": "Gabor Csardi <csardi.gabor@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-09-24 21:10:02 UTC",
+        "Built": "R 4.5.1; ; 2026-08-04 13:13:26 UTC; unix"
+      }
+    },
     "prismatic": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -4201,6 +4465,34 @@
         "Repository": "CRAN",
         "Date/Publication": "2024-04-10 23:10:03 UTC",
         "Built": "R 4.5.1; ; 2026-07-24 20:29:13 UTC; unix"
+      }
+    },
+    "progress": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "progress",
+        "Title": "Terminal Progress Bars",
+        "Version": "1.2.3",
+        "Authors@R": "c(\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Rich\", \"FitzJohn\", role = \"aut\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Configurable Progress bars, they may include percentage,\n    elapsed time, and/or the estimated completion time. They work in\n    terminals, in 'Emacs' 'ESS', 'RStudio', 'Windows' 'Rgui' and the\n    'macOS' 'R.app'. The package also provides a 'C++' 'API', that works\n    with or without 'Rcpp'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/r-lib/progress#readme,\nhttp://r-lib.github.io/progress/",
+        "BugReports": "https://github.com/r-lib/progress/issues",
+        "Depends": "R (>= 3.6)",
+        "Imports": "crayon, hms, prettyunits, R6",
+        "Suggests": "Rcpp, testthat (>= 3.0.0), withr",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-12-05 09:33:10 UTC; gaborcsardi",
+        "Author": "Gábor Csárdi [aut, cre],\n  Rich FitzJohn [aut],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-12-06 10:30:02 UTC",
+        "Built": "R 4.5.1; ; 2026-08-04 13:17:11 UTC; unix"
       }
     },
     "promises": {
@@ -4362,6 +4654,39 @@
         "Repository": "CRAN",
         "Date/Publication": "2026-01-17 08:40:02 UTC",
         "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-07-21 17:11:28 UTC; unix"
+      }
+    },
+    "readr": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "readr",
+        "Title": "Read Rectangular Text Data",
+        "Version": "2.2.0",
+        "Authors@R": "c(\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = \"aut\"),\n    person(\"Jim\", \"Hester\", role = \"aut\"),\n    person(\"Romain\", \"Francois\", role = \"ctb\"),\n    person(\"Jennifer\", \"Bryan\", , \"jenny@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-6983-2759\")),\n    person(\"Shelby\", \"Bearrows\", role = \"ctb\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"),\n           comment = c(ROR = \"03wc8by49\")),\n    person(\"https://github.com/mandreyel/\", role = \"cph\",\n           comment = \"mio library\"),\n    person(\"Jukka\", \"Jylänki\", role = c(\"ctb\", \"cph\"),\n           comment = \"grisu3 implementation\"),\n    person(\"Mikkel\", \"Jørgensen\", role = c(\"ctb\", \"cph\"),\n           comment = \"grisu3 implementation\")\n  )",
+        "Description": "The goal of 'readr' is to provide a fast and friendly way to\n    read rectangular data (like 'csv', 'tsv', and 'fwf').  It is designed\n    to flexibly parse many types of data found in the wild, while still\n    cleanly failing when data unexpectedly changes.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://readr.tidyverse.org, https://github.com/tidyverse/readr",
+        "BugReports": "https://github.com/tidyverse/readr/issues",
+        "Depends": "R (>= 4.1)",
+        "Imports": "cli, clipr, crayon, glue, hms (>= 0.4.1), lifecycle, methods,\nR6, rlang, tibble, utils, vroom (>= 1.7.0), withr",
+        "Suggests": "covr, curl, datasets, knitr, rmarkdown, spelling, stringi,\ntestthat (>= 3.2.0), tzdb (>= 0.1.1), waldo, xml2",
+        "LinkingTo": "cpp11, tzdb (>= 0.1.1)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "tidyverse, tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "false",
+        "Config/usethis/last-upkeep": "2025-11-14",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.3.3",
+        "NeedsCompilation": "yes",
+        "Packaged": "2026-02-19 07:07:31 UTC; jenny",
+        "Author": "Hadley Wickham [aut],\n  Jim Hester [aut],\n  Romain Francois [ctb],\n  Jennifer Bryan [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-6983-2759>),\n  Shelby Bearrows [ctb],\n  Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>),\n  https://github.com/mandreyel/ [cph] (mio library),\n  Jukka Jylänki [ctb, cph] (grisu3 implementation),\n  Mikkel Jørgensen [ctb, cph] (grisu3 implementation)",
+        "Maintainer": "Jennifer Bryan <jenny@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-02-19 18:10:02 UTC",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-08-04 13:21:34 UTC; unix"
       }
     },
     "rematch2": {
@@ -4675,6 +5000,30 @@
         "Built": "R 4.5.1; ; 2026-07-28 13:55:38 UTC; unix"
       }
     },
+    "scattermore": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "scattermore",
+        "Title": "Scatterplots with More Points",
+        "Version": "1.2",
+        "Authors@R": "\n    c(person(given = \"Tereza\",\n           family = \"Kulichova\",\n           role = c(\"aut\"),\n           email = \"kulichova.t@gmail.com\"),\n    person(given = \"Mirek\",\n           family = \"Kratochvil\",\n           role = c(\"aut\", \"cre\"),\n           email = \"exa.exa@gmail.com\",\n           comment = c(ORCID = \"0000-0001-7356-4075\")))",
+        "Description": "C-based conversion of large scatterplot data to rasters plus other \n             operations such as data blurring or data alpha blending. Speeds up \n             plotting of data with millions of points.",
+        "Imports": "ggplot2, scales, grid, grDevices, graphics",
+        "License": "GPL (>= 3)",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "Suggests": "covr, knitr, rmarkdown, testthat",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-06-11 17:47:59 UTC; exa",
+        "Author": "Tereza Kulichova [aut],\n  Mirek Kratochvil [aut, cre] (<https://orcid.org/0000-0001-7356-4075>)",
+        "Maintainer": "Mirek Kratochvil <exa.exa@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-06-12 08:30:02 UTC",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-08-04 13:16:29 UTC; unix"
+      }
+    },
     "scatterplot3d": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -4696,6 +5045,38 @@
         "Repository": "CRAN",
         "Date/Publication": "2026-02-23 17:00:07 UTC",
         "Built": "R 4.5.1; ; 2026-11-04 16:06:39 UTC; unix"
+      }
+    },
+    "scrapper": {
+      "Source": "Bioconductor",
+      "Repository": "https://bioconductor.org/packages/3.22/bioc",
+      "description": {
+        "Package": "scrapper",
+        "Version": "1.4.0",
+        "Date": "2025-10-27",
+        "Authors@R": "person(\"Aaron\", \"Lun\", role=c(\"cre\", \"aut\"), email=\"infinite.monkeys.with.keyboards@gmail.com\")",
+        "Title": "Bindings to C++ Libraries for Single-Cell Analysis",
+        "Description": "\n    Implements R bindings to C++ code for analyzing single-cell (expression) data, mostly from various libscran libraries. \n    Each function performs an individual step in the single-cell analysis workflow, ranging from quality control to clustering and marker detection.\n    It is mostly intended for other Bioconductor package developers to build more user-friendly end-to-end workflows.",
+        "License": "MIT + file LICENSE",
+        "Imports": "methods, Rcpp, beachmat (>= 2.25.1), DelayedArray,\nBiocNeighbors (>= 1.99.0), Rigraphlib, parallel",
+        "Suggests": "testthat, knitr, rmarkdown, BiocStyle, MatrixGenerics,\nsparseMatrixStats, Matrix, S4Vectors, SummarizedExperiment,\nSingleCellExperiment, scRNAseq, igraph",
+        "LinkingTo": "Rcpp, assorthead (>= 1.3.10), beachmat, BiocNeighbors",
+        "biocViews": "Normalization, RNASeq, Software, GeneExpression,\nTranscriptomics, SingleCell, BatchEffect, QualityControl,\nDifferentialExpression, FeatureExtraction, PrincipalComponent,\nClustering",
+        "SystemRequirements": "C++17, GNU make",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.3",
+        "git_url": "https://git.bioconductor.org/packages/scrapper",
+        "git_branch": "RELEASE_3_22",
+        "git_last_commit": "4de467a",
+        "git_last_commit_date": "2025-10-29",
+        "Repository": "Bioconductor 3.22",
+        "Date/Publication": "2025-10-29",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-10-30 06:29:46 UTC; biocbuild",
+        "Author": "Aaron Lun [cre, aut]",
+        "Maintainer": "Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-11-18 20:34:36 UTC; unix"
       }
     },
     "scuttle": {
@@ -4914,38 +5295,43 @@
       }
     },
     "spatialLIBD": {
-      "Source": "Bioconductor",
-      "Repository": "https://bioconductor.org/packages/3.22/data/experiment",
+      "Source": "github",
+      "Repository": null,
       "description": {
         "Package": "spatialLIBD",
         "Title": "spatialLIBD: an R/Bioconductor package to visualize\nspatially-resolved transcriptomics data",
-        "Version": "1.22.0",
-        "Date": "2025-09-16",
+        "Version": "1.25.6",
+        "Date": "2026-11-18",
         "Authors@R": "\n    c(\n    person(\"Leonardo\", \"Collado-Torres\", role = c(\"aut\", \"cre\"), \n    email = \"lcolladotor@gmail.com\", comment = c(ORCID = \"0000-0003-2140-308X\")),\n    person(c(\"Kristen\", \"R.\"), \"Maynard\",\n    role = \"ctb\", email = \"Kristen.Maynard@libd.org\",\n    comment = c(ORCID = \"0000-0003-0031-8468\")),\n    person(c(\"Andrew\", \"E.\"), \"Jaffe\",\n    role = \"ctb\", email = \"andrew.jaffe@libd.org\",\n    comment = c(ORCID = \"0000-0001-6886-1454\")),\n    person(\"Brenda\", \"Pardo\",\n    role = \"ctb\", email = \"bpardo@lcgej.unam.mx\",\n    comment = c(ORCID = \"0000-0001-8103-7136\")),\n    person(\"Abby\", \"Spangler\",\n    role = \"ctb\", email = \"aspangle@gmail.com\",\n    comment = c(ORCID = \"0000-0002-0028-9348\")),\n    person(\"Jesús\", \"Vélez Santiago\",\n    role = \"ctb\", email = \"jvelezmagic@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5128-3838\")),\n    person(\"Lukas M.\", \"Weber\",\n    role = \"ctb\", email = \"lukas.weber.edu@gmail.com\", \n    comment = c(ORCID = \"0000-0002-3282-1730\")),\n    person(\"Louise\", \"Huuki-Myers\", role = \"ctb\", email = \"lahuuki@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5148-3602\")),\n    person(\"Nicholas\", \"Eagles\", role = \"ctb\", email = \"nickeagles77@gmail.com\",\n    comment = c(ORCID = \"0000-0002-9808-5254\"))\n    )",
         "Description": "Inspect interactively the spatially-resolved transcriptomics data\n    from the 10x Genomics Visium platform as well as data from the \n    Maynard, Collado-Torres et al, Nature Neuroscience, 2021 project analyzed by\n    Lieber Institute for Brain Development (LIBD) researchers and collaborators.",
         "License": "Artistic-2.0",
         "Encoding": "UTF-8",
         "LazyData": "true",
-        "Imports": "shiny, golem, ggplot2, cowplot, plotly, viridisLite,\nshinyWidgets, sessioninfo, grid, grDevices, methods,\nAnnotationHub, utils, png, scater, DT, ExperimentHub,\nSummarizedExperiment, stats, graphics, S4Vectors, IRanges,\nbenchmarkme, SingleCellExperiment, BiocFileCache, jsonlite,\ntibble, rtracklayer, Matrix, BiocGenerics, GenomicRanges,\nmagick, paletteer, scuttle, edgeR, limma, statmod,\nMatrixGenerics, rlang, dplyr, ComplexHeatmap, circlize",
-        "RoxygenNote": "7.3.3",
+        "Imports": "BPCells (>= 0.3.1), tools, htmltools, shiny (>= 1.5.0),\nmarkdown, golem, ggplot2, cowplot, plotly, viridisLite,\nshinyWidgets, sessioninfo, grid, grDevices, methods,\nAnnotationHub, utils, png, scater, DT, ExperimentHub,\nSummarizedExperiment, stats, S4Vectors, IRanges, benchmarkme,\nSingleCellExperiment, BiocFileCache, jsonlite, tibble,\nrtracklayer, Matrix, BiocGenerics, GenomicRanges, magick,\npaletteer, scuttle, edgeR, limma, statmod, MatrixGenerics,\nrlang, dplyr, ComplexHeatmap, circlize, scrapper, scales",
         "Roxygen": "list(markdown = TRUE)",
         "URL": "https://github.com/LieberInstitute/spatialLIBD",
         "BugReports": "https://support.bioconductor.org/tag/spatialLIBD",
-        "Suggests": "knitr, RefManageR, rmarkdown, BiocStyle, testthat (>= 2.1.0),\ncovr, here, BiocManager, lobstr, DropletUtils, RColorBrewer",
+        "Additional_repositories": "https://bnprks.r-universe.dev",
+        "Suggests": "sf, SpatialFeatureExperiment, knitr, xml2, RefManageR,\nrmarkdown, BiocStyle, testthat (>= 3.2.0), covr, here,\nBiocManager, lobstr, DropletUtils, RColorBrewer",
         "VignetteBuilder": "knitr",
         "biocViews": "Homo_sapiens_Data, ExperimentHub, SequencingData,\nSingleCellData, ExpressionData, Tissue, PackageTypeData,\nSpatialData",
         "Depends": "SpatialExperiment (>= 1.3.3), R (>= 4.1)",
-        "git_url": "https://git.bioconductor.org/packages/spatialLIBD",
-        "git_branch": "RELEASE_3_22",
-        "git_last_commit": "d06d43c",
-        "git_last_commit_date": "2025-10-29",
-        "Repository": "Bioconductor 3.22",
-        "Date/Publication": "2025-11-04",
+        "Config/roxygen2/version": "8.1.1",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteRepo": "spatialLIBD",
+        "RemoteUsername": "LieberInstitute",
+        "RemoteRef": "HEAD",
+        "RemoteSha": "8fa41b656e6cc9441409000b290b41c24dd085ae",
+        "GithubRepo": "spatialLIBD",
+        "GithubUsername": "LieberInstitute",
+        "GithubRef": "HEAD",
+        "GithubSHA1": "8fa41b656e6cc9441409000b290b41c24dd085ae",
         "NeedsCompilation": "no",
-        "Packaged": "2025-11-04 16:49:08 UTC; biocbuild",
+        "Packaged": "2026-11-19 21:13:39 UTC; nick.eagles",
         "Author": "Leonardo Collado-Torres [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-2140-308X>),\n  Kristen R. Maynard [ctb] (ORCID:\n    <https://orcid.org/0000-0003-0031-8468>),\n  Andrew E. Jaffe [ctb] (ORCID: <https://orcid.org/0000-0001-6886-1454>),\n  Brenda Pardo [ctb] (ORCID: <https://orcid.org/0000-0001-8103-7136>),\n  Abby Spangler [ctb] (ORCID: <https://orcid.org/0000-0002-0028-9348>),\n  Jesús Vélez Santiago [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5128-3838>),\n  Lukas M. Weber [ctb] (ORCID: <https://orcid.org/0000-0002-3282-1730>),\n  Louise Huuki-Myers [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5148-3602>),\n  Nicholas Eagles [ctb] (ORCID: <https://orcid.org/0000-0002-9808-5254>)",
         "Maintainer": "Leonardo Collado-Torres <lcolladotor@gmail.com>",
-        "Built": "R 4.5.1; ; 2026-07-28 14:02:25 UTC; unix"
+        "Built": "R 4.5.1; ; 2026-11-19 21:13:40 UTC; unix"
       }
     },
     "statmod": {
@@ -5278,6 +5664,35 @@
         "Built": "R 4.5.1; ; 2026-07-21 17:15:20 UTC; unix"
       }
     },
+    "tzdb": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "tzdb",
+        "Title": "Time Zone Database Information",
+        "Version": "0.5.0",
+        "Authors@R": "c(\n    person(\"Davis\", \"Vaughan\", , \"davis@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Howard\", \"Hinnant\", role = \"cph\",\n           comment = \"Author of the included date library\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Provides an up-to-date copy of the Internet Assigned Numbers\n    Authority (IANA) Time Zone Database. It is updated periodically to\n    reflect changes made by political bodies to time zone boundaries, UTC\n    offsets, and daylight saving time rules. Additionally, this package\n    provides a C++ interface for working with the 'date' library. 'date'\n    provides comprehensive support for working with dates and date-times,\n    which this package exposes to make it easier for other R packages to\n    utilize. Headers are provided for calendar specific calculations,\n    along with a limited interface for time zone manipulations.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://tzdb.r-lib.org, https://github.com/r-lib/tzdb",
+        "BugReports": "https://github.com/r-lib/tzdb/issues",
+        "Depends": "R (>= 4.0.0)",
+        "Suggests": "covr, testthat (>= 3.0.0)",
+        "LinkingTo": "cpp11 (>= 0.5.2)",
+        "Biarch": "yes",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-03-14 18:41:13 UTC; davis",
+        "Author": "Davis Vaughan [aut, cre],\n  Howard Hinnant [cph] (Author of the included date library),\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Davis Vaughan <davis@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-03-15 22:50:02 UTC",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-08-04 13:14:52 UTC; unix"
+      }
+    },
     "utf8": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -5449,6 +5864,41 @@
         "Built": "R 4.5.1; ; 2026-07-21 17:13:02 UTC; unix"
       }
     },
+    "vroom": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "vroom",
+        "Title": "Read and Write Rectangular Text Data Quickly",
+        "Version": "1.7.1",
+        "Authors@R": "c(\n    person(\"Jim\", \"Hester\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-2739-7082\")),\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-4757-117X\")),\n    person(\"Jennifer\", \"Bryan\", , \"jenny@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-6983-2759\")),\n    person(\"Shelby\", \"Bearrows\", role = \"ctb\"),\n    person(\"https://github.com/mandreyel/\", role = \"cph\",\n           comment = \"mio library\"),\n    person(\"Jukka\", \"Jylänki\", role = \"cph\",\n           comment = \"grisu3 implementation\"),\n    person(\"Mikkel\", \"Jørgensen\", role = \"cph\",\n           comment = \"grisu3 implementation\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"), comment = c(ROR = \"03wc8by49\"))\n  )",
+        "Description": "The goal of 'vroom' is to read and write data (like 'csv',\n    'tsv' and 'fwf') quickly. When reading it uses a quick initial\n    indexing step, then reads the values lazily , so only the data you\n    actually use needs to be read.  The writer formats the data in\n    parallel and writes to disk asynchronously from formatting.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://vroom.tidyverse.org, https://github.com/tidyverse/vroom",
+        "BugReports": "https://github.com/tidyverse/vroom/issues",
+        "Depends": "R (>= 4.1)",
+        "Imports": "bit64, cli (>= 3.2.0), crayon, glue, hms, lifecycle (>=\n1.0.3), methods, rlang (>= 1.1.0), stats, tibble (>= 2.0.0),\ntidyselect, tzdb (>= 0.1.1), vctrs (>= 0.2.0), withr",
+        "Suggests": "archive, bench (>= 1.1.0), covr, curl, dplyr, forcats, fs,\nggplot2, knitr, patchwork, prettyunits, purrr, rmarkdown,\nrstudioapi, scales, spelling, testthat (>= 2.1.0), tidyr,\nutils, waldo, xml2",
+        "LinkingTo": "cpp11 (>= 0.2.0), progress (>= 1.2.3), tzdb (>= 0.1.1)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "nycflights13, tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "false",
+        "Config/usethis/last-upkeep": "2025-11-25",
+        "Copyright": "file COPYRIGHTS",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.3.3",
+        "Config/build/compilation-database": "true",
+        "NeedsCompilation": "yes",
+        "Packaged": "2026-03-30 20:25:37 UTC; jenny",
+        "Author": "Jim Hester [aut] (ORCID: <https://orcid.org/0000-0002-2739-7082>),\n  Hadley Wickham [aut] (ORCID: <https://orcid.org/0000-0003-4757-117X>),\n  Jennifer Bryan [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-6983-2759>),\n  Shelby Bearrows [ctb],\n  https://github.com/mandreyel/ [cph] (mio library),\n  Jukka Jylänki [cph] (grisu3 implementation),\n  Mikkel Jørgensen [cph] (grisu3 implementation),\n  Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
+        "Maintainer": "Jennifer Bryan <jenny@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-03-31 05:10:02 UTC",
+        "Built": "R 4.5.1; x86_64-pc-linux-gnu; 2026-08-04 13:18:21 UTC; unix"
+      }
+    },
     "withr": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -5563,7 +6013,16 @@
   },
   "files": {
     "app.R": {
-      "checksum": "cf3dbb31e24f85eb4c63e799fe4aaf11"
+      "checksum": "fe186d110de5b5478ad63fed52d35046"
+    },
+    "modeling_results_domain.qs2": {
+      "checksum": "fe635159c93417ddbc045ec4ea94bb58"
+    },
+    "sig_genes_domain.qs2": {
+      "checksum": "6f11f7085e97f09f63fb863fef26977d"
+    },
+    "spe_pb_domain.qs2": {
+      "checksum": "5083339ca33cc0cd1b5ed84a10ffbb4a"
     },
     "www/documentation_sce_layer.md": {
       "checksum": "17021db5131ab1f3ca663d54058ce1e2"

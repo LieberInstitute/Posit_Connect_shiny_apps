@@ -1,109 +1,90 @@
-This document describes this Shiny web application made by the  [`spatialLIBD`](https://bioconductor.org/packages/spatialLIBD) Bioconductor package. You can either find the documentation about this package through [Bioconductor](https://bioconductor.org/packages/spatialLIBD) or at the [`spatialLIBD` documentation website](http://lieberinstitute.github.io/spatialLIBD). Below we explain the options common across tabs.
+## Cell-level data
 
-## Documentation video
+**Raw summary** describes the [`SpatialExperiment`](https://bioconductor.org/packages/SpatialExperiment)
+for nucleus accumbens (NAc) cells from Br6522, Br3943, and Br3899. Use
+**Interactive** to examine gene expression and cell labels together in one donor,
+or **Static grid** to compare donors. These replace the separate gene and
+cluster views in older versions of [spatialLIBD](https://lieberinstitute.github.io/spatialLIBD/).
 
-You might be interested in this video demonstration of `spatialLIBD` for the [LIBD rstats club](http://research.libd.org/rstatsclub/).
+## Shared controls
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LZ2kvCiRVdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- **Sample** selects the donor in **Interactive**. **Static grid** has its own
+  **Samples** selector.
+- **Histology image** selects the background or hides it with **None**.
+  **Interactive** supports tiled full-resolution histology; **Static grid** and
+  **Edit image** use low-resolution images.
+- **Discrete variable** selects the labels to display. Use **Clusters to show**
+  to restrict which labels are visible. Available columns include:
+  - `ManualAnnotation`: labels added during the session or imported from a CSV.
+  - `celltyping_<token>`, `celltyping_supp_<token>`, `domains_<token>`, and
+    `domains_supp_<token>`: 48 BANKSY label columns, from four runs at 12 Leiden
+    resolutions each. Cell typing uses lambda 0.2 and k = 15; domains use lambda
+    0.9 and k = 25. All runs use Harmony. The supplemented runs replace genes in
+    the spatially variable gene set, not cells. Resolution tokens replace the
+    decimal point with an underscore (for example, `1_05` for 1.05). This app
+    defaults to `domains_1_05`, also used for its pseudobulk data.
+  - `rctd_cell_type`: unsmoothed RCTD `first_type` calls, including eligible
+    doublets. `Dropped` remains a separate label.
+  - `rctd_domain_raw` and `rctd_domain_smoothed`: labels inherited from bins,
+    before and after smoothing bin weights within each donor, respectively.
+- **Continuous feature(s)** accepts genes by symbol or Ensembl ID and the QC
+  columns below. **Assay** is `logcounts` in this dataset; raw counts are not
+  included. When selecting multiple features, use **Combine features** to choose
+  **Mean Z-score**, **PC1**, or **Proportion nonzero**.
 
-## Raw summary
+  | Column | Meaning |
+  | --- | --- |
+  | `sum_umi` | Total UMIs per cell |
+  | `sum_gene` | Genes with nonzero counts per cell |
+  | `expr_chrM` | Mitochondrial UMIs per cell |
+  | `expr_chrM_ratio` | Fraction of UMIs from mitochondrial genes |
 
-Before the documentation, this tab displays the [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment) object that contains the cell-level nucleus accumbens data from donors Br6522, Br3943, and Br3899. It's basically useful to know that the data has been loaded and that you can start navigating the app. Throughout the rest of this document, we'll refer to this object by the name `spe`. The cell SPE contains no BANKSY embeddings or other reduced dimensions.
+- **Show values greater than** filters by the continuous value; **Maximum
+  percentile (0–1)** caps values used for coloring.
+- **Embedding** selects PCA, UMAP, or **None** to hide the embedding panels.
 
-## Common options
+Under **Appearance**, use **Show settings** to adjust the cell boundary style,
+palettes, image and cell opacity, and point sizes. Changes apply immediately in
+**Interactive**; click **Update grid** to apply them in **Static grid**.
 
-* `Samples to plot`: which sample to plot on the tabs that do not have _grid_ on their name.
-* `Discrete variable to plot`: which discrete variable (typically with the cluster labels) to visualize. We include the clusters:
-  - `ManualAnnotation`: your own annotations of each cell.
-  - Four BANKSY cluster-name prefixes are used, each followed by a resolution token: `celltyping_<token>`, `celltyping_supp_<token>`, `domains_<token>`, and `domains_supp_<token>` (for example, `celltyping_supp_0_2`). Together these are 48 columns: four runs at each of 12 Leiden resolutions. Cell typing uses lambda 0.2 and k 15; domains use lambda 0.9 and k 25. All runs use Harmony. The supplemented runs replace genes in the SVG gene set, not cells. Resolution tokens replace the decimal point with an underscore: `0_05`, `0_1`, `0_15`, `0_2`, `0_25`, `0_3`, `0_35`, `0_4`, `0_575`, `1_05`, `1_525`, and `2`. The main domain cluster is `domains_1_05`.
-  - `rctd_cell_type`: unsmoothed RCTD `first_type` calls, including eligible doublets; `Dropped` is preserved.
-  - `rctd_domain_raw` and `rctd_domain_smoothed`: domains inherited from bins, before and after smoothing bin weights within each donor, respectively.
-* `Reduced dimensions`: the cell SPE has no reduced dimensions, so cell-level reduced-dimension visualization is unavailable.
-* `Continuous variable to plot`: which gene or continuous variable to visualize in the gene tabs as well as on the `clusters (interactive)` tab. The following options exist:
-  - `sum_umi`: total number of reads present in a cell.
-  - `sum_gene`: total number of genes with nonzero expression in a cell.
-  - `expr_chrM`: sum of chrM counts in a cell.
-  - `expr_chrM_ratio`: ratio of `expr_chrM` / `sum_umi`.
-* `Gene scale`: whether to use the raw expression values (`counts`) or the scaled and log transformed values (`logcounts`).
-* `Image name`: the name of the background image to use. You can edit this image on the `Edit image` tab.
-* `Spot transparency level`: the transparency of the cells in the visualizations. It can be useful if the cell colors are blocking the background image.
-* `Minimum count value`: Values from the selected `continuous variable to plot` at or below this threshold will not be displayed.
-* `Gene color scale`: Whether to use the color blind friendly palette (`viridis`) or to use a custom palette that we used for the _HumanPilot_ `paper` (Maynard, Collado-Torres, et al, 2021). Other options from the [viridisLite R package](https://sjmgarnier.github.io/viridisLite/reference/viridis.html#details) are also supported.
-* `Gene color direction`: whether colors should be ordered from darkest to lightest or in the reverse direction.
+## Interactive
 
-We will cover the download button and upload CSV options at the end of this document.
+The spatial panels show the same cells colored by the selected continuous
+feature and discrete label. The optional embedding panels show the same
+colorings in PCA or UMAP space. Hover over a cell for details. Use **Pan**, the
+zoom buttons, or **Reset view** to navigate. Zoom in on the histology to see the
+vendor's expanded 5 µm contours. These outlines are not independently validated
+cell membranes.
 
-## Clusters (static)
+Use **Select** to pick individual cells or **Lasso** to select a group. Selections
+are linked across panels. Hold **Shift** to add to a selection or **Alt** to
+remove from it. To annotate, enter a **Manual annotation label** and click
+**Label selected units**, or enable **Annotate individual units on click**.
+**Undo last annotation** reverses the latest labeling action or import. Choose
+`ManualAnnotation` as the **Discrete variable** to see your labels.
 
-Displays the selected cluster variable (from `discrete variable to plot`) for the given sample (from `samples to plot`). You can also choose to see the background image and clusters side to side.
+## Static grid
 
-```{r}
-## Reproduce locally with
-spatialLIBD::vis_clus()
-```
+Use **Color by** to choose **Continuous** or **Discrete**, then choose the donor
+order under **Samples** and set **Rows** and **Columns**. Use **Show histology**
+to display the image behind the cells, or **Image beside features** to compare
+them side by side. **Point size (mm)** controls the size of the cell markers.
+The grid draws points, not outlines; use **Interactive** for detailed inspection.
 
-## Clusters (interactive)
-
-This tab normally links spatial and reduced-dimension plots of the selected gene or continuous variable and cluster or discrete variable. Because this cell SPE has no reduced dimensions, its reduced-dimension plots are unavailable; use the spatial plots and `Gene (interactive)` for cell-level visualization.
-
-This panel normally allows you to combine clustering and gene expression information in spatial and reduced-dimensionality views, but the latter are unavailable for this cell SPE.
-
-Once you have selected cells of interest, at the bottom of the tab there is a text box where you can enter your manual annotations. This overwrites `spe$ManualAnnotation` which is why you need to confirm doing so by clicking the button `Label selected points (from lasso) with manual annotation`. You can then change the `clusters to plot` option to `ManualAnnotation` to see your new cell labels.
-
-Given the amount of data being displayed, this tab consumes quite a bit of resources.
-
-Note that there can be a maximum of 36 unique manual annotations (unique values in `spe$ManualAnnotation`) before we run out of colors to visualize them.
-
-## Clusters grid (static)
-
-This tab is similar to `clusters (static)` with the difference being that you can visualize a subset or even all samples at once. Select the samples you want to visualize, then specify the grid on which they will be plotted (the number of rows and columns), and click the `upgrade grid plot` button. We ask that you use this button every time you want to update the plot as it can take a few seconds for this update to complete.
-
-This particular tab is useful if you have computationally defined some clusters using the data of all your samples and you want to visualize the resulting clusters across multiple (or even all the) samples at the same time.
-
-```{r}
-## Reproduce locally with
-spatialLIBD::vis_grid_clus()
-```
-
-## Gene (static)
-
-This tab is similar to `clusters (static)` but instead of displaying discrete values (like clusters), it displays continuous values such as the gene expression of a given gene or the number of bins per cell. By default, cells whose value is below or at 0 are not shown, which makes it easier for you to distinguish points with low values from those below the threshold of your interest (controlled by `minimum count value`). The points can be colored in two different color scales. You can also choose to see the background image and continuous values side to side.
-
-```{r}
-## Reproduce locally with
-spatialLIBD::vis_gene()
-```
-
-## Gene (interactive)
-
-This tab shows a single interactive plot. It is similar to `clusters (interactive)` as in you can use the lasso selector (mouse over top right to find it) to select cells and them label them using the text box at the bottom with the corresponding button. Unlike `clusters (interactive)`, this version includes checkboxes at the top for each of the unique values of the selected `discrete variable to plot` such that you can subset the cells to those present on a given cluster.
-
-Note that if you have `discrete variable to plot` toggled to the `ManualAnnotation` option and update the cell-level information with the text box and button at the bottom of the tab, then it will re-load the interactive visualization and you will lose your selection of points.
-
-## Gene grid (static)
-
-This is the equivalent of `clusters grid (static)` but for continuous variables, just like `gene (static)` was the equivalent of `clusters (static)`.
-
-```{r}
-## Reproduce locally with
-spatialLIBD::vis_grid_gene()
-```
+Click **Update grid** after changing settings. **Download plot** exports the
+last updated grid as PDF when fewer than 50,000 cells are displayed per sample
+on average, or as a 300 dpi PNG otherwise.
 
 ## Edit image
 
-This panel shows you all the options we have for manipulating the colors and properties of the selected background image. These results will be available under the `edited_image` option in the image chooser menu. You can perform sequential manipulations of the image, though it will get hard to keep track of all the changes you made.
+Adjust the thumbnail appearance and click **Update custom image**, then select
+`edited_imaged` under **Histology image**. Edits apply to the low-resolution
+variants for all donors and do not modify the full-resolution pyramids.
 
-```{r}
-## Reproduce locally with
-spatialLIBD::img_update_all()
-```
+## Save and restore annotations
 
-## Saving and uploading your `spe$ManualAnnotation` results
-
-Beyond visualizing the data, the main goal of this section of `spatialLIBD` is to enable you to label cells. That is done only through the `interactive` tabs as previously described. Your manual annotations are saved under `spe$ManualAnnotation` and you can save them for future use using the main menu download button. If you click this button, it will prompt you to save a CSV file. We recommend that you keep selected the checkbox `Drop NA layer entries in the CSV file?` which means that your CSV file will be smaller and will potentially lead to less conflicts with other CSV files you make. That is, you will likely avoid re-labeling the same cell with different values in two or more of these CSV files. This is particularly useful if you plan to work on one sample at a time, save your results, and then merge them all into a single CSV file.
-
-These CSV files with your manual annotations can be re-uploaded to `spatialLIBD`. You can notice this by choosing `ManualAnnotation` under `clusters to plot` and using any of the `clusters` tabs. If you upload more than one CSV, any values you have under `spe$ManualAnnotation` will be overwritten if the cell is present in your CSV file. Thus, if you followed the recommended workflow of saving one CSV file per sample, you can then upload them all sequentially and merge them together into a single CSV file to simplify your work later.
-
-In summary, the order in which you re-upload the CSV files matters as newer uploads will overwrite any duplicated cells from previous CSV files.
-
-We also recommend saving your work often in case you lose connection to `spatialLIBD`.
+Annotations are session-specific. Click **Download annotations** before closing
+the app. **Omit unlabeled units from CSV** is selected by default. To restore
+labels, use **Import annotations** with a CSV containing `sample_id`, `spot_name`
+(the exported cell identifier), and `ManualAnnotation`. Later imports replace
+labels for matching cells.

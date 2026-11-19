@@ -23,43 +23,31 @@ You might also be interested in this video demonstration of `spatialLIBD` for th
 
 ## Raw summary
 
-Before the documentation, this tab displays the [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment) object that contains the domain-level data (layer-level in other `spatialLIBD` apps). It's basically useful to know that the data has been loaded and that you can start navigating the app. If you wish to download this data, use the following command.
+This tab summarizes the NAc domain pseudobulk data and model results. From the
+`NAc_domain` app directory in the project checkout, load the same inputs with:
 
 ```{r}
-## Check that you have a recent version of spatialLIBD installed
-stopifnot(packageVersion("spatialLIBD") >= "1.11.6")
-
-## Download sce data
-sce_pseudo <- spatialLIBD::fetch_data(type = "habenula_atlas_HD_pseudobulk")
-```
-
-Throughout the rest of this document, we'll refer to this object by the name `sce_pseudo`.
-
-This tab also shows the statistical modeling results, described below, that you can access locally and re-shape using the following code.
-
-```{r}
-## Reproduce locally with
-modeling_results <- fetch_data("habenula_atlas_HD_modeling_results")
-sig_genes <- spatialLIBD::sig_genes_extract_all(
-    n = nrow(sce_pseudo), # n = 1000 was used in the app for performance
-    modeling_results = modeling_results,
-    sce_layer = sce_pseudo
-)
+sce_pseudo <- qs2::qs_read("spe_pb_domain.qs2")
+modeling_results <- qs2::qs_read("modeling_results_domain.qs2")
+sig_genes <- qs2::qs_read("sig_genes_domain.qs2")
 ```
 
 ## Common options
 
 * `Model results`: the statistical modeling results to use. We computed three different types of models:
-  1. `enrichment`: one cell type against all the the other cell types. Results in t-statistics.
-  2. `pairwise`: one cell type against another one. Results in t-statistics with two-sided p-values. These are empty, because they can't be meaningfully computed with one sample.
-  3. `anova`: changes among the cell types (adjusting for the mean expression) using the data from all cell types (`all`). Note that great changes between the white matter and grey matter will greatly influence these results. These are empty, because they can't be meaningfully computed with one sample.
+  1. `enrichment`: one domain against the rest; reports t-statistics.
+  2. `pairwise`: one domain against another; reports t-statistics with two-sided p-values.
+  3. `anova`: tests for expression differences across all domains (`all`).
+
+Domains 22, 24, 25, and 26 are represented in only one donor after pseudobulk
+filtering. Interpret model results involving these domains cautiously.
 
 ## Reduced dim
 
 In this panel you can visualize the domain-level data (`sce_pseudo`) across reduced dimensionality representations derived from the gene expression data from the domain-level pseudo-bulked data. Select which dimensionality reduction method to use with `Reduced Dimension` (PCA or UMAP). Then use `Color by` to choose which variable to color data by, which can be useful to identify groups of pseudo-bulked samples. The `colData` columns are:
 
 * `domains_1_05`: main BANKSY domain cluster.
-* `sum_umi`: total number of reads present in a pseudobulked sample.
+* `sum_umi`: total number of UMIs in a pseudobulked sample.
 * `sum_gene`: total number of genes with nonzero expression in a pseudobulked sample.
 * `expr_chrM`: sum of chrM counts in a pseudobulked sample.
 * `expr_chrM_ratio`: ratio of `expr_chrM` / `sum_umi`.
@@ -76,7 +64,10 @@ scater::plotReducedDim(sce_pseudo)
 
 ## Model boxplots
 
-This tab allows you to make a boxplot of the `logcounts` gene expression from the cell-type-level data (`sce_pseudo`) for a given `gene`; you can search your gene by typing either the symbol or the Ensembl gene ID. The model result information displayed in the title of the plot is based on which `model results` you selected and whether you are using the short title version or not (controlled by a checkbox). We provide two different color scales you can use: the color blind friendly `viridis` as well as a custom one we used for the `paper`. Through the `Model test` selector, you can choose which particular comparison to display. For example, `1` for the `enrichment` model means that you would display the results of comparing Banksy cluster 1 against the rest of the clusters.
+This tab shows pseudobulk `logcounts` by domain. Search for a gene by symbol or
+Ensembl ID, then select **Model results** and **Model test** to display the
+comparison of interest. For example, `1` under `enrichment` compares BANKSY
+domain 1 against the other domains.
 
 Below the plot you can find the subset of the table of results  (`sig_genes` from earlier), sort the table by the different columns, and download it as a CSV if you want. For more details about what each of these columns mean, check the [`spatialLIBD` vignette documentation](http://LieberInstitute.github.io/spatialLIBD/articles/spatialLIBD.html#extract-significant-genes).
 
@@ -111,7 +102,10 @@ If you have a single nucleus or single cell RNA-sequencing (snRNA-seq)  (scRNA-s
 * human Ensembl gene IDs as the row names (first column, no name for the column),
 * statistics (numeric values) for the cells.
 
-Once you have uploaded a CSV file following this specific format, you can then assess whether the correlation between your statistics and the ones from our cell types for the subset of genes (Ensembl ids) present in both. The resulting heatmap and interactive correlation matrix (which again you can interact with and download) can be useful if you are in the process of labeling your sn/scRNA-seq clusters or simply want to compare them against the cell-type-specific data we have provided. This can also be used for new spatially-resolved transcriptomics datasets.
+The heatmap and correlation table compare your statistics with the NAc domain
+statistics using the Ensembl gene IDs present in both datasets. This can help
+compare your sn/scRNA-seq clusters or spatial transcriptomics results against
+the NAc domains.
 
 Finally, you can change the `Maximum correlation` for visualization purposes on the heatmap as it will change the dynamic range for the colors.
 
