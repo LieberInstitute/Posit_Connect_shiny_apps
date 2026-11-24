@@ -5300,9 +5300,9 @@
       "description": {
         "Package": "spatialLIBD",
         "Title": "spatialLIBD: an R/Bioconductor package to visualize\nspatially-resolved transcriptomics data",
-        "Version": "1.25.6",
-        "Date": "2026-11-18",
-        "Authors@R": "\n    c(\n    person(\"Leonardo\", \"Collado-Torres\", role = c(\"aut\", \"cre\"), \n    email = \"lcolladotor@gmail.com\", comment = c(ORCID = \"0000-0003-2140-308X\")),\n    person(c(\"Kristen\", \"R.\"), \"Maynard\",\n    role = \"ctb\", email = \"Kristen.Maynard@libd.org\",\n    comment = c(ORCID = \"0000-0003-0031-8468\")),\n    person(c(\"Andrew\", \"E.\"), \"Jaffe\",\n    role = \"ctb\", email = \"andrew.jaffe@libd.org\",\n    comment = c(ORCID = \"0000-0001-6886-1454\")),\n    person(\"Brenda\", \"Pardo\",\n    role = \"ctb\", email = \"bpardo@lcgej.unam.mx\",\n    comment = c(ORCID = \"0000-0001-8103-7136\")),\n    person(\"Abby\", \"Spangler\",\n    role = \"ctb\", email = \"aspangle@gmail.com\",\n    comment = c(ORCID = \"0000-0002-0028-9348\")),\n    person(\"Jesús\", \"Vélez Santiago\",\n    role = \"ctb\", email = \"jvelezmagic@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5128-3838\")),\n    person(\"Lukas M.\", \"Weber\",\n    role = \"ctb\", email = \"lukas.weber.edu@gmail.com\", \n    comment = c(ORCID = \"0000-0002-3282-1730\")),\n    person(\"Louise\", \"Huuki-Myers\", role = \"ctb\", email = \"lahuuki@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5148-3602\")),\n    person(\"Nicholas\", \"Eagles\", role = \"ctb\", email = \"nickeagles77@gmail.com\",\n    comment = c(ORCID = \"0000-0002-9808-5254\"))\n    )",
+        "Version": "1.25.9",
+        "Date": "2026-11-24",
+        "Authors@R": "\n    c(\n    person(\"Leonardo\", \"Collado-Torres\", role = \"aut\", \n    email = \"lcolladotor@gmail.com\", comment = c(ORCID = \"0000-0003-2140-308X\")),\n    person(c(\"Kristen\", \"R.\"), \"Maynard\",\n    role = \"ctb\", email = \"Kristen.Maynard@libd.org\",\n    comment = c(ORCID = \"0000-0003-0031-8468\")),\n    person(c(\"Andrew\", \"E.\"), \"Jaffe\",\n    role = \"ctb\", email = \"andrew.jaffe@libd.org\",\n    comment = c(ORCID = \"0000-0001-6886-1454\")),\n    person(\"Brenda\", \"Pardo\",\n    role = \"ctb\", email = \"bpardo@lcgej.unam.mx\",\n    comment = c(ORCID = \"0000-0001-8103-7136\")),\n    person(\"Abby\", \"Spangler\",\n    role = \"ctb\", email = \"aspangle@gmail.com\",\n    comment = c(ORCID = \"0000-0002-0028-9348\")),\n    person(\"Jesús\", \"Vélez Santiago\",\n    role = \"ctb\", email = \"jvelezmagic@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5128-3838\")),\n    person(\"Lukas M.\", \"Weber\",\n    role = \"ctb\", email = \"lukas.weber.edu@gmail.com\", \n    comment = c(ORCID = \"0000-0002-3282-1730\")),\n    person(\"Louise\", \"Huuki-Myers\", role = \"ctb\", email = \"lahuuki@gmail.com\",\n    comment = c(ORCID = \"0000-0001-5148-3602\")),\n    person(\"Nicholas\", \"Eagles\", role = c(\"aut\", \"cre\"),\n\temail = \"nickeagles77@gmail.com\", comment = c(ORCID = \"0000-0002-9808-5254\"))\n    )",
         "Description": "Inspect interactively the spatially-resolved transcriptomics data\n    from the 10x Genomics Visium platform as well as data from the \n    Maynard, Collado-Torres et al, Nature Neuroscience, 2021 project analyzed by\n    Lieber Institute for Brain Development (LIBD) researchers and collaborators.",
         "License": "Artistic-2.0",
         "Encoding": "UTF-8",
@@ -5322,16 +5322,16 @@
         "RemoteRepo": "spatialLIBD",
         "RemoteUsername": "LieberInstitute",
         "RemoteRef": "HEAD",
-        "RemoteSha": "8fa41b656e6cc9441409000b290b41c24dd085ae",
+        "RemoteSha": "5600a175184666e86e8e2e71c7119a8ab767ee2c",
         "GithubRepo": "spatialLIBD",
         "GithubUsername": "LieberInstitute",
         "GithubRef": "HEAD",
-        "GithubSHA1": "8fa41b656e6cc9441409000b290b41c24dd085ae",
+        "GithubSHA1": "5600a175184666e86e8e2e71c7119a8ab767ee2c",
         "NeedsCompilation": "no",
-        "Packaged": "2026-11-19 21:13:39 UTC; nick.eagles",
-        "Author": "Leonardo Collado-Torres [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-2140-308X>),\n  Kristen R. Maynard [ctb] (ORCID:\n    <https://orcid.org/0000-0003-0031-8468>),\n  Andrew E. Jaffe [ctb] (ORCID: <https://orcid.org/0000-0001-6886-1454>),\n  Brenda Pardo [ctb] (ORCID: <https://orcid.org/0000-0001-8103-7136>),\n  Abby Spangler [ctb] (ORCID: <https://orcid.org/0000-0002-0028-9348>),\n  Jesús Vélez Santiago [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5128-3838>),\n  Lukas M. Weber [ctb] (ORCID: <https://orcid.org/0000-0002-3282-1730>),\n  Louise Huuki-Myers [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5148-3602>),\n  Nicholas Eagles [ctb] (ORCID: <https://orcid.org/0000-0002-9808-5254>)",
-        "Maintainer": "Leonardo Collado-Torres <lcolladotor@gmail.com>",
-        "Built": "R 4.5.1; ; 2026-11-19 21:13:40 UTC; unix"
+        "Packaged": "2026-11-24 18:12:20 UTC; nick.eagles",
+        "Author": "Leonardo Collado-Torres [aut] (ORCID:\n    <https://orcid.org/0000-0003-2140-308X>),\n  Kristen R. Maynard [ctb] (ORCID:\n    <https://orcid.org/0000-0003-0031-8468>),\n  Andrew E. Jaffe [ctb] (ORCID: <https://orcid.org/0000-0001-6886-1454>),\n  Brenda Pardo [ctb] (ORCID: <https://orcid.org/0000-0001-8103-7136>),\n  Abby Spangler [ctb] (ORCID: <https://orcid.org/0000-0002-0028-9348>),\n  Jesús Vélez Santiago [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5128-3838>),\n  Lukas M. Weber [ctb] (ORCID: <https://orcid.org/0000-0002-3282-1730>),\n  Louise Huuki-Myers [ctb] (ORCID:\n    <https://orcid.org/0000-0001-5148-3602>),\n  Nicholas Eagles [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-9808-5254>)",
+        "Maintainer": "Nicholas Eagles <nickeagles77@gmail.com>",
+        "Built": "R 4.5.1; ; 2026-11-24 18:12:22 UTC; unix"
       }
     },
     "statmod": {
