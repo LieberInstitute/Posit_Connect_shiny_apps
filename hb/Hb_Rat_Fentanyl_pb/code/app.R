@@ -7,12 +7,12 @@ library("scuttle")
 # sce_pseudo <- readRDS("pseudobulk_cluster_atlas.rds")
 
 posit_connect_file <- "/r_data/lcollado/Posit_Connect_shiny_apps/hb/Hb_Rat_Fentanyl_pb/pseudobulk_cluster_atlas.rds"
-## Load the pseudobulked object spe_pseudo
+## Load the pseudobulked object sce_pseudo
 if (file.exists(posit_connect_file)) {
     ## Location for the https://conn1.libd.org/ server
-    spe_pseudo <- readRDS(posit_connect_file)
+    sce_pseudo <- readRDS(posit_connect_file)
 } else {
-    spe_pseudo <- readRDS(here::here("hb", "Hb_Rat_Fentanyl_pb", "processed-data", "pseudobulk_cluster_atlas.rds"))
+    sce_pseudo <- readRDS(here::here("hb", "Hb_Rat_Fentanyl_pb", "processed-data", "pseudobulk_cluster_atlas.rds"))
 }
 
 ## Make unique gene names ## these are ensemble ids
