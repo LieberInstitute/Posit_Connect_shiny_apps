@@ -231,10 +231,10 @@ initial[["FeatureAssayPlot1"]] <- new(
 )
 
 ################################################################################
-# Settings for Feature assay plot 3
+# Settings for Feature assay plot 2
 ################################################################################
 
-initial[["FeatureAssayPlot3"]] <- new(
+initial[["FeatureAssayPlot2"]] <- new(
     "FeatureAssayPlot",
     Assay = "logcounts",
     XAxis = "Column data",
@@ -304,10 +304,10 @@ initial[["FeatureAssayPlot3"]] <- new(
 )
 
 ################################################################################
-# Settings for Feature assay plot 4
+# Settings for Feature assay plot 3
 ################################################################################
 
-initial[["FeatureAssayPlot4"]] <- new(
+initial[["FeatureAssayPlot3"]] <- new(
     "FeatureAssayPlot",
     Assay = "logcounts",
     XAxis = "Column data",
